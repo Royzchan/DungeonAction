@@ -15,7 +15,7 @@ D:/Unity/DungeonAction/DungeonAction
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53082
+53688
 Successfully changed project path to: D:/Unity/DungeonAction/DungeonAction
 D:/Unity/DungeonAction/DungeonAction
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,14 +49,14 @@ D:/Unity/DungeonAction/DungeonAction
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [27392]  Target information:
+Player connection [27512]  Target information:
 
-Player connection [27392]  * "[IP] 192.168.0.22 [Port] 0 [Flags] 2 [Guid] 18619656 [EditorId] 18619656 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-P7EN735) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [27512]  * "[IP] 192.168.0.22 [Port] 0 [Flags] 2 [Guid] 2945569514 [EditorId] 2945569514 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-P7EN735) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [27392] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [27392] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [27512] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [27512] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 6.98 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 7.80 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.39f1 (4e1b0f82c39a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.39f1/Editor/Data/Resources/UnitySubsystems
@@ -72,44 +72,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.39f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.39f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.39f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56696
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56312
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.39f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006608 seconds.
-- Loaded All Assemblies, in  0.356 seconds
+Registered in 0.010667 seconds.
+- Loaded All Assemblies, in  0.372 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.259 seconds
-Domain Reload Profiling: 613ms
-	BeginReloadAssembly (106ms)
+- Finished resetting the current domain, in  0.244 seconds
+Domain Reload Profiling: 615ms
+	BeginReloadAssembly (129ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (34ms)
+	RebuildCommonClasses (36ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (66ms)
-	LoadAllAssembliesAndSetupDomain (137ms)
-		LoadAssemblies (104ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (131ms)
+		LoadAssemblies (126ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (135ms)
-			TypeCache.Refresh (133ms)
-				TypeCache.ScanAssembly (121ms)
+		AnalyzeDomain (129ms)
+			TypeCache.Refresh (128ms)
+				TypeCache.ScanAssembly (114ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (260ms)
+	FinalizeReload (245ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (204ms)
+		SetupLoadedEditorAssemblies (189ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (9ms)
 			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (137ms)
-			ProcessInitializeOnLoadMethodAttributes (48ms)
+			ProcessInitializeOnLoadAttributes (128ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,109 +117,109 @@ Domain Reload Profiling: 613ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-Symbol file data-000001FCF7674020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file data-000001D20EEE8C30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3EE9FF0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-000001D20DDC5010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3EE9FF0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-000001D20DDC5010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF5EF94A0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file data-000001D20EEF4070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF7229C50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-000001D20EEF4070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3AFAEA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-000001D20DF6FE30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3AFAEA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-000001D20DF6FE30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD4807010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file data-000001D1EB7E6010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49069D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-000001D20DDECE30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49069D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD4848820 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-000001D1EB9FFA40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCB0D9D010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-000001D1EBB40510 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCB0D9D010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file data-000001D1EBB40510 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49BE430 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file data-000001D1EBB40510 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49BE430 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-000001D20E966840 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF5EF94A0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file data-000001D1EBA02A50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF5EF94A0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file data-000001D20DD759F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49BE430 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file data-000001D1EC0019E0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCB0DE1E30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file data-000001D20DD759F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD4850830 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file data-000001D20DD7C400 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3AFAEA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-000001D1EC043800 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCB0DE1E30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file data-000001D20DF74B80 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49D6C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file data-000001D1EC04B810 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD42D7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-000001D1EB72F080 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD42A0B40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-000001D20E966840 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD4850830 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file data-000001D1EC04B810 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49D6C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-000001D20E972650 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.741 seconds
-Refreshing native plugins compatible for Editor in 4.03 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.643 seconds
+Refreshing native plugins compatible for Editor in 3.24 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.648 seconds
-Domain Reload Profiling: 1386ms
-	BeginReloadAssembly (153ms)
+- Finished resetting the current domain, in  0.815 seconds
+Domain Reload Profiling: 1456ms
+	BeginReloadAssembly (143ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
+		CreateAndSetChildDomain (23ms)
 	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (500ms)
-		LoadAssemblies (399ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (420ms)
+		LoadAssemblies (306ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (188ms)
-			TypeCache.Refresh (164ms)
-				TypeCache.ScanAssembly (150ms)
-			ScanForSourceGeneratedMonoScriptInfo (16ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (649ms)
+		AnalyzeDomain (197ms)
+			TypeCache.Refresh (171ms)
+				TypeCache.ScanAssembly (155ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (816ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (497ms)
+		SetupLoadedEditorAssemblies (645ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (5ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (77ms)
-			ProcessInitializeOnLoadAttributes (378ms)
-			ProcessInitializeOnLoadMethodAttributes (26ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			ProcessInitializeOnLoadAttributes (530ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 2.89 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 4.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3542 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 40 unused Assets / (58.1 KB). Loaded Objects now: 4006.
+Unloading 40 unused Assets / (58.3 KB). Loaded Objects now: 4006.
 Memory consumption went from 136.9 MB to 136.8 MB.
-Total: 3.866700 ms (FindLiveObjects: 0.318500 ms CreateObjectMapping: 0.113300 ms MarkObjects: 3.279500 ms  DeleteObjects: 0.153500 ms)
+Total: 5.585700 ms (FindLiveObjects: 0.395300 ms CreateObjectMapping: 0.217800 ms MarkObjects: 4.764600 ms  DeleteObjects: 0.206400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -237,156 +237,135 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 3596.880672 seconds.
-  path: Assets/unity-chan!/Unity-chan! Model/Prefabs/LookPos.prefab
-  artifactKey: Guid(6d5bff5837eca402492a89073b17c2e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/unity-chan!/Unity-chan! Model/Prefabs/LookPos.prefab using Guid(6d5bff5837eca402492a89073b17c2e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '04203f365d6503a0ee3c17d0790fe26d') in 0.028690 seconds
+  Time since last request: 4399.173020 seconds.
+  path: Assets/Animation
+  artifactKey: Guid(c6e6bab6c85c18244809e88caa9368a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation using Guid(c6e6bab6c85c18244809e88caa9368a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '53fa85da430b70db898b3ecdddd8b1dc') in 0.002388 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 4
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/unity-chan!/Unity-chan! Model/Prefabs/Locator_IKtarget.prefab
-  artifactKey: Guid(88eeda7d3a9f2492da9213d1c1ab46d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/unity-chan!/Unity-chan! Model/Prefabs/Locator_IKtarget.prefab using Guid(88eeda7d3a9f2492da9213d1c1ab46d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9f69a47e05411e546179771a8e71c3df') in 0.245802 seconds
+  Time since last request: 7.973072 seconds.
+  path: Assets/Animation/Controller
+  artifactKey: Guid(0822c23c84c435a438cbf9d6f1b5902d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Controller using Guid(0822c23c84c435a438cbf9d6f1b5902d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6095078129271f2f37b42dfb80986756') in 0.000519 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 9
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/unity-chan!/Unity-chan! Model/Prefabs/Directional light for UnityChan.prefab
-  artifactKey: Guid(b76c71a1e3f6c4fdab657f4fbf5466de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/unity-chan!/Unity-chan! Model/Prefabs/Directional light for UnityChan.prefab using Guid(b76c71a1e3f6c4fdab657f4fbf5466de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'c5f32d7ec2a62205cfb7ee631ef3e83d') in 0.002321 seconds
+  Time since last request: 51.157776 seconds.
+  path: Assets/Animation/Controller/UnityChanAnimController.controller
+  artifactKey: Guid(3098c54ce0439ba46ac1e9aabf21008f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Controller/UnityChanAnimController.controller using Guid(3098c54ce0439ba46ac1e9aabf21008f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4d3513578084cc128660a832928affb0') in 0.010078 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 9.086533 seconds.
-  path: Assets/unity-chan!/Unity-chan! Model/Prefabs/unitychan_dynamic.prefab
-  artifactKey: Guid(49f2055d53eeb4e5a92af590a44bddee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/unity-chan!/Unity-chan! Model/Prefabs/unitychan_dynamic.prefab using Guid(49f2055d53eeb4e5a92af590a44bddee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '04d5f0211b13e56a4a92e4d0ea57d13f') in 0.489870 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 640
-========================================================================
-Received Import Request.
-  Time since last request: 0.811809 seconds.
-  path: Assets/unity-chan!/Unity-chan! Model/Prefabs/unitychan.prefab
-  artifactKey: Guid(412b92d4feeb9c548bfa98f62c4d1022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/unity-chan!/Unity-chan! Model/Prefabs/unitychan.prefab using Guid(412b92d4feeb9c548bfa98f62c4d1022) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7ed08e3210c8400fe10a7ad1435bb95c') in 0.127446 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 578
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Symbol file data-000001FCF7395020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file data-000001D1C7E3E0A0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF5FE9890 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-000001D20D654020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF6529010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-000001D20F2F0030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF74FD240 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file data-000001D20E802C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF74FD240 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-000001D20E802C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF74FD240 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-000001D20DF6FE30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF74FD240 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-000001D20E802C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF5FE9890 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file data-000001D20D654020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3C7C020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-000001D1EB316030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF673A050 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF74FD240 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-000001D20E802C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF63B3030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-000001D1EB8BC020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB20000080 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file data-000001D21822EC60 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF70A5010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD451F020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-000001D20EA4E020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3C74420 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file data-000001D1EB2DF020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF6020EA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file data-000001D20DF77E40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3C7C020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file data-000001D1EB316030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3AFAEA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file data-000001D20EA4E020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF74FD240 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file data-000001D1EB9FF040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB2148F010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-000001D20EA4E020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB216F7020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file data-000001D20E802C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF7501F90 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file data-000001D20D68B630 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF68B4050 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-000001D1EBBF6030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB21D26540 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-000001D1EB6759B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF7501F90 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file data-000001D20E802C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB21494AF0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-000001D20EEC2040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.471 seconds
-Refreshing native plugins compatible for Editor in 3.23 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.465 seconds
+Refreshing native plugins compatible for Editor in 3.30 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.868 seconds
-Domain Reload Profiling: 1337ms
-	BeginReloadAssembly (162ms)
+- Finished resetting the current domain, in  0.910 seconds
+Domain Reload Profiling: 1372ms
+	BeginReloadAssembly (153ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (40ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (33ms)
-	LoadAllAssembliesAndSetupDomain (215ms)
-		LoadAssemblies (290ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (231ms)
+		LoadAssemblies (296ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (11ms)
+		AnalyzeDomain (14ms)
 			TypeCache.Refresh (6ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (869ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (910ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (455ms)
+		SetupLoadedEditorAssemblies (465ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
+			InitializePlatformSupportModulesInManaged (7ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (76ms)
-			ProcessInitializeOnLoadAttributes (339ms)
-			ProcessInitializeOnLoadMethodAttributes (21ms)
-			AfterProcessingInitializeOnLoad (8ms)
+			BeforeProcessingInitializeOnLoad (80ms)
+			ProcessInitializeOnLoadAttributes (345ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 3.04 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 5.56 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (33.2 KB). Loaded Objects now: 4019.
-Memory consumption went from 138.9 MB to 138.9 MB.
-Total: 3.558500 ms (FindLiveObjects: 0.270400 ms CreateObjectMapping: 0.279000 ms MarkObjects: 2.866900 ms  DeleteObjects: 0.140700 ms)
+Unloading 25 unused Assets / (32.2 KB). Loaded Objects now: 4010.
+Memory consumption went from 132.6 MB to 132.6 MB.
+Total: 3.326000 ms (FindLiveObjects: 0.373900 ms CreateObjectMapping: 0.131200 ms MarkObjects: 2.760400 ms  DeleteObjects: 0.058800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -404,144 +383,469 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 44.589485 seconds.
-  path: Assets/unity-chan!/Unity-chan! Model/Art/Models/unitychan.fbx
-  artifactKey: Guid(8f0565f23a2b58541a475bd3c1393052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/unity-chan!/Unity-chan! Model/Art/Models/unitychan.fbx using Guid(8f0565f23a2b58541a475bd3c1393052) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '91d615c6b34ef3518a6e2652a29be706') in 0.342573 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 411
-========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Symbol file data-000001FB21E90C80 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file data-000001D20EAB7C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF74CD030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-000001D218039030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD4807010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-000001D20E8CE470 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB21E90C80 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file data-000001D20EAB7C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3FFA2E0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-000001D20EAB7C40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB2144D020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-000001D20F3F2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB216F7020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-000001D20F3F2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB207B3020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file data-000001D218039030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF6C56010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-000001D20F3C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD49069D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB216F7020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-000001D20F3F2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF63B3030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-000001D20F1A8020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF6874020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file data-000001D2182B0080 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF715B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD42A3020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-000001D20EA4E020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB21E90C80 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file data-000001D1EB2DF020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF71AA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file data-000001D218070640 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3AEB0A0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file data-000001D20DB24040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD3F8E050 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file data-000001D20F3F2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB21C010D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file data-000001D20F3F2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCD451F020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-000001D20E82D040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB216F7020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file data-000001D20F3F6D60 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB21C010D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file data-000001D20E82D040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF6874020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-000001D1EBBF6030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FCF7BA8020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-000001D1EB6759B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB207EBA30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file data-000001D1EB8FAE20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001FB21669010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-000001D20F393B30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.451 seconds
-Refreshing native plugins compatible for Editor in 3.36 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.499 seconds
+Refreshing native plugins compatible for Editor in 2.65 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.914 seconds
-Domain Reload Profiling: 1361ms
-	BeginReloadAssembly (146ms)
+- Finished resetting the current domain, in  0.947 seconds
+Domain Reload Profiling: 1442ms
+	BeginReloadAssembly (145ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (30ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (28ms)
-	LoadAllAssembliesAndSetupDomain (234ms)
-		LoadAssemblies (296ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (285ms)
+		LoadAssemblies (346ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (947ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (477ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (87ms)
+			ProcessInitializeOnLoadAttributes (346ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 3.03 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.2 KB). Loaded Objects now: 4013.
+Memory consumption went from 132.9 MB to 132.8 MB.
+Total: 2.827000 ms (FindLiveObjects: 0.264600 ms CreateObjectMapping: 0.102700 ms MarkObjects: 2.405200 ms  DeleteObjects: 0.053600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218E62AE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217B9A020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB7E6010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E62AE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217BDBF50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C8499020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C8499020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217B9A020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F3C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C8499020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB651920 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DBB4010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F314020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C8499020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C849D830 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F35E020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217D25050 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C849D830 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB54D9C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2176A3010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBF84070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBBF6030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB6759B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217BD2A30 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D21895EB00 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.481 seconds
+Refreshing native plugins compatible for Editor in 3.89 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.899 seconds
+Domain Reload Profiling: 1377ms
+	BeginReloadAssembly (143ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (253ms)
+		LoadAssemblies (310ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (13ms)
 			TypeCache.Refresh (6ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (914ms)
+	FinalizeReload (899ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (472ms)
+		SetupLoadedEditorAssemblies (479ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (85ms)
+			ProcessInitializeOnLoadAttributes (353ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4016.
+Memory consumption went from 132.9 MB to 132.8 MB.
+Total: 3.516000 ms (FindLiveObjects: 0.318300 ms CreateObjectMapping: 0.134800 ms MarkObjects: 2.991200 ms  DeleteObjects: 0.070500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218C2ECC0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D56C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB7E6010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217BDBF50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB754730 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D56C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F3C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25B8E0630 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB6513C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DBB4010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F4B7EB0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EACF010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E9E3F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DC53020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C37B40 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D21899F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E7FD010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D21899F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F488010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB6759B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DCB3040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2181B3020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.450 seconds
+Refreshing native plugins compatible for Editor in 2.75 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.958 seconds
+Domain Reload Profiling: 1404ms
+	BeginReloadAssembly (154ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (227ms)
+		LoadAssemblies (291ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (959ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (467ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (87ms)
-			ProcessInitializeOnLoadAttributes (342ms)
-			ProcessInitializeOnLoadMethodAttributes (23ms)
+			BeforeProcessingInitializeOnLoad (86ms)
+			ProcessInitializeOnLoadAttributes (340ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 3.14 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4019.
+Memory consumption went from 132.9 MB to 132.8 MB.
+Total: 3.738100 ms (FindLiveObjects: 0.416800 ms CreateObjectMapping: 0.188300 ms MarkObjects: 3.036600 ms  DeleteObjects: 0.094800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218C2ECC0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D602020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB7E6010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C2ECC0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D49C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D602020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218491010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25B8E0630 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB6513C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EF92390 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EC031A00 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EACF010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E9E3F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB34A060 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BB48020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F4F1040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F456010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F4F1040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DBB4010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB8BC020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DCB3040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C25CA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.460 seconds
+Refreshing native plugins compatible for Editor in 3.66 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.897 seconds
+Domain Reload Profiling: 1355ms
+	BeginReloadAssembly (153ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (226ms)
+		LoadAssemblies (295ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (898ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (446ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (333ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
 			AfterProcessingInitializeOnLoad (9ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 2.57 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.37 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4025.
-Memory consumption went from 139.2 MB to 139.1 MB.
-Total: 3.018900 ms (FindLiveObjects: 0.262200 ms CreateObjectMapping: 0.171800 ms MarkObjects: 2.412700 ms  DeleteObjects: 0.169900 ms)
+Unloading 3524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4022.
+Memory consumption went from 132.9 MB to 132.8 MB.
+Total: 3.042000 ms (FindLiveObjects: 0.269500 ms CreateObjectMapping: 0.111200 ms MarkObjects: 2.598900 ms  DeleteObjects: 0.060800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -560,93 +864,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 288.806642 seconds.
-  path: Assets/Prefabs/unitychan.prefab
-  artifactKey: Guid(98113953b02e8f14c81c13be6ca932f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/unitychan.prefab using Guid(98113953b02e8f14c81c13be6ca932f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ba7aa9d5ceb2ac2cf15093b94f020081') in 0.107131 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 777
-========================================================================
-Received Import Request.
-  Time since last request: 319.581337 seconds.
-  path: Assets/mode/dome
-  artifactKey: Guid(2d9b81ebf0154f04cb9b8c82d1ab907f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/mode/dome using Guid(2d9b81ebf0154f04cb9b8c82d1ab907f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd764f344e722d1a1a4927884103364ff') in 0.001642 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 11.563033 seconds.
-  path: Assets/Stores
-  artifactKey: Guid(29419e3413615584ea5c8958991dbc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Stores using Guid(29419e3413615584ea5c8958991dbc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd601bb08b8348de792b843784819b382') in 0.000895 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.598369 seconds.
-  path: Assets/mode
-  artifactKey: Guid(a6aa8b3505df84c419bd74d3f123f485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/mode using Guid(a6aa8b3505df84c419bd74d3f123f485) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '0d0a9ea138fe59fba664584d57e95e95') in 0.000565 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 9.990683 seconds.
-  path: Assets/Stores/mode/dome/big_precise.png
-  artifactKey: Guid(98f3b4f73b4c448da933ead90c651bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Stores/mode/dome/big_precise.png using Guid(98f3b4f73b4c448da933ead90c651bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ce3be197b1d4df329ddeab09e987d003') in 0.035150 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.631768 seconds.
-  path: Assets/Stores/mode/dome/icon_precise.png
-  artifactKey: Guid(a7fa909bd810f46549b966f3f98a1bd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Stores/mode/dome/icon_precise.png using Guid(a7fa909bd810f46549b966f3f98a1bd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '10b67ddd11c6a6122c65129729eeda0f') in 0.017817 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.441841 seconds.
-  path: Assets/Stores/mode/dome/small_precise_01.png
-  artifactKey: Guid(3ae9901aaa56942ebbacd5f8727c56ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Stores/mode/dome/small_precise_01.png using Guid(3ae9901aaa56942ebbacd5f8727c56ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'adee4fb153229c0b3c8bf1719b6ea86a') in 0.016668 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.615673 seconds.
-  path: Assets/Stores/mode/dome/small_precise_02.png
-  artifactKey: Guid(7c96f920da78e4281a547b7fc705a373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Stores/mode/dome/small_precise_02.png using Guid(7c96f920da78e4281a547b7fc705a373) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '52e2e6dbf3d4531a71641a1c99e4fd44') in 0.016549 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.729090 seconds.
-  path: Assets/Stores/mode/Materials
-  artifactKey: Guid(f24aaacb7d37c6d4dae60ae9d683a68d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Stores/mode/Materials using Guid(f24aaacb7d37c6d4dae60ae9d683a68d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ee783dc712eb696d49dd869cf6995566') in 0.000605 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.511823 seconds.
+  Time since last request: 229.042523 seconds.
   path: Assets/Stores/mode/WomanWarrior.FBX
   artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
@@ -657,6 +875,1495 @@ Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'dbf7c7e34ee2a07e33dc624012436fdf') in 0.111901 seconds
+ -> (artifact id: 'a624ec3a5e7eb81fe4926322a641da62') in 0.179485 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 120
+========================================================================
+Received Import Request.
+  Time since last request: 88.057029 seconds.
+  path: Assets/Stores/mode/WomanWarrior.FBX
+  artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f94c1ed93e6d8cd73fdf84e75ee8afe8') in 0.061926 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 120
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D20EFBF6B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB7E6010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EACF010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217BDBF50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBFA8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C00B020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBFA8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EF92390 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C859D740 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EACF010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218AE0C60 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217DAA020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E72C20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F3200C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBFA8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C8559460 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB8BC020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C85520C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.452 seconds
+Refreshing native plugins compatible for Editor in 4.38 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.870 seconds
+Domain Reload Profiling: 1319ms
+	BeginReloadAssembly (133ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (255ms)
+		LoadAssemblies (311ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (16ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (870ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (441ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (326ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 2.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4036.
+Memory consumption went from 138.9 MB to 138.9 MB.
+Total: 3.084800 ms (FindLiveObjects: 0.272000 ms CreateObjectMapping: 0.093800 ms MarkObjects: 2.666500 ms  DeleteObjects: 0.051200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D20EFBF6B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218917010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218B0C9D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E82D040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB1D6020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EF92390 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D16DE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25B584030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217DAA020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E72C20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D21926B020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20ED65030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C8559460 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C85520C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.460 seconds
+Refreshing native plugins compatible for Editor in 2.59 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.928 seconds
+Domain Reload Profiling: 1383ms
+	BeginReloadAssembly (137ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (256ms)
+		LoadAssemblies (314ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (928ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (456ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (82ms)
+			ProcessInitializeOnLoadAttributes (335ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4039.
+Memory consumption went from 139.2 MB to 139.1 MB.
+Total: 3.337900 ms (FindLiveObjects: 0.265300 ms CreateObjectMapping: 0.111800 ms MarkObjects: 2.890000 ms  DeleteObjects: 0.069900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D20EA55700 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C651010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA55700 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218B60020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EC0019E0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C04D010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB621010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BC6E0F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EC0019E0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBC16040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E72C20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D21926B020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E90730 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C85583B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.463 seconds
+Refreshing native plugins compatible for Editor in 3.94 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.896 seconds
+Domain Reload Profiling: 1357ms
+	BeginReloadAssembly (143ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (255ms)
+		LoadAssemblies (317ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (897ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (447ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (333ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 3.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4042.
+Memory consumption went from 139.2 MB to 139.1 MB.
+Total: 3.091300 ms (FindLiveObjects: 0.249700 ms CreateObjectMapping: 0.114500 ms MarkObjects: 2.668200 ms  DeleteObjects: 0.057800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 116.255368 seconds.
+  path: Assets/Stores/mode/WomanWarrior.FBX
+  artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '20e5965b18706ccb9c25f6dd2e971a51') in 0.123214 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 109
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218B07D00 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D39E70 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E8CE470 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB82BE50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D39E70 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218965B80 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C84F8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D49C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217D18020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BC6E0F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218965B80 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C84C8020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E72C20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25B32D020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB633020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C85583B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218CDD130 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.473 seconds
+Refreshing native plugins compatible for Editor in 2.88 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.857 seconds
+Domain Reload Profiling: 1327ms
+	BeginReloadAssembly (144ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (256ms)
+		LoadAssemblies (314ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (857ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (422ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (80ms)
+			ProcessInitializeOnLoadAttributes (305ms)
+			ProcessInitializeOnLoadMethodAttributes (16ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 2.14 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.2 KB). Loaded Objects now: 4045.
+Memory consumption went from 138.9 MB to 138.9 MB.
+Total: 2.560700 ms (FindLiveObjects: 0.236800 ms CreateObjectMapping: 0.089000 ms MarkObjects: 2.185700 ms  DeleteObjects: 0.048400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 8.046441 seconds.
+  path: Assets/Stores/mode/WomanWarrior.FBX
+  artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e7121002e894be2434cd775ad2a76beb') in 0.141659 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 119
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218B07D00 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BEE5030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218917010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218B60020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBB61020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BEE5030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2177461B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C04D010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D49C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D16DE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C6F9020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C25CA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E72C20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D219227040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB633020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C85583B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217E258B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.425 seconds
+Refreshing native plugins compatible for Editor in 3.21 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.841 seconds
+Domain Reload Profiling: 1263ms
+	BeginReloadAssembly (138ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (211ms)
+		LoadAssemblies (268ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (841ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (403ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (294ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 2.41 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 4048.
+Memory consumption went from 138.9 MB to 138.9 MB.
+Total: 2.670600 ms (FindLiveObjects: 0.238500 ms CreateObjectMapping: 0.086300 ms MarkObjects: 2.283000 ms  DeleteObjects: 0.061000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 7.004526 seconds.
+  path: Assets/Stores/mode/WomanWarrior.FBX
+  artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a1c23cf789e9262853fe62a2aa046e9a') in 0.124998 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 120
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218B07D00 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BEE5030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CFF2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218B0C9D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBB61020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BEE5030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D98B70 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D49C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D16DE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C6F9020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C84C8020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218E72C20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D219227040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB3800C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218EFC820 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DBB4010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D217E258B0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EA03070 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DCB3040 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.420 seconds
+Refreshing native plugins compatible for Editor in 2.96 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.893 seconds
+Domain Reload Profiling: 1310ms
+	BeginReloadAssembly (139ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (216ms)
+		LoadAssemblies (275ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (893ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (455ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (82ms)
+			ProcessInitializeOnLoadAttributes (331ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.2 KB). Loaded Objects now: 4051.
+Memory consumption went from 138.9 MB to 138.9 MB.
+Total: 3.126000 ms (FindLiveObjects: 0.285300 ms CreateObjectMapping: 0.164400 ms MarkObjects: 2.622900 ms  DeleteObjects: 0.052700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 41.212967 seconds.
+  path: Assets/Stores/mode/WomanWarrior.FBX
+  artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ce0c4b42a303b611116bddaa99a022e7') in 0.129100 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 107
+========================================================================
+Received Import Request.
+  Time since last request: 4.553075 seconds.
+  path: Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_F.fbx
+  artifactKey: Guid(e52be2fa48716194ea1d9d76686005f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_F.fbx using Guid(e52be2fa48716194ea1d9d76686005f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '924c510df662357b5c807a6f0c996cd3') in 0.078960 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 325
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_R.fbx
+  artifactKey: Guid(dbc663f7e83140241a679da3ca9063b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WALK00_R.fbx using Guid(dbc663f7e83140241a679da3ca9063b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2211521c8dc9c8dd87d06ead5af33f0a') in 0.070029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 325
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WIN00.fbx
+  artifactKey: Guid(e2538d48c03da46a8b0c3b59d39a4cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/unity-chan!/Unity-chan! Model/Art/Animations/unitychan_WIN00.fbx using Guid(e2538d48c03da46a8b0c3b59d39a4cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b66d7f3fb1444c972774777b41f96568') in 0.060825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 325
+========================================================================
+Received Import Request.
+  Time since last request: 3.482219 seconds.
+  path: Assets/Stores/mode/WomanWarrior.FBX
+  artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '578feedc1bbf1e98a3df17d2f271a375') in 0.056128 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 120
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D217E358C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CADA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CFF2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218B0C9D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CADA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C9C0030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D98B70 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D16DE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D92F030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C6F9020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C84C8020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB701030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BEA5020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB701030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DBB4010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E963020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB701030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E8B3010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.449 seconds
+Refreshing native plugins compatible for Editor in 2.98 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.863 seconds
+Domain Reload Profiling: 1308ms
+	BeginReloadAssembly (139ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (223ms)
+		LoadAssemblies (282ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (864ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (434ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (317ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 2.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (31.3 KB). Loaded Objects now: 4055.
+Memory consumption went from 139.1 MB to 139.1 MB.
+Total: 3.013900 ms (FindLiveObjects: 0.297200 ms CreateObjectMapping: 0.128600 ms MarkObjects: 2.530900 ms  DeleteObjects: 0.055500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D217E358C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2173CC020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CFF2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C334A0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2173CC020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EB55010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB989010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BC6E0F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20EB55010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C84C8020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E8B3010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D21873D020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB701030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DBB4010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E963020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E8B3010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB701030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.472 seconds
+Refreshing native plugins compatible for Editor in 2.41 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.883 seconds
+Domain Reload Profiling: 1352ms
+	BeginReloadAssembly (140ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (267ms)
+		LoadAssemblies (325ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (884ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (432ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (82ms)
+			ProcessInitializeOnLoadAttributes (312ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 2.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (31.3 KB). Loaded Objects now: 4058.
+Memory consumption went from 139.1 MB to 139.1 MB.
+Total: 3.334800 ms (FindLiveObjects: 0.301000 ms CreateObjectMapping: 0.161100 ms MarkObjects: 2.825700 ms  DeleteObjects: 0.046000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218B07D00 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CADA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CFF2010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C334A0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25CADA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C9C0030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBEA2F20 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BC6E0F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25C9C0030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C84C8020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BEAD030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25B32D020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218EFC820 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DBB4010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E963020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB701030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E8B3010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.464 seconds
+Refreshing native plugins compatible for Editor in 4.18 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.924 seconds
+Domain Reload Profiling: 1383ms
+	BeginReloadAssembly (142ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (245ms)
+		LoadAssemblies (303ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (925ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (451ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (334ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 2.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (31.3 KB). Loaded Objects now: 4061.
+Memory consumption went from 139.1 MB to 139.1 MB.
+Total: 2.822400 ms (FindLiveObjects: 0.283300 ms CreateObjectMapping: 0.104200 ms MarkObjects: 2.384900 ms  DeleteObjects: 0.048900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 333.924765 seconds.
+  path: Assets/Stores/mode/WomanWarrior.FBX
+  artifactKey: Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stores/mode/WomanWarrior.FBX using Guid(332a8a5bfb2fc4a18944ffe0345b93c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2e8ef6c70ba658e5f516a4c66959447d') in 0.144187 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 120
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D218B07D00 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218917010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218B0C9D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D87B010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BF37010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C84F8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D16DE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BAA6020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F3200C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB633020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F3200C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D2174C0020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB633020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25B471030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E963020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB633020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E8B3010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.473 seconds
+Refreshing native plugins compatible for Editor in 3.79 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.881 seconds
+Domain Reload Profiling: 1350ms
+	BeginReloadAssembly (150ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (226ms)
+		LoadAssemblies (295ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (882ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (438ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (81ms)
+			ProcessInitializeOnLoadAttributes (321ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 2.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (31.3 KB). Loaded Objects now: 4064.
+Memory consumption went from 139.2 MB to 139.1 MB.
+Total: 2.695800 ms (FindLiveObjects: 0.283100 ms CreateObjectMapping: 0.111200 ms MarkObjects: 2.248400 ms  DeleteObjects: 0.052100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D217E358C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D27D0F0080 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E8CE470 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218B0C9D0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C25CA0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBFA8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D27D0F0080 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BF37010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D6FDA50 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBFA8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20DDF7010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1C7C3B2F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20D50C010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218D16DE0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D218C483F0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E929490 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25BAA6020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F3200C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F4EA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F3200C0 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EBFA8010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F4EA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D25B471030 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20E963020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D20F4EA010 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D1EB633020 doesn't match image D:\Unity\DungeonAction\DungeonAction\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.476 seconds
+Refreshing native plugins compatible for Editor in 3.01 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.877 seconds
+Domain Reload Profiling: 1348ms
+	BeginReloadAssembly (135ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (263ms)
+		LoadAssemblies (321ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (877ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (438ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (77ms)
+			ProcessInitializeOnLoadAttributes (323ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 2.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3523 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (31.3 KB). Loaded Objects now: 4067.
+Memory consumption went from 139.2 MB to 139.1 MB.
+Total: 2.914000 ms (FindLiveObjects: 0.296700 ms CreateObjectMapping: 0.099500 ms MarkObjects: 2.445800 ms  DeleteObjects: 0.070900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
