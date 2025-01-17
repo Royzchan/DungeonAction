@@ -24,17 +24,55 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private InputAction _moveAction;
+    [SerializeField]
+    private InputAction _attackAction;
+    [SerializeField]
+    private InputAction _skillAction;
+    [SerializeField]
+    private InputAction _specialAction;
 
     private Vector2 _moveDirection = Vector2.zero;
 
     private void OnEnable()
     {
+        //移動の入力を有効化
         _moveAction?.Enable();
+
+        //攻撃のアクションのコールバックを追加
+        _attackAction.started += OnAttack;
+        //攻撃アクションの入力を有効化
+        _attackAction?.Enable();
+
+        //スキルのアクションのコールバックを追加
+        _skillAction.started += OnSkill;
+        //スキルのアクションの入力を有効化
+        _skillAction?.Enable();
+
+        //必殺技のアクションのコールバックを追加
+        _specialAction.started += OnSpecial;
+        //必殺技の入力を有効化
+        _specialAction?.Enable();
     }
 
     private void OnDisable()
     {
+        //移動の入力を無効化
         _moveAction?.Disable();
+
+        //攻撃のアクションのコールバックを解除
+        _attackAction.started -= OnAttack;
+        //攻撃の入力を無効化
+        _attackAction?.Disable();
+
+        //スキルのアクションのコールバックを解除
+        _skillAction.started -= OnSkill;
+        //スキルの入力を無効化
+        _skillAction?.Disable();
+
+        //必殺技のアクションのコールバックを解除
+        _specialAction.started -= OnSpecial;
+        //必殺技の入力を無効化
+        _specialAction?.Disable();
     }
 
 
@@ -49,6 +87,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _moveDirection = _moveAction.ReadValue<Vector2>();
+    }
+
+    private void FixedUpdate()
+    {
         Move();
     }
 
@@ -85,18 +127,34 @@ public class PlayerController : MonoBehaviour
     //攻撃
     private void Attack()
     {
-
+        Debug.Log("攻撃");
     }
 
     //スキル
     private void Skill()
     {
-
+        Debug.Log("スキル");
     }
 
     //必殺技
     private void Special()
     {
+        Debug.Log("必殺技");
+    }
 
+    //Input Systemのコールバック
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("攻撃が押された");
+    }
+
+    private void OnSkill(InputAction.CallbackContext context)
+    {
+        Debug.Log("スキルが押された");
+    }
+
+    private void OnSpecial(InputAction.CallbackContext context)
+    {
+        Debug.Log("必殺技が押された");
     }
 }
