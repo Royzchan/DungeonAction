@@ -116,7 +116,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        _moveDirection = _moveAction.ReadValue<Vector2>();
+        if (!_attackNow)
+        {
+            _moveDirection = _moveAction.ReadValue<Vector2>();
+        }
+        else
+        {
+            _moveDirection = Vector2.zero;
+        }
     }
 
     private void FixedUpdate()
@@ -167,7 +174,16 @@ public class PlayerController : MonoBehaviour
     //UŒ‚
     private void Attack()
     {
-        Debug.Log("UŒ‚");
+        if (!_attackNow)
+        {
+            _attackNow = true;
+            _animator.SetTrigger(_attackStr);
+        }
+    }
+
+    public void EndAttack()
+    {
+        _attackNow = false;
     }
 
     //ƒXƒLƒ‹
@@ -185,12 +201,16 @@ public class PlayerController : MonoBehaviour
     //‰ñ”ğ
     private void StartAvoid()
     {
-        _animator.SetBool(_avoidStr, true);
+        if (_attackNow)
+        {
+            _attackNow = false;
+        }
+        _animator.SetTrigger(_avoidStr);
     }
 
     private void EndAvoid()
     {
-        _animator.SetBool(_avoidStr, false);
+
     }
 
     //Œ»İ‚ÌˆÚ“®‘¬“x‚ğæ“¾‚·‚éŠÖ”
