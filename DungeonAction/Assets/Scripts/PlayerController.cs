@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rb;
+    private Animator _animator;
+
     [SerializeField]
     private Transform _cameraTransform;
 
@@ -21,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private float _defenses = 100f;
     [SerializeField]
     private float _speed = 5f;
+    [SerializeField]
+    private float _dashSpeed = 7.5f;
 
     [SerializeField]
     private InputAction _moveAction;
@@ -30,8 +34,19 @@ public class PlayerController : MonoBehaviour
     private InputAction _skillAction;
     [SerializeField]
     private InputAction _specialAction;
+    [SerializeField]
+    private InputAction _avoidAction;
+    [SerializeField]
+    private InputAction _dashAction;
 
     private Vector2 _moveDirection = Vector2.zero;
+
+    private bool _attackNow = false;
+    private bool _avoidNow = false;
+
+    private string _moveSpeedStr = "MoveSpeed";
+    private string _attackStr = "isAttack";
+    private string _avoidStr = "isAvoid";
 
     private void OnEnable()
     {
@@ -52,6 +67,14 @@ public class PlayerController : MonoBehaviour
         _specialAction.started += OnSpecial;
         //必殺技の入力を有効化
         _specialAction?.Enable();
+
+        //回避のアクションのコールバックを追加
+        _avoidAction.started += OnAvoid;
+        //回避の入力を有効化
+        _avoidAction?.Enable();
+
+        //ダッシュの入力を有効化
+        _dashAction?.Enable();
     }
 
     private void OnDisable()
@@ -73,13 +96,20 @@ public class PlayerController : MonoBehaviour
         _specialAction.started -= OnSpecial;
         //必殺技の入力を無効化
         _specialAction?.Disable();
+
+        //回避のアクションのコールバックを解除
+        _avoidAction.started -= OnAvoid;
+        //回避の入力を無効化
+        _avoidAction?.Disable();
+
+        //ダッシュの入力を無効化
+        _dashAction?.Disable();
     }
-
-
 
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
         _hp = _maxHP;
         _stamina = _maxStamina;
     }
@@ -92,6 +122,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        _animator.SetFloat(_moveSpeedStr, GetCurrentMoveSpeed());
     }
 
     //移動
@@ -113,7 +144,16 @@ public class PlayerController : MonoBehaviour
             Vector3 move = cameraRight * _moveDirection.x + cameraForward * _moveDirection.y;
 
             // Rigidbodyの速度を設定
-            _rb.velocity = move * _speed + new Vector3(0f, _rb.velocity.y, 0f);
+            //ダッシュ中
+            if (_dashAction.IsPressed())
+            {
+                _rb.velocity = move * _dashSpeed + new Vector3(0f, _rb.velocity.y, 0f);
+            }
+            //通常時
+            else
+            {
+                _rb.velocity = move * _speed + new Vector3(0f, _rb.velocity.y, 0f);
+            }
 
             // プレイヤーが進行方向を向く
             if (move.magnitude > 0.1f)
@@ -142,19 +182,45 @@ public class PlayerController : MonoBehaviour
         Debug.Log("必殺技");
     }
 
+    //回避
+    private void StartAvoid()
+    {
+        _animator.SetBool(_avoidStr, true);
+    }
+
+    private void EndAvoid()
+    {
+        _animator.SetBool(_avoidStr, false);
+    }
+
+    //現在の移動速度を取得する関数
+    public float GetCurrentMoveSpeed()
+    {
+        // Rigidbodyの速度を水平面に投影したベクトルを計算
+        Vector3 horizontalVelocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
+
+        // ベクトルの大きさを計算し、移動速度とする
+        return horizontalVelocity.magnitude;
+    }
+
     //Input Systemのコールバック
     private void OnAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("攻撃が押された");
+        Attack();
     }
 
     private void OnSkill(InputAction.CallbackContext context)
     {
-        Debug.Log("スキルが押された");
+        Skill();
     }
 
     private void OnSpecial(InputAction.CallbackContext context)
     {
-        Debug.Log("必殺技が押された");
+        Special();
+    }
+
+    private void OnAvoid(InputAction.CallbackContext context)
+    {
+        StartAvoid();
     }
 }
