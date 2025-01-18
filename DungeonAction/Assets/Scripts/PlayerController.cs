@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Transform _cameraTransform;
 
     [SerializeField]
-    private float _maxHP = 100f;
+    private float _maxHp = 100f;
     private float _hp;
     [SerializeField]
     private float _maxStamina;
@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
     private InputAction _avoidAction;
     [SerializeField]
     private InputAction _dashAction;
+
+    [SerializeField]
+    private GameObject _sowrdObj;
+    private Collider _sowrdCollider;
 
     private Vector2 _moveDirection = Vector2.zero;
 
@@ -110,8 +114,14 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-        _hp = _maxHP;
+        _hp = _maxHp;
         _stamina = _maxStamina;
+
+        if (_sowrdObj != null)
+        {
+            _sowrdCollider = _sowrdObj.GetComponent<Collider>();
+            _sowrdCollider.enabled = false;
+        }
     }
 
     void Update()
@@ -178,12 +188,21 @@ public class PlayerController : MonoBehaviour
         {
             _attackNow = true;
             _animator.SetTrigger(_attackStr);
+
+            if (_sowrdCollider != null)
+            {
+                _sowrdCollider.enabled = true;
+            }
         }
     }
 
     public void EndAttack()
     {
         _attackNow = false;
+        if (_sowrdCollider != null)
+        {
+            _sowrdCollider.enabled = false;
+        }
     }
 
     //ÉXÉLÉã
