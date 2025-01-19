@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
     [SerializeField]
-    private float _maxHp;
+    private float _maxHp = 100f;
     private float _hp;
     [SerializeField]
     private float _attack;
@@ -22,6 +23,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float _attackCooldown = 1.5f;
 
+    [SerializeField]
+    private GameObject _hpBar;
+    private Slider _hpSlider;
+
     private Transform _player;
     private bool _isChasing = false;
     private float _lastAttackTime = -Mathf.Infinity;
@@ -33,9 +38,23 @@ public class EnemyController : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _rigidbody = GetComponent<Rigidbody>();
 
+        _hp = _maxHp;
+
         if (_rigidbody == null)
         {
             Debug.LogError("Rigidbody component is missing!");
+        }
+
+        _hpSlider = _hpBar.GetComponentInChildren<Slider>();
+        if (_hpSlider == null)
+        {
+            Debug.LogError("HP bar Slider component is missing in child objects!");
+        }
+        else
+        {
+            // 初期のSliderの値を設定
+            _hpSlider.maxValue = _maxHp;
+            _hpSlider.value = _hp;
         }
     }
 
@@ -75,6 +94,14 @@ public class EnemyController : MonoBehaviour
             // Stop movement when not chasing
             _rigidbody.velocity = Vector3.zero;
         }
+
+        //常にメインのカメラにHPバーを向けて置く
+        _hpBar.transform.rotation = Camera.main.transform.rotation;
+
+        if (_hpSlider != null)
+        {
+            _hpSlider.value = _hp;  // 現在のHPに基づいてSliderを更新
+        }
     }
 
     protected void ChasePlayer()
@@ -99,6 +126,5 @@ public class EnemyController : MonoBehaviour
     public virtual void Damage(float attack)
     {
         _hp -= attack;
-        Debug.Log("基底の敵に攻撃Hit");
     }
 }
