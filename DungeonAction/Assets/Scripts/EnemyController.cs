@@ -25,16 +25,23 @@ public class EnemyController : MonoBehaviour
     private Transform _player;
     private bool _isChasing = false;
     private float _lastAttackTime = -Mathf.Infinity;
+    private Rigidbody _rigidbody;
 
     protected virtual void Start()
     {
         // Find the player by tag (assumes the player has a "Player" tag)
         _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _rigidbody = GetComponent<Rigidbody>();
+
+        if (_rigidbody == null)
+        {
+            Debug.LogError("Rigidbody component is missing!");
+        }
     }
 
     protected virtual void Update()
     {
-        if (_player == null) return;
+        if (_player == null || _rigidbody == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
@@ -63,22 +70,35 @@ public class EnemyController : MonoBehaviour
         {
             ChasePlayer();
         }
+        else
+        {
+            // Stop movement when not chasing
+            _rigidbody.velocity = Vector3.zero;
+        }
     }
 
     protected void ChasePlayer()
     {
-        // Face the player
+        // Calculate direction towards the player
         Vector3 direction = (_player.position - transform.position).normalized;
+
+        // Face the player
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
-        // Move towards the player
-        transform.position += transform.forward * _speed * Time.deltaTime;
+        // Set the velocity towards the player
+        _rigidbody.velocity = direction * _speed;
     }
 
     protected virtual void AttackPlayer()
     {
         // Placeholder for attack logic
         Debug.Log("Attacking the player!");
+    }
+
+    public virtual void Damage(float attack)
+    {
+        _hp -= attack;
+        Debug.Log("äÓíÍÇÃìGÇ…çUåÇHit");
     }
 }

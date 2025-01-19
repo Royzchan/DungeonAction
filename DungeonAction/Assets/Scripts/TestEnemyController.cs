@@ -9,4 +9,9 @@ public class TestEnemyController : EnemyController
         Debug.Log("テストエネミーの攻撃");
         // Add custom attack logic here
     }
+
+    public override void Damage(float damage)
+    {
+        Debug.Log("テストエネミーに攻撃hit");
+    }
 }

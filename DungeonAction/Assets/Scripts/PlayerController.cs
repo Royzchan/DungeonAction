@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     private GameObject _sowrdObj;
     private Collider _sowrdCollider;
 
+    private HashSet<Collider> _hitEnemies = new HashSet<Collider>();
+
     private Vector2 _moveDirection = Vector2.zero;
 
     private bool _attackNow = false;
@@ -192,6 +194,7 @@ public class PlayerController : MonoBehaviour
             if (_sowrdCollider != null)
             {
                 _sowrdCollider.enabled = true;
+                _hitEnemies.Clear();
             }
         }
     }
@@ -203,6 +206,7 @@ public class PlayerController : MonoBehaviour
         {
             _sowrdCollider.enabled = false;
         }
+        _hitEnemies.Clear();
     }
 
     //ÉXÉLÉã
@@ -261,5 +265,19 @@ public class PlayerController : MonoBehaviour
     private void OnAvoid(InputAction.CallbackContext context)
     {
         StartAvoid();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        bool hitAttack = _sowrdCollider.enabled && !_hitEnemies.Contains(other);
+        if (hitAttack)
+        {
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.Damage(_attackPower);
+                _hitEnemies.Add(other);
+            }
+        }
     }
 }
