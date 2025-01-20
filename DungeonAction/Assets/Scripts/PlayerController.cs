@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _dashSpeed = 7.5f;
 
+    private bool _alive = true;
+
     [SerializeField]
     private InputAction _moveAction;
     [SerializeField]
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
     private string _moveSpeedStr = "MoveSpeed";
     private string _attackStr = "isAttack";
     private string _avoidStr = "isAvoid";
+    private string _dieStr = "Die";
 
     #region ゲッター
     public float MaxHP { get { return _maxHp; } }
@@ -147,6 +150,8 @@ public class PlayerController : MonoBehaviour
         {
             Damage(20);
         }
+
+        if (!_alive) return;
 
         if (!_attackNow)
         {
@@ -306,7 +311,16 @@ public class PlayerController : MonoBehaviour
     //ダメージ
     public void Damage(float attack)
     {
-        _hp -= attack;
+        if (_alive)
+        {
+            _hp -= attack;
+
+            if (_hp <= 0)
+            {
+                _alive = false;
+                _animator.SetTrigger(_dieStr);
+            }
+        }
     }
 
 

@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 100
-  _attackPower: 5
+  _attackPower: 50
   _defenses: 100
   _speed: 5
   _vigilanceRange: 10
