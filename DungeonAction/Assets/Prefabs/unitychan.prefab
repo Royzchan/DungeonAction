@@ -233,11 +233,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTransform: {fileID: 0}
-  _maxHP: 100
+  _maxHp: 100
   _maxStamina: 0
   _attackPower: 100
   _defenses: 100
   _speed: 5
+  _dashSpeed: 7.5
   _moveAction:
     m_Name: Move
     m_Type: 0
@@ -287,3 +288,49 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
+  _attackAction:
+    m_Name: Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: cd69e394-0f29-4c58-9821-64687386df97
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _skillAction:
+    m_Name: Skill
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 54aad7d0-ef03-41ec-ba11-8d476286da12
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _specialAction:
+    m_Name: Special
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0ee1f1c8-bf9e-4815-971f-75d06e98a5ab
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _avoidAction:
+    m_Name: Avoid
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c3b5defe-4b7b-4248-a08e-351a7d19c242
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _dashAction:
+    m_Name: Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 53181f65-631b-4945-baca-5afcbf8a5fd9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _sowrdObj: {fileID: 0}
