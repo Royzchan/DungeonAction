@@ -37,6 +37,7 @@ public class ChestEnemyController : EnemyController
 
     public override void EndAttack()
     {
+        base.EndAttack();
         _attackHitBox.enabled = false;
     }
 

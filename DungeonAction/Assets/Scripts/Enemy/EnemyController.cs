@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     private float _attackCooldown = 1.5f;
 
     private bool _alive = true;
+    private bool _isAttacking = false;
 
     [SerializeField]
     private GameObject _hpBar;
@@ -35,7 +36,6 @@ public class EnemyController : MonoBehaviour
 
     protected virtual void Start()
     {
-        // Find the player by tag (assumes the player has a "Player" tag)
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
@@ -54,7 +54,6 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            // 初期のSliderの値を設定
             _hpSlider.maxValue = _maxHp;
             _hpSlider.value = _hp;
         }
@@ -67,35 +66,34 @@ public class EnemyController : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
-        if (distanceToPlayer <= _vigilanceRange && distanceToPlayer > _attackRange)
+        if (!_isAttacking)
         {
-            // Player is within vigilance range but outside attack range
-            _isChasing = true;
-        }
-        else if (distanceToPlayer <= _attackRange)
-        {
-            // Player is within attack range
-            _isChasing = false;
-            if (Time.time >= _lastAttackTime + _attackCooldown)
+            if (distanceToPlayer <= _vigilanceRange && distanceToPlayer > _attackRange)
             {
-                AttackPlayer();
-                _lastAttackTime = Time.time;
+                _isChasing = true;
             }
-        }
-        else
-        {
-            // Player is outside vigilance range
-            _isChasing = false;
-        }
+            else if (distanceToPlayer <= _attackRange)
+            {
+                _isChasing = false;
+                if (Time.time >= _lastAttackTime + _attackCooldown)
+                {
+                    AttackPlayer();
+                    _lastAttackTime = Time.time;
+                }
+            }
+            else
+            {
+                _isChasing = false;
+            }
 
-        if (_isChasing)
-        {
-            ChasePlayer();
-        }
-        else
-        {
-            // Stop movement when not chasing
-            _rb.velocity = Vector3.zero;
+            if (_isChasing)
+            {
+                ChasePlayer();
+            }
+            else
+            {
+                _rb.velocity = Vector3.zero;
+            }
         }
 
         if (_hp <= 0)
@@ -103,51 +101,43 @@ public class EnemyController : MonoBehaviour
             Die();
         }
 
-        //常にメインのカメラにHPバーを向けて置く
         _hpBar.transform.rotation = Camera.main.transform.rotation;
 
         if (_hpSlider != null)
         {
-            _hpSlider.value = _hp;  // 現在のHPに基づいてSliderを更新
+            _hpSlider.value = _hp;
         }
     }
 
     protected void ChasePlayer()
     {
-        // Calculate direction towards the player
         Vector3 direction = (_player.position - transform.position).normalized;
 
-        // Face the player
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
-        // Set the velocity towards the player
         _rb.velocity = direction * _speed;
     }
 
     protected virtual void AttackPlayer()
     {
+        _isAttacking = true;
         Vector3 direction = (_player.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+        transform.rotation = lookRotation;
     }
 
-    /// <summary>
-    /// 攻撃判定が始まる時に呼ぶ
-    /// 基底クラスに何も書いてないので必ずオーバーライドを行う
-    /// </summary>
     public virtual void StartAttack()
     {
-
     }
 
-    /// <summary>
-    /// 攻撃判定が終わる時に呼ぶ
-    /// 基底クラスに何も書いてないので必ずオーバーライドを行う
-    /// </summary>
     public virtual void EndAttack()
     {
+    }
 
+    public virtual void EndAttackAnim()
+    {
+        _isAttacking = false;
     }
 
     public virtual void Damage(float attack)
@@ -169,10 +159,7 @@ public class EnemyController : MonoBehaviour
 
     protected virtual float GetCurrentMoveSpeed()
     {
-        // Rigidbodyの速度を水平面に投影したベクトルを計算
         Vector3 horizontalVelocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
-
-        // ベクトルの大きさを計算し、移動速度とする
         return horizontalVelocity.magnitude;
     }
 }
