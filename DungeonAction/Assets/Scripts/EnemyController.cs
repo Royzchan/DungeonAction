@@ -95,6 +95,11 @@ public class EnemyController : MonoBehaviour
             _rigidbody.velocity = Vector3.zero;
         }
 
+        if (_hp <= 0)
+        {
+            Die();
+        }
+
         //常にメインのカメラにHPバーを向けて置く
         _hpBar.transform.rotation = Camera.main.transform.rotation;
 
@@ -126,5 +131,10 @@ public class EnemyController : MonoBehaviour
     public virtual void Damage(float attack)
     {
         _hp -= attack;
+    }
+
+    public virtual void Die()
+    {
+        Destroy(this.gameObject);
     }
 }

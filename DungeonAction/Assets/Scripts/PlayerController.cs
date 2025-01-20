@@ -54,6 +54,14 @@ public class PlayerController : MonoBehaviour
     private string _attackStr = "isAttack";
     private string _avoidStr = "isAvoid";
 
+    #region ゲッター
+    public float MaxHP { get { return _maxHp; } }
+    public float HP { get { return _hp; } }
+    public float MaxStamina { get { return _maxStamina; } }
+    public float Stamina { get { return _stamina; } }
+
+    #endregion
+
     private void OnEnable()
     {
         //移動の入力を有効化
@@ -112,12 +120,16 @@ public class PlayerController : MonoBehaviour
         _dashAction?.Disable();
     }
 
+    private void Awake()
+    {
+        _hp = _maxHp;
+        _stamina = _maxStamina;
+    }
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-        _hp = _maxHp;
-        _stamina = _maxStamina;
 
         if (_sowrdObj != null)
         {
@@ -128,6 +140,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //デバックコマンド
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Damage(20);
+        }
+
         if (!_attackNow)
         {
             _moveDirection = _moveAction.ReadValue<Vector2>();
@@ -235,6 +253,13 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+
+    //ダメージ
+    public void Damage(float attack)
+    {
+        _hp -= attack;
+    }
+
 
     //現在の移動速度を取得する関数
     public float GetCurrentMoveSpeed()
