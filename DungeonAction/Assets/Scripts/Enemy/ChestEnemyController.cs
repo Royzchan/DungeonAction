@@ -8,6 +8,7 @@ public class ChestEnemyController : EnemyController
     private Animator _animator;
     private string _moveSpeedStr = "MoveSpeed";
     private string _attackStr = "Attack";
+    private string _dieStr = "Die";
     [SerializeField]
     Collider _attackHitBox;
 
@@ -43,6 +44,12 @@ public class ChestEnemyController : EnemyController
     {
         base.Damage(attack);
         Debug.Log("宝箱エネミーに攻撃hit");
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        _animator.SetTrigger(_dieStr);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -219,7 +219,7 @@ public class PlayerController : MonoBehaviour
                 if (directionToEnemy.magnitude > 0.1f)
                 {
                     Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 150f);
+                    transform.rotation = targetRotation;
                 }
             }
 

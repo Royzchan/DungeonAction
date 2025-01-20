@@ -21,6 +21,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float _attackCooldown = 1.5f;
 
+    private bool _alive = true;
+
     [SerializeField]
     private GameObject _hpBar;
     private Slider _hpSlider;
@@ -29,12 +31,14 @@ public class EnemyController : MonoBehaviour
     private bool _isChasing = false;
     private float _lastAttackTime = -Mathf.Infinity;
     private Rigidbody _rb;
+    private Collider _collider;
 
     protected virtual void Start()
     {
         // Find the player by tag (assumes the player has a "Player" tag)
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
 
         _hp = _maxHp;
 
@@ -59,6 +63,7 @@ public class EnemyController : MonoBehaviour
     protected virtual void Update()
     {
         if (_player == null || _rb == null) return;
+        if (!_alive) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
@@ -151,6 +156,13 @@ public class EnemyController : MonoBehaviour
     }
 
     public virtual void Die()
+    {
+        _alive = false;
+        _hpBar.SetActive(false);
+        _collider.enabled = false;
+    }
+
+    public virtual void DeleteObj()
     {
         Destroy(this.gameObject);
     }
