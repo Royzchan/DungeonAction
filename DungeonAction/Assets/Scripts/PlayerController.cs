@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _attackPower = 100f;
     [SerializeField]
+    private float _attackRange = 5f;
+    [SerializeField]
     private float _defenses = 100f;
     [SerializeField]
     private float _speed = 5f;
@@ -207,6 +209,20 @@ public class PlayerController : MonoBehaviour
         if (!_attackNow)
         {
             _attackNow = true;
+
+            // “G‚ðŒŸo‚µ‚Äƒ^[ƒQƒbƒg‚Ì•ûŒü‚ðŒü‚­
+            Collider nearestEnemy = FindNearestEnemy();
+            if (nearestEnemy != null)
+            {
+                Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
+                directionToEnemy.y = 0; // Y•ûŒü‚Ì‰ñ“]‚ð–³Ž‹
+                if (directionToEnemy.magnitude > 0.1f)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 150f);
+                }
+            }
+
             _animator.SetTrigger(_attackStr);
 
             if (_sowrdCollider != null)
@@ -215,6 +231,39 @@ public class PlayerController : MonoBehaviour
                 _hitEnemies.Clear();
             }
         }
+    }
+
+    private Collider FindNearestEnemy()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, _attackRange);
+        Collider nearestEnemy = null;
+        float nearestDistance = float.MaxValue;
+
+        foreach (Collider collider in hitColliders)
+        {
+            // “G‚©‚Ç‚¤‚©‚ð”»’è
+            EnemyController enemy = collider.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                float distance = Vector3.Distance(transform.position, collider.transform.position);
+                if (distance < nearestDistance)
+                {
+                    nearestEnemy = collider;
+                    nearestDistance = distance;
+                }
+            }
+        }
+
+        if (nearestEnemy != null)
+        {
+            Debug.Log("ÅŠñ‚Ì“G: " + nearestEnemy.name);  // Œ©‚Â‚©‚Á‚½“G‚ðƒƒO‚É•\Ž¦
+        }
+        else
+        {
+            Debug.Log("”ÍˆÍ“à‚É“G‚ª‚¢‚Ü‚¹‚ñ");
+        }
+
+        return nearestEnemy;
     }
 
     public void EndAttack()
@@ -304,5 +353,12 @@ public class PlayerController : MonoBehaviour
                 _hitEnemies.Add(other);
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // UŒ‚”ÍˆÍ‚Ì‰ÂŽ‹‰»
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _attackRange);
     }
 }
