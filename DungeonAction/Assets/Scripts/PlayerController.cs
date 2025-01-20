@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rb;
     private Animator _animator;
+    private GameManager _gm;
 
     [SerializeField]
     private Transform _cameraTransform;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
     public float HP { get { return _hp; } }
     public float MaxStamina { get { return _maxStamina; } }
     public float Stamina { get { return _stamina; } }
+    public bool Alive { get { return _alive; } }
 
     #endregion
 
@@ -135,6 +137,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+        _gm = FindAnyObjectByType<GameManager>();
 
         if (_sowrdObj != null)
         {
@@ -318,6 +321,7 @@ public class PlayerController : MonoBehaviour
             if (_hp <= 0)
             {
                 _alive = false;
+                _gm.GameOver();
                 _animator.SetTrigger(_dieStr);
             }
         }

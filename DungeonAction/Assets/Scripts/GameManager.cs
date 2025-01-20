@@ -13,11 +13,15 @@ public class GameManager : MonoBehaviour
     public int _seconds { get; private set; } // 秒
     public string _milliseconds { get; private set; } // 秒以下2桁（文字列）
 
-    [SerializeField] private TMP_Text timerText; // UIのTextコンポーネントを参照
+    [SerializeField]
+    private TMP_Text timerText; // UIのTextコンポーネントを参照
+    [SerializeField]
+    private GameObject _gameOverUIs;
 
     protected virtual void Start()
     {
         StartTimer(); // ゲーム開始と同時にタイマーを開始
+        _gameOverUIs.SetActive(false);
     }
 
     protected virtual void Update()
@@ -64,5 +68,10 @@ public class GameManager : MonoBehaviour
     public float GetTimer()
     {
         return _timer;
+    }
+
+    public void GameOver()
+    {
+        _gameOverUIs.SetActive(true);
     }
 }
