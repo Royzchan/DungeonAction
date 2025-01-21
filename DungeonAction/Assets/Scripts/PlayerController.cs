@@ -360,6 +360,7 @@ public class PlayerController : MonoBehaviour
         if (_alive && !_isInvincible)
         {
             _hp -= attack;
+            Debug.Log(_hp);
 
             if (_hp <= 0)
             {

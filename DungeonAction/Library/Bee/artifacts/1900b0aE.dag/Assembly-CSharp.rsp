@@ -365,6 +365,8 @@
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/Enemy/ChestEnemyController.cs"
 "Assets/Scripts/Enemy/EnemyController.cs"
+"Assets/Scripts/Enemy/SkeletonEnemyController.cs"
+"Assets/Scripts/Enemy/S_MinionController.cs"
 "Assets/Scripts/Enemy/TestEnemyController.cs"
 "Assets/Scripts/GameManager/GameManager.cs"
 "Assets/Scripts/GameManager/GameManager_Normal.cs"
