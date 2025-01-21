@@ -75,6 +75,14 @@ public class PlayerController : MonoBehaviour
     public bool Alive { get { return _alive; } }
     #endregion
 
+    // スタミナ回復関連設定
+    [SerializeField]
+    private float _staminaRecoveryRate = 5f; // スタミナの回復速度
+    [SerializeField]
+    private float _staminaConsumptionRate = 10f; // ダッシュ中のスタミナ消費速度
+    [SerializeField]
+    private float _avoidConsumptionAmount = 50f; // 回避時のスタミナ消費量
+
     private void OnEnable()
     {
         // 入力を有効化
@@ -143,6 +151,13 @@ public class PlayerController : MonoBehaviour
 
         // 攻撃中は移動不可
         _moveDirection = _attackNow || _isAvoiding ? Vector2.zero : _moveAction.ReadValue<Vector2>();
+
+        // スタミナ回復（ダッシュ中、回避中では回復しない）
+        if (!_dashAction.IsPressed() && _stamina < _maxStamina && !_isAvoiding)
+        {
+            _stamina += _staminaRecoveryRate * Time.deltaTime;
+            if (_stamina > _maxStamina) _stamina = _maxStamina;
+        }
     }
 
     private void FixedUpdate()
@@ -168,9 +183,13 @@ public class PlayerController : MonoBehaviour
             Vector3 move = cameraRight * _moveDirection.x + cameraForward * _moveDirection.y;
 
             // ダッシュ時の速度変更
-            if (_dashAction.IsPressed())
+            if (_dashAction.IsPressed() && _stamina > 0)
             {
                 _rb.velocity = move * _dashSpeed + new Vector3(0f, _rb.velocity.y, 0f);
+
+                // スタミナ消費
+                _stamina -= _staminaConsumptionRate * Time.deltaTime;
+                if (_stamina < 0) _stamina = 0;
             }
             else
             {
@@ -208,7 +227,16 @@ public class PlayerController : MonoBehaviour
                 move = transform.forward;
             }
 
-            _rb.velocity = move * _dashSpeed + new Vector3(0f, _rb.velocity.y, 0f);
+            // 一気にスタミナ消費して回避
+            if (_stamina >= _avoidConsumptionAmount)
+            {
+                _rb.velocity = move * _dashSpeed + new Vector3(0f, _rb.velocity.y, 0f);
+            }
+            else
+            {
+                // スタミナが足りない場合は回避できない
+                EndAvoid();
+            }
         }
     }
 
@@ -294,6 +322,12 @@ public class PlayerController : MonoBehaviour
             _attackNow = false;
         }
 
+        // スタミナが足りていない場合は回避できない
+        if (_stamina < _avoidConsumptionAmount)
+        {
+            return;
+        }
+
         _animator.SetTrigger(_avoidStr);
 
         // 方向キーの入力を確認
@@ -303,7 +337,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(StartInvincibility());
         }
-
+        _stamina -= _avoidConsumptionAmount;
         _isAvoiding = true;
     }
 
