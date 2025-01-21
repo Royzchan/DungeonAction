@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private bool _alive = true; // 生存状態フラグ
     private bool _isInvincible = false; // 無敵状態フラグ
+    private bool _isAvoiding = false; // 回避中フラグ
+    private Vector2 _avoidDirection = Vector2.zero; // 回避方向
 
     [Header("Input Actions")]
     [SerializeField]
@@ -140,21 +142,21 @@ public class PlayerController : MonoBehaviour
         }
 
         // 攻撃中は移動不可
-        _moveDirection = _attackNow ? Vector2.zero : _moveAction.ReadValue<Vector2>();
+        _moveDirection = _attackNow || _isAvoiding ? Vector2.zero : _moveAction.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
         // 移動処理
         Move();
-        _animator.SetFloat(_moveSpeedStr, GetCurrentMoveSpeed());
     }
 
     private void Move()
     {
-        if (_cameraTransform != null)
+        if (_cameraTransform != null && !_isAvoiding)
         {
-            // カメラの向きに基づいて移動
+            _animator.SetFloat(_moveSpeedStr, GetCurrentMoveSpeed());
+            // 通常の移動処理
             Vector3 cameraForward = _cameraTransform.forward;
             Vector3 cameraRight = _cameraTransform.right;
 
@@ -181,6 +183,32 @@ public class PlayerController : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(move);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 10f);
             }
+        }
+        else if (_isAvoiding)
+        {
+            // 回避中の移動処理
+            Vector3 move = Vector3.zero;
+
+            if (_avoidDirection.magnitude > 0)
+            {
+                // 方向キーが押されていた場合、その方向に回避
+                Vector3 cameraForward = _cameraTransform.forward;
+                Vector3 cameraRight = _cameraTransform.right;
+
+                cameraForward.y = 0;
+                cameraRight.y = 0;
+                cameraForward.Normalize();
+                cameraRight.Normalize();
+
+                move = cameraRight * _avoidDirection.x + cameraForward * _avoidDirection.y;
+            }
+            else
+            {
+                // 方向キーが押されていない場合は、現在の向きで回避
+                move = transform.forward;
+            }
+
+            _rb.velocity = move * _dashSpeed + new Vector3(0f, _rb.velocity.y, 0f);
         }
     }
 
@@ -268,10 +296,21 @@ public class PlayerController : MonoBehaviour
 
         _animator.SetTrigger(_avoidStr);
 
+        // 方向キーの入力を確認
+        _avoidDirection = _moveAction.ReadValue<Vector2>();
+
         if (!_isInvincible)
         {
             StartCoroutine(StartInvincibility());
         }
+
+        _isAvoiding = true;
+    }
+
+    public void EndAvoid()
+    {
+        // 回避アニメーションが終わるのを待つ
+        _isAvoiding = false;
     }
 
     private IEnumerator StartInvincibility()
