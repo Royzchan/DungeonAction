@@ -44,7 +44,6 @@ public class ChestEnemyController : EnemyController
     public override void Damage(float attack)
     {
         base.Damage(attack);
-        Debug.Log("宝箱エネミーに攻撃hit");
     }
 
     public override void Die()

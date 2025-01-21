@@ -7,9 +7,11 @@ public class CameraController : MonoBehaviour
 {
     public GameObject _player; // プレイヤー（ターゲット）となるオブジェクト
     private PlayerController _playerController;
+    private GameManager _gm;
     public float _distance = 5.0f; // ターゲットからの距離
     public float _rotationSpeed = 100.0f; // 回転速度
     public Vector2 _pitchLimits = new Vector2(-30, 60); // 上下の角度制限
+    public Vector3 _playerOffset = new Vector3(0, 1.5f, 0); // プレイヤー位置調整用のオフセット
 
     private float _currentYaw = 0.0f; // 現在の水平角度
     private float _currentPitch = 0.0f; // 現在の垂直角度
@@ -34,13 +36,14 @@ public class CameraController : MonoBehaviour
             Debug.LogError("Target is not assigned! Please assign a target for the camera.");
         }
         _playerController = _player.GetComponent<PlayerController>();
+        _gm = FindAnyObjectByType<GameManager>();
     }
 
     void Update()
     {
         if (_player == null) return;
-
         if (!_playerController.Alive) return;
+        if (!_gm.GamePlaying) return;
 
         // マウス入力から角度を計算
         float mouseX = _cameraRotateAction.ReadValue<Vector2>().x * _rotationSpeed * Time.deltaTime;
@@ -58,12 +61,15 @@ public class CameraController : MonoBehaviour
 
     void UpdateCameraPosition()
     {
+        // プレイヤーの中心位置にオフセットを追加
+        Vector3 targetPosition = _player.transform.position + _playerOffset;
+
         // カメラの位置をターゲットの周囲に設定
         Quaternion rotation = Quaternion.Euler(_currentPitch, _currentYaw, 0);
         Vector3 offset = rotation * new Vector3(0, 0, -_distance);
-        transform.position = _player.transform.position + offset;
+        transform.position = targetPosition + offset;
 
         // カメラがターゲットを向くように設定
-        transform.LookAt(_player.transform);
+        transform.LookAt(targetPosition);
     }
 }

@@ -10,27 +10,32 @@ public class PlayerController : MonoBehaviour
     private GameManager _gm;
 
     [SerializeField]
-    private Transform _cameraTransform;
+    private Transform _cameraTransform; // プレイヤーの動きに基づくカメラの向き
 
+    [Header("プレイヤーのステータス")]
     [SerializeField]
-    private float _maxHp = 100f;
+    private float _maxHp = 100f; // 最大HP
     private float _hp;
     [SerializeField]
-    private float _maxStamina;
+    private float _maxStamina; // 最大スタミナ
     private float _stamina;
     [SerializeField]
-    private float _attackPower = 100f;
+    private float _attackPower = 100f; // 攻撃力
     [SerializeField]
-    private float _attackRange = 5f;
+    private float _attackRange = 5f; // 攻撃範囲
     [SerializeField]
-    private float _defenses = 100f;
+    private float _defenses = 100f; // 防御力
     [SerializeField]
-    private float _speed = 5f;
+    private float _speed = 5f; // 通常移動速度
     [SerializeField]
-    private float _dashSpeed = 7.5f;
+    private float _dashSpeed = 7.5f; // ダッシュ時の移動速度
+    [SerializeField]
+    private float _invincibilityDuration = 0.5f; // 無敵時間の長さ
 
-    private bool _alive = true;
+    private bool _alive = true; // 生存状態フラグ
+    private bool _isInvincible = false; // 無敵状態フラグ
 
+    [Header("Input Actions")]
     [SerializeField]
     private InputAction _moveAction;
     [SerializeField]
@@ -44,21 +49,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private InputAction _dashAction;
 
+    [Header("武器設定")]
     [SerializeField]
-    private GameObject _sowrdObj;
-    private Collider _sowrdCollider;
+    private GameObject _sowrdObj; // プレイヤーの武器オブジェクト
+    private Collider _sowrdCollider; // 武器のコライダー
 
-    private HashSet<Collider> _hitEnemies = new HashSet<Collider>();
+    private HashSet<Collider> _hitEnemies = new HashSet<Collider>(); // 攻撃した敵の記録
 
-    private Vector2 _moveDirection = Vector2.zero;
+    private Vector2 _moveDirection = Vector2.zero; // プレイヤーの移動方向
 
-    private bool _attackNow = false;
-    private bool _avoidNow = false;
+    private bool _attackNow = false; // 現在攻撃中か
 
-    private string _moveSpeedStr = "MoveSpeed";
-    private string _attackStr = "isAttack";
-    private string _avoidStr = "isAvoid";
-    private string _dieStr = "Die";
+    private string _moveSpeedStr = "MoveSpeed"; // アニメーション用の速度パラメータ
+    private string _attackStr = "isAttack"; // 攻撃アニメーショントリガー
+    private string _avoidStr = "isAvoid"; // 回避アニメーショントリガー
+    private string _dieStr = "Die"; // 死亡アニメーショントリガー
 
     #region ゲッター
     public float MaxHP { get { return _maxHp; } }
@@ -66,79 +71,53 @@ public class PlayerController : MonoBehaviour
     public float MaxStamina { get { return _maxStamina; } }
     public float Stamina { get { return _stamina; } }
     public bool Alive { get { return _alive; } }
-
     #endregion
 
     private void OnEnable()
     {
-        //移動の入力を有効化
+        // 入力を有効化
         _moveAction?.Enable();
-
-        //攻撃のアクションのコールバックを追加
         _attackAction.started += OnAttack;
-        //攻撃アクションの入力を有効化
         _attackAction?.Enable();
-
-        //スキルのアクションのコールバックを追加
         _skillAction.started += OnSkill;
-        //スキルのアクションの入力を有効化
         _skillAction?.Enable();
-
-        //必殺技のアクションのコールバックを追加
         _specialAction.started += OnSpecial;
-        //必殺技の入力を有効化
         _specialAction?.Enable();
-
-        //回避のアクションのコールバックを追加
         _avoidAction.started += OnAvoid;
-        //回避の入力を有効化
         _avoidAction?.Enable();
-
-        //ダッシュの入力を有効化
         _dashAction?.Enable();
     }
 
     private void OnDisable()
     {
-        //移動の入力を無効化
+        // 入力を無効化
         _moveAction?.Disable();
-
-        //攻撃のアクションのコールバックを解除
         _attackAction.started -= OnAttack;
-        //攻撃の入力を無効化
         _attackAction?.Disable();
-
-        //スキルのアクションのコールバックを解除
         _skillAction.started -= OnSkill;
-        //スキルの入力を無効化
         _skillAction?.Disable();
-
-        //必殺技のアクションのコールバックを解除
         _specialAction.started -= OnSpecial;
-        //必殺技の入力を無効化
         _specialAction?.Disable();
-
-        //回避のアクションのコールバックを解除
         _avoidAction.started -= OnAvoid;
-        //回避の入力を無効化
         _avoidAction?.Disable();
-
-        //ダッシュの入力を無効化
         _dashAction?.Disable();
     }
 
     private void Awake()
     {
+        // 初期化
         _hp = _maxHp;
         _stamina = _maxStamina;
     }
 
-    void Start()
+    private void Start()
     {
+        // コンポーネントの取得
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _gm = FindAnyObjectByType<GameManager>();
 
+        // 武器のコライダー設定
         if (_sowrdObj != null)
         {
             _sowrdCollider = _sowrdObj.GetComponent<Collider>();
@@ -146,63 +125,57 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        //デバックコマンド
+        // デバッグ用ダメージコマンド
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Damage(20);
         }
 
-        if (!_alive) return;
-
-        if (!_attackNow)
-        {
-            _moveDirection = _moveAction.ReadValue<Vector2>();
-        }
-        else
+        if (!_alive || !_gm.GamePlaying)
         {
             _moveDirection = Vector2.zero;
+            return; // 生存中でない場合、処理を中止
         }
+
+        // 攻撃中は移動不可
+        _moveDirection = _attackNow ? Vector2.zero : _moveAction.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
+        // 移動処理
         Move();
         _animator.SetFloat(_moveSpeedStr, GetCurrentMoveSpeed());
     }
 
-    //移動
     private void Move()
     {
         if (_cameraTransform != null)
         {
-            // カメラの前方と右方向を取得
+            // カメラの向きに基づいて移動
             Vector3 cameraForward = _cameraTransform.forward;
             Vector3 cameraRight = _cameraTransform.right;
 
-            // Y軸方向を無視（水平移動のみ）
             cameraForward.y = 0;
             cameraRight.y = 0;
             cameraForward.Normalize();
             cameraRight.Normalize();
 
-            // 移動方向を計算
             Vector3 move = cameraRight * _moveDirection.x + cameraForward * _moveDirection.y;
 
-            // Rigidbodyの速度を設定
-            //ダッシュ中
+            // ダッシュ時の速度変更
             if (_dashAction.IsPressed())
             {
                 _rb.velocity = move * _dashSpeed + new Vector3(0f, _rb.velocity.y, 0f);
             }
-            //通常時
             else
             {
                 _rb.velocity = move * _speed + new Vector3(0f, _rb.velocity.y, 0f);
             }
 
-            // プレイヤーが進行方向を向く
+            // 向きの変更
             if (move.magnitude > 0.1f)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(move);
@@ -211,19 +184,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //攻撃
     private void Attack()
     {
         if (!_attackNow)
         {
             _attackNow = true;
 
-            // 敵を検出してターゲットの方向を向く
+            // 最寄りの敵を向く
             Collider nearestEnemy = FindNearestEnemy();
             if (nearestEnemy != null)
             {
                 Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
-                directionToEnemy.y = 0; // Y方向の回転を無視
+                directionToEnemy.y = 0;
                 if (directionToEnemy.magnitude > 0.1f)
                 {
                     Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
@@ -233,6 +205,7 @@ public class PlayerController : MonoBehaviour
 
             _animator.SetTrigger(_attackStr);
 
+            // 武器のコライダーを有効化
             if (_sowrdCollider != null)
             {
                 _sowrdCollider.enabled = true;
@@ -243,13 +216,13 @@ public class PlayerController : MonoBehaviour
 
     private Collider FindNearestEnemy()
     {
+        // 一定範囲内の敵を検索
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, _attackRange);
         Collider nearestEnemy = null;
         float nearestDistance = float.MaxValue;
 
         foreach (Collider collider in hitColliders)
         {
-            // 敵かどうかを判定
             EnemyController enemy = collider.GetComponent<EnemyController>();
             if (enemy != null)
             {
@@ -262,20 +235,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null)
-        {
-            Debug.Log("最寄の敵: " + nearestEnemy.name);  // 見つかった敵をログに表示
-        }
-        else
-        {
-            Debug.Log("範囲内に敵がいません");
-        }
-
         return nearestEnemy;
     }
 
     public void EndAttack()
     {
+        // 攻撃終了時の処理
         _attackNow = false;
         if (_sowrdCollider != null)
         {
@@ -284,42 +249,48 @@ public class PlayerController : MonoBehaviour
         _hitEnemies.Clear();
     }
 
-    //スキル
     private void Skill()
     {
-        Debug.Log("スキル");
+        Debug.Log("スキル発動");
     }
 
-    //必殺技
     private void Special()
     {
-        Debug.Log("必殺技");
+        Debug.Log("必殺技発動");
     }
 
-    //回避
     private void StartAvoid()
     {
         if (_attackNow)
         {
             _attackNow = false;
         }
+
         _animator.SetTrigger(_avoidStr);
+
+        if (!_isInvincible)
+        {
+            StartCoroutine(StartInvincibility());
+        }
     }
 
-    private void EndAvoid()
+    private IEnumerator StartInvincibility()
     {
-
+        // 無敵時間の開始
+        _isInvincible = true;
+        yield return new WaitForSeconds(_invincibilityDuration);
+        _isInvincible = false;
     }
 
-    //ダメージ
     public void Damage(float attack)
     {
-        if (_alive)
+        if (_alive && !_isInvincible)
         {
             _hp -= attack;
 
             if (_hp <= 0)
             {
+                // 死亡処理
                 _alive = false;
                 _gm.GameOver();
                 _animator.SetTrigger(_dieStr);
@@ -327,18 +298,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    //現在の移動速度を取得する関数
     public float GetCurrentMoveSpeed()
     {
-        // Rigidbodyの速度を水平面に投影したベクトルを計算
+        // 現在の移動速度を計算
         Vector3 horizontalVelocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
-
-        // ベクトルの大きさを計算し、移動速度とする
         return horizontalVelocity.magnitude;
     }
 
-    //Input Systemのコールバック
     private void OnAttack(InputAction.CallbackContext context)
     {
         Attack();
@@ -361,6 +327,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // 武器の攻撃判定
         bool hitAttack = _sowrdCollider.enabled && !_hitEnemies.Contains(other);
         if (hitAttack)
         {
