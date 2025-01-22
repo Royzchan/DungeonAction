@@ -1813,6 +1813,59 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7910618971927313076, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
   m_PrefabInstance: {fileID: 9126763411329572899}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &867364370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867364372}
+  - component: {fileID: 867364371}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &867364371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867364370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c225c72a5e26104cbef686b0c7c5740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 80
+  height: 80
+  roomCount: 20
+  roomMinSize: {x: 8, y: 8}
+  roomMaxSize: {x: 12, y: 12}
+  floorPrefab: {fileID: 3236148554509712915, guid: e6a4f6707660a9a4b84b6b56818c5dbc, type: 3}
+  wallPrefab: {fileID: 3785119162388893768, guid: e379788ba106fdf45b9c95ab7760377f, type: 3}
+  startRoomPrefab: {fileID: 3785119162388893768, guid: 3b8d285cd5a6b074785e49932ca2fdb5, type: 3}
+  bossRoomPrefab: {fileID: 3785119162388893768, guid: 4da042320b5c6c94787dceff1fc1fe41, type: 3}
+--- !u!4 &867364372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867364370}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14909141, y: -0.16338426, z: 0.4112159}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875803107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4927,3 +4980,4 @@ SceneRoots:
   - {fileID: 50463876}
   - {fileID: 925644145}
   - {fileID: 839111539210495941}
+  - {fileID: 867364372}

@@ -363,6 +363,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.39f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/GhostCharacter_Free/Scripts/GhostScript.cs"
 "Assets/Scripts/CameraController.cs"
+"Assets/Scripts/DungeonCreator.cs"
 "Assets/Scripts/Enemy/ChestEnemyController.cs"
 "Assets/Scripts/Enemy/EnemyController.cs"
 "Assets/Scripts/Enemy/SkeletonEnemyController.cs"
