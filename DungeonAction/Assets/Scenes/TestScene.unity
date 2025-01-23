@@ -1851,7 +1851,12 @@ MonoBehaviour:
   wallPrefab: {fileID: 3109040576957302478, guid: 2ddae79968efed744adf913759e0935b, type: 3}
   startRoomPrefab: {fileID: 3785119162388893768, guid: 3b8d285cd5a6b074785e49932ca2fdb5, type: 3}
   bossRoomPrefab: {fileID: 3785119162388893768, guid: 4da042320b5c6c94787dceff1fc1fe41, type: 3}
+  enemyPrefabs:
+  - {fileID: 2033646375480863671, guid: 9cd32e32122e3bd4483328168f855b91, type: 3}
+  bossPrefabs:
+  - {fileID: 6911668680422085486, guid: 457bea2dfbd2ea84689bd0821a13de78, type: 3}
   maxCorridorLength: 10
+  randomEnemyRange: {x: 1, y: 5}
 --- !u!4 &867364372
 Transform:
   m_ObjectHideFlags: 0
@@ -2746,7 +2751,7 @@ MonoBehaviour:
   _scoreText: {fileID: 2104405368}
   _gameClearUIs: {fileID: 1543143535}
   _gameOverUIs: {fileID: 1445182624}
-  _bossEnemy: {fileID: 1299779307}
+  _bossEnemy: []
 --- !u!1 &1129716234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,11 +2957,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1299779307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6911668680422085486, guid: 457bea2dfbd2ea84689bd0821a13de78, type: 3}
-  m_PrefabInstance: {fileID: 839111539210495941}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1445182624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5506539393645534358, guid: 317e7d511a9ce2643aa4c613824cd0dc, type: 3}
@@ -4675,6 +4675,14 @@ PrefabInstance:
     - target: {fileID: 6123479985603402243, guid: ef1d2bcfc7f2b9f47ab75e018113e228, type: 3}
       propertyPath: _rotationSpeed
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123479985603402243, guid: ef1d2bcfc7f2b9f47ab75e018113e228, type: 3}
+      propertyPath: _rotationSpeed.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123479985603402243, guid: ef1d2bcfc7f2b9f47ab75e018113e228, type: 3}
+      propertyPath: _rotationSpeed.y
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6953102855670612487, guid: ef1d2bcfc7f2b9f47ab75e018113e228, type: 3}
       propertyPath: m_Name

@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     private PlayerController _playerController;
     private GameManager _gm;
     public float _distance = 5.0f; // ターゲットからの距離
-    public float _rotationSpeed = 100.0f; // 回転速度
+    public Vector2 _rotationSpeed = new Vector2(100f, 50f); // 回転速度
     public Vector2 _pitchLimits = new Vector2(-30, 60); // 上下の角度制限
     public Vector3 _playerOffset = new Vector3(0, 1.5f, 0); // プレイヤー位置調整用のオフセット
 
@@ -46,8 +46,8 @@ public class CameraController : MonoBehaviour
         if (!_gm.GamePlaying) return;
 
         // マウス入力から角度を計算
-        float mouseX = _cameraRotateAction.ReadValue<Vector2>().x * _rotationSpeed * Time.deltaTime;
-        float mouseY = _cameraRotateAction.ReadValue<Vector2>().y * _rotationSpeed * Time.deltaTime;
+        float mouseX = _cameraRotateAction.ReadValue<Vector2>().x * _rotationSpeed.x * Time.deltaTime;
+        float mouseY = _cameraRotateAction.ReadValue<Vector2>().y * _rotationSpeed.y * Time.deltaTime;
 
         _currentYaw += mouseX;
         _currentPitch -= mouseY;

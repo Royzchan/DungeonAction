@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _gameOverUIs;
 
+    [SerializeField]
+    protected List<GameObject> _bossEnemy;
+
     protected virtual void Start()
     {
         //フレームレートを固定
@@ -113,5 +116,10 @@ public class GameManager : MonoBehaviour
         _gameOverUIs.SetActive(true);
         _gamePlaying = false;
         StopTimer();
+    }
+
+    public void AddBossEnemy(GameObject boss)
+    {
+        _bossEnemy.Add(boss);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 public class DungeonCreator : MonoBehaviour
 {
     private PlayerController _player;
+    private GameManager _gm;
     public int width = 50;   // マップ全体の横幅
     public int height = 50;  // マップ全体の高さ
     public int roomCount = 10; // 一般部屋の数
@@ -14,9 +15,12 @@ public class DungeonCreator : MonoBehaviour
     public GameObject wallPrefab;        // 壁のプレハブ
     public GameObject startRoomPrefab;   // スタート部屋の床プレハブ
     public GameObject bossRoomPrefab;    // ボス部屋の床プレハブ
+    public List<GameObject> enemyPrefabs; // 敵プレハブのリスト
+    public List<GameObject> bossPrefabs; // ボスプレハブのリスト
 
     public int maxCorridorLength = 10; // 通路の最大長さ
 
+    public Vector2Int randomEnemyRange = new Vector2Int(1, 5); // 一般部屋に配置する敵のランダム範囲
     private int[,] dungeonMap; // 0 = 壁, 1 = 一般床, 2 = スタート床, 3 = ボス床
     private List<Rect> rooms = new List<Rect>();
     private Rect startRoom;
@@ -25,9 +29,11 @@ public class DungeonCreator : MonoBehaviour
 
     void Start()
     {
+        _gm = FindAnyObjectByType<GameManager>();
         _player = FindAnyObjectByType<PlayerController>();
         GenerateDungeon();
         InstantiateDungeon();
+        PlaceEnemies(); // 敵を配置
         PlacePlayer();
     }
 
@@ -236,6 +242,58 @@ public class DungeonCreator : MonoBehaviour
             Vector2Int startCenter = GetRoomCenter(startRoom);
             Vector3 playerPosition = new Vector3(startCenter.x * 4, 0, startCenter.y * 4);
             _player.SetPos(playerPosition);
+        }
+    }
+
+    void PlaceEnemies()
+    {
+        foreach (Rect room in rooms)
+        {
+            if (room == startRoom) continue; // スタート部屋には配置しない
+
+            Vector2Int roomCenter = GetRoomCenter(room);
+
+            if (room == bossRoom)
+            {
+                // ボス部屋にボスを配置
+                PlaceBoss(roomCenter);
+            }
+            else
+            {
+                // 一般部屋にランダムで敵を配置
+                int enemyCount = Random.Range(randomEnemyRange.x, randomEnemyRange.y);
+                PlaceRandomEnemies(room, enemyCount);
+            }
+        }
+    }
+
+    void PlaceBoss(Vector2Int center)
+    {
+        foreach (GameObject bossPrefab in bossPrefabs)
+        {
+            Vector3 spawnPosition = new Vector3(
+                center.x * 4 + Random.Range(-1f, 1f),
+                0,
+                center.y * 4 + Random.Range(-1f, 1f)
+            );
+            var boss = Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
+            _gm.AddBossEnemy(boss);
+        }
+    }
+
+    void PlaceRandomEnemies(Rect room, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            int randomX = (int)Random.Range(room.xMin + 1, room.xMax - 1);
+            int randomY = (int)Random.Range(room.yMin + 1, room.yMax - 1);
+
+            if (dungeonMap[randomX, randomY] == 1) // 床が配置された場所にのみ配置
+            {
+                GameObject randomEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+                Vector3 spawnPosition = new Vector3(randomX * 4, 0, randomY * 4);
+                Instantiate(randomEnemy, spawnPosition, Quaternion.identity);
+            }
         }
     }
 }

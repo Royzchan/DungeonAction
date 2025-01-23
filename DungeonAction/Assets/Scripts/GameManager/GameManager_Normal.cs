@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GameManager_Normal : GameManager
 {
-    [SerializeField]
-    private GameObject _bossEnemy;
-
     protected override void Start()
     {
         base.Start();
@@ -36,13 +33,22 @@ public class GameManager_Normal : GameManager
 
     private bool AliveBossEnemy()
     {
-        if (_bossEnemy != null)
+        int bossCount = _bossEnemy.Count;
+        int deadBossNum = 0;
+        foreach (GameObject boss in _bossEnemy)
         {
-            return true;
+            if (boss == null)
+            {
+                deadBossNum++;
+            }
+        }
+        if (deadBossNum == bossCount)
+        {
+            return false;
         }
         else
         {
-            return false;
+            return true;
         }
     }
 }
