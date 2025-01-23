@@ -419,4 +419,10 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _attackRange);
     }
+
+    //座標を移動(スタート時に使う)
+    public void SetPos(Vector3 pos)
+    {
+        this.transform.position = pos;
+    }
 }
