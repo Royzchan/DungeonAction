@@ -1845,8 +1845,8 @@ MonoBehaviour:
   width: 80
   height: 80
   roomCount: 20
-  roomMinSize: {x: 8, y: 8}
-  roomMaxSize: {x: 12, y: 12}
+  roomMinSize: {x: 5, y: 5}
+  roomMaxSize: {x: 10, y: 10}
   floorPrefab: {fileID: 3236148554509712915, guid: e6a4f6707660a9a4b84b6b56818c5dbc, type: 3}
   wallPrefab: {fileID: 3109040576957302478, guid: 2ddae79968efed744adf913759e0935b, type: 3}
   startRoomPrefab: {fileID: 3785119162388893768, guid: 3b8d285cd5a6b074785e49932ca2fdb5, type: 3}
@@ -2874,7 +2874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1255429647
 Light:
   m_ObjectHideFlags: 0
@@ -2887,7 +2887,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4618,7 +4618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 552216457610311545, guid: ef1d2bcfc7f2b9f47ab75e018113e228, type: 3}
       propertyPath: far clip plane
-      value: 500
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2389229894104349332, guid: ef1d2bcfc7f2b9f47ab75e018113e228, type: 3}
       propertyPath: m_LocalPosition.x

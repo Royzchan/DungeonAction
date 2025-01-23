@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     protected virtual void Start()
     {
+        //フレームレートを固定
+        Application.targetFrameRate = 60;
         _gameClearUIs.SetActive(false);
         _gameOverUIs.SetActive(false);
     }

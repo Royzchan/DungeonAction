@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6509553827016593285}
   - component: {fileID: 8637895615378028413}
   - component: {fileID: 2622836693331727031}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallPanel_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,6 +162,10 @@ PrefabInstance:
       value: wall (3)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -226,6 +230,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
       propertyPath: m_Name
       value: wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -294,6 +302,10 @@ PrefabInstance:
       value: wall
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -358,6 +370,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
       propertyPath: m_Name
       value: wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b7cf4dde99589b54694947cb504e32ea, type: 3}
       propertyPath: m_StaticEditorFlags

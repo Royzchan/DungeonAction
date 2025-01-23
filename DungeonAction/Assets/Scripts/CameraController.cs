@@ -64,10 +64,23 @@ public class CameraController : MonoBehaviour
         // プレイヤーの中心位置にオフセットを追加
         Vector3 targetPosition = _player.transform.position + _playerOffset;
 
-        // カメラの位置をターゲットの周囲に設定
+        // カメラの理想的な位置を計算
         Quaternion rotation = Quaternion.Euler(_currentPitch, _currentYaw, 0);
-        Vector3 offset = rotation * new Vector3(0, 0, -_distance);
-        transform.position = targetPosition + offset;
+        Vector3 desiredOffset = rotation * new Vector3(0, 0, -_distance);
+        Vector3 desiredCameraPosition = targetPosition + desiredOffset;
+
+        // Raycastを使用してカメラとターゲット間の障害物を検出
+        RaycastHit hit;
+        if (Physics.Raycast(targetPosition, desiredOffset.normalized, out hit, _distance))
+        {
+            // 障害物がある場合、カメラを障害物の手前に配置
+            transform.position = hit.point - desiredOffset.normalized * 0.1f; // 少し手前にずらす
+        }
+        else
+        {
+            // 障害物がない場合、理想的な位置に配置
+            transform.position = desiredCameraPosition;
+        }
 
         // カメラがターゲットを向くように設定
         transform.LookAt(targetPosition);
