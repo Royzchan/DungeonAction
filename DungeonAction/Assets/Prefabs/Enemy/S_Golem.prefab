@@ -632,5 +632,6 @@ MonoBehaviour:
   _vigilanceRange: 10
   _attackRange: 2
   _attackCooldown: 1.5
+  _hpBarDisplayRange: 50
   _hpBar: {fileID: 2134971845844423765}
   _weaponObj: {fileID: 3048904606904858529}

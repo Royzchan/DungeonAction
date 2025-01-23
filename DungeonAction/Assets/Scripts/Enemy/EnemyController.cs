@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour
     private float _attackRange = 2f; // 攻撃可能な範囲
     [SerializeField]
     private float _attackCooldown = 1.5f; // 攻撃のクールダウン時間
+    [SerializeField]
+    private float _hpBarDisplayRange = 15f; // HPバーが表示される範囲
 
     private bool _alive = true; // 生存状態フラグ
     private bool _isAttacking = false; // 攻撃中フラグ
@@ -64,6 +66,8 @@ public class EnemyController : MonoBehaviour
             _hpSlider.maxValue = _maxHp;
             _hpSlider.value = _hp;
         }
+
+        _hpBar.SetActive(false); // HPバーを非表示に設定
     }
 
     // 毎フレームの処理
@@ -73,6 +77,23 @@ public class EnemyController : MonoBehaviour
         if (!_alive) return; // 敵が死んでいる場合も処理をスキップ
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position); // プレイヤーとの距離を計算
+
+        // HPバーの表示切り替え
+        if (distanceToPlayer <= _hpBarDisplayRange)
+        {
+            _hpBar.SetActive(true);
+            _hpBar.transform.rotation = Camera.main.transform.rotation; // HPバーを常にカメラに向ける
+        }
+        else
+        {
+            _hpBar.SetActive(false);
+        }
+
+        // プレイヤーが警戒範囲外なら他の処理をスキップ
+        if (distanceToPlayer > _vigilanceRange)
+        {
+            return;
+        }
 
         if (!_isAttacking)
         {
@@ -108,8 +129,6 @@ public class EnemyController : MonoBehaviour
         {
             Die(); // HPが0以下の場合死亡処理を実行
         }
-
-        _hpBar.transform.rotation = Camera.main.transform.rotation; // HPバーを常にカメラに向ける
 
         if (_hpSlider != null)
         {
