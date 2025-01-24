@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
     private InputAction _avoidAction;
     [SerializeField]
     private InputAction _dashAction;
+    [SerializeField]
+    private InputAction _suspensionAction;
 
     [Header("ïêäÌê›íË")]
     [SerializeField]
@@ -96,6 +98,8 @@ public class PlayerController : MonoBehaviour
         _avoidAction.started += OnAvoid;
         _avoidAction?.Enable();
         _dashAction?.Enable();
+        _suspensionAction?.Enable();
+        _suspensionAction.started += OnSuspension;
     }
 
     private void OnDisable()
@@ -111,6 +115,8 @@ public class PlayerController : MonoBehaviour
         _avoidAction.started -= OnAvoid;
         _avoidAction?.Disable();
         _dashAction?.Disable();
+        _suspensionAction?.Disable();
+        _suspensionAction.started -= OnSuspension;
     }
 
     private void Awake()
@@ -396,6 +402,18 @@ public class PlayerController : MonoBehaviour
     private void OnAvoid(InputAction.CallbackContext context)
     {
         StartAvoid();
+    }
+
+    private void OnSuspension(InputAction.CallbackContext context)
+    {
+        if (!_gm.OpenSetting)
+        {
+            _gm.ViewSettingCanvas();
+        }
+        else
+        {
+            _gm.HideSettingCanvas();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

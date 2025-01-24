@@ -51,4 +51,16 @@ public class GameManager_Normal : GameManager
             return true;
         }
     }
+
+    public override void ViewSettingCanvas()
+    {
+        base.ViewSettingCanvas();
+        Time.timeScale = 0;
+    }
+
+    public override void HideSettingCanvas()
+    {
+        base.HideSettingCanvas();
+        Time.timeScale = 1;
+    }
 }
