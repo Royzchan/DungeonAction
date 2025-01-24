@@ -378,6 +378,7 @@
 "Assets/Scripts/PlayerHPBarController.cs"
 "Assets/Scripts/PlayerStaminaBarController.cs"
 "Assets/Scripts/SceneChanger.cs"
+"Assets/Scripts/SettingController.cs"
 "Assets/Scripts/TitleManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"

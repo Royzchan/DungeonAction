@@ -85,4 +85,32 @@ public class CameraController : MonoBehaviour
         // カメラがターゲットを向くように設定
         transform.LookAt(targetPosition);
     }
+
+    /// <summary>
+    /// カメラの感度のX軸をセットする関数
+    /// </summary>
+    /// <param name="value">セットする感度の数値</param>
+    public void SetRotateSpeedYaw(float value)
+    {
+        _rotationSpeed.x = value;
+    }
+
+    /// <summary>
+    /// カメラの感度のY軸をセット
+    /// </summary>
+    /// <param name="value">セットする感度の数値</param>
+    public void SetRotateSpeedPitch(float value)
+    {
+        _rotationSpeed.y = value;
+    }
+
+    public float GetRotateSpeedYaw()
+    {
+        return _rotationSpeed.x;
+    }
+
+    public float GetRotateSpeedPitch()
+    {
+        return _rotationSpeed.y;
+    }
 }
