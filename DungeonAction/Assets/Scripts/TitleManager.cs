@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class TitleManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private GameObject _modeSelectCanvas;
+
     void Start()
     {
-        
+        _modeSelectCanvas.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void ViewModeSelectCanvas()
+    {
+        _modeSelectCanvas.SetActive(true);
+    }
+
+    public void HideModeSelectCanvas()
+    {
+        _modeSelectCanvas.SetActive(false);
     }
 }

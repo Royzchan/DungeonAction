@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 64ede8390e02e654c8ee624a81fd6e3d, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -151,6 +151,7 @@ MonoBehaviour:
   _vigilanceRange: 3
   _attackRange: 1.5
   _attackCooldown: 1.5
+  _hpBarDisplayRange: 15
   _hpBar: {fileID: 786530080}
   _attackHitBox: {fileID: 1474510117}
 --- !u!54 &28149252
@@ -570,6 +571,7 @@ MonoBehaviour:
   _vigilanceRange: 3
   _attackRange: 1.5
   _attackCooldown: 1.5
+  _hpBarDisplayRange: 15
   _hpBar: {fileID: 567372417}
   _attackHitBox: {fileID: 952439970}
 --- !u!54 &246049104
@@ -4252,6 +4254,7 @@ MonoBehaviour:
   _vigilanceRange: 3
   _attackRange: 1.5
   _attackCooldown: 1.5
+  _hpBarDisplayRange: 15
   _hpBar: {fileID: 515205392}
   _attackHitBox: {fileID: 897610610}
 --- !u!54 &2068490036
