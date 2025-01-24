@@ -27,11 +27,20 @@ public class DungeonCreator : MonoBehaviour
     private Rect bossRoom;
     private bool bossRoomCreated = false;
 
+    private MapController _mapController;
+
     void Start()
     {
         _gm = FindAnyObjectByType<GameManager>();
         _player = FindAnyObjectByType<PlayerController>();
+        _mapController = FindAnyObjectByType<MapController>();
         GenerateDungeon();
+        // マップを初期化
+        if (_mapController != null)
+        {
+            _mapController.InitializeMap(dungeonMap);
+        }
+
         InstantiateDungeon();
         PlaceEnemies(); // 敵を配置
         PlacePlayer();
@@ -211,24 +220,27 @@ public class DungeonCreator : MonoBehaviour
 
     void InstantiateDungeon()
     {
+        // マップの中心を計算
+        Vector3 offset = new Vector3(width / 2 * 4, 0, height / 2 * 4);
+
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                Vector3 position = new Vector3(x, 0, y);
+                Vector3 position = new Vector3(x * 4, 0, y * 4) - offset;
                 switch (dungeonMap[x, y])
                 {
                     case 1:
-                        Instantiate(floorPrefab, position * 4, Quaternion.identity);
+                        Instantiate(floorPrefab, position, Quaternion.identity);
                         break;
                     case 2:
-                        Instantiate(startRoomPrefab, position * 4, Quaternion.identity);
+                        Instantiate(startRoomPrefab, position, Quaternion.identity);
                         break;
                     case 3:
-                        Instantiate(bossRoomPrefab, position * 4, Quaternion.identity);
+                        Instantiate(bossRoomPrefab, position, Quaternion.identity);
                         break;
                     default:
-                        Instantiate(wallPrefab, position * 4, Quaternion.identity);
+                        Instantiate(wallPrefab, position, Quaternion.identity);
                         break;
                 }
             }
@@ -240,7 +252,8 @@ public class DungeonCreator : MonoBehaviour
         if (_player != null)
         {
             Vector2Int startCenter = GetRoomCenter(startRoom);
-            Vector3 playerPosition = new Vector3(startCenter.x * 4, 0, startCenter.y * 4);
+            Vector3 offset = new Vector3(width / 2 * 4, 0, height / 2 * 4);
+            Vector3 playerPosition = new Vector3(startCenter.x * 4, 0, startCenter.y * 4) - offset;
             _player.SetPos(playerPosition);
         }
     }
@@ -269,20 +282,23 @@ public class DungeonCreator : MonoBehaviour
 
     void PlaceBoss(Vector2Int center)
     {
+        Vector3 offset = new Vector3(width / 2 * 4, 0, height / 2 * 4);
         foreach (GameObject bossPrefab in bossPrefabs)
         {
             Vector3 spawnPosition = new Vector3(
                 center.x * 4 + Random.Range(-1f, 1f),
                 0,
                 center.y * 4 + Random.Range(-1f, 1f)
-            );
+            ) - offset;
             var boss = Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
             _gm.AddBossEnemy(boss);
         }
     }
 
+
     void PlaceRandomEnemies(Rect room, int count)
     {
+        Vector3 offset = new Vector3(width / 2 * 4, 0, height / 2 * 4);
         for (int i = 0; i < count; i++)
         {
             int randomX = (int)Random.Range(room.xMin + 1, room.xMax - 1);
@@ -291,7 +307,7 @@ public class DungeonCreator : MonoBehaviour
             if (dungeonMap[randomX, randomY] == 1) // 床が配置された場所にのみ配置
             {
                 GameObject randomEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-                Vector3 spawnPosition = new Vector3(randomX * 4, 0, randomY * 4);
+                Vector3 spawnPosition = new Vector3(randomX * 4, 0, randomY * 4) - offset;
                 Instantiate(randomEnemy, spawnPosition, Quaternion.identity);
             }
         }

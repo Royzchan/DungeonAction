@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public bool GamePlaying { get { return _gamePlaying; } }
     private bool _openSetting = false;
     public bool OpenSetting { get { return _openSetting; } }
+    private bool _openMap = false;
+    public bool OpenMap { get { return _openMap; } }
     protected float _timer = 0f; // タイマーの総経過時間
     protected bool _isTimerRunning = false; // タイマーの開始/停止フラグ
 
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
     private GameObject _gameOverUIs;
     [SerializeField]
     private GameObject _settingCanvas;
+    [SerializeField]
+    private GameObject _mapCanvas;
 
     [SerializeField]
     protected List<GameObject> _bossEnemy;
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         _gameClearUIs.SetActive(false);
         _gameOverUIs.SetActive(false);
+        if (_mapCanvas != null) _mapCanvas.SetActive(false);
 
         if (_settingCanvas != null) _settingCanvas.SetActive(false);
     }
@@ -140,5 +145,17 @@ public class GameManager : MonoBehaviour
     {
         _settingCanvas.SetActive(false);
         _openSetting = false;
+    }
+
+    public virtual void ViewMapCanvas()
+    {
+        _mapCanvas.SetActive(true);
+        _openMap = true;
+    }
+
+    public virtual void HideMapCanvas()
+    {
+        _mapCanvas.SetActive(false);
+        _openMap = false;
     }
 }

@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rb;
     private Animator _animator;
     private GameManager _gm;
+    [SerializeField]
+    private MapController _mapController;
 
     [SerializeField]
     private Transform _cameraTransform; // プレイヤーの動きに基づくカメラの向き
@@ -52,6 +54,8 @@ public class PlayerController : MonoBehaviour
     private InputAction _dashAction;
     [SerializeField]
     private InputAction _suspensionAction;
+    [SerializeField]
+    private InputAction _mapAction;
 
     [Header("武器設定")]
     [SerializeField]
@@ -100,6 +104,8 @@ public class PlayerController : MonoBehaviour
         _dashAction?.Enable();
         _suspensionAction?.Enable();
         _suspensionAction.started += OnSuspension;
+        _mapAction?.Enable();
+        _mapAction.started += OnMap;
     }
 
     private void OnDisable()
@@ -117,6 +123,8 @@ public class PlayerController : MonoBehaviour
         _dashAction?.Disable();
         _suspensionAction?.Disable();
         _suspensionAction.started -= OnSuspension;
+        _mapAction?.Disable();
+        _mapAction.started -= OnMap;
     }
 
     private void Awake()
@@ -132,6 +140,9 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _gm = FindAnyObjectByType<GameManager>();
+        _mapController = FindAnyObjectByType<MapController>();
+        // マップに初期位置を送信
+        //UpdatePlayerPositionOnMap();
 
         // 武器のコライダー設定
         if (_sowrdObj != null)
@@ -244,6 +255,9 @@ public class PlayerController : MonoBehaviour
                 EndAvoid();
             }
         }
+
+        // マップに現在の座標と向きを送る
+        //UpdatePlayerPositionOnMap();
     }
 
     private void Attack()
@@ -416,6 +430,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnMap(InputAction.CallbackContext context)
+    {
+        if (!_gm.OpenMap)
+        {
+            _gm.ViewMapCanvas();
+        }
+        else
+        {
+            _gm.HideMapCanvas();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // 武器の攻撃判定
@@ -442,5 +468,28 @@ public class PlayerController : MonoBehaviour
     public void SetPos(Vector3 pos)
     {
         this.transform.position = pos;
+    }
+
+    /// <summary>
+    /// マップにプレイヤーの位置と向きを更新
+    /// </summary>
+    private void UpdatePlayerPositionOnMap()
+    {
+        if (_mapController != null)
+        {
+            // 現在のプレイヤー座標 (Grid単位で送信)
+            Vector3 position = transform.position;
+            Vector2Int gridPosition = new Vector2Int(Mathf.FloorToInt(position.x) / 4, Mathf.FloorToInt(position.z) / 4);
+
+            // 現在の向き
+            Vector3 forward = transform.forward;
+            Vector2Int facingDirection = new Vector2Int(
+                Mathf.RoundToInt(forward.x),
+                Mathf.RoundToInt(forward.z)
+            );
+
+            // マップコントローラーを更新
+            _mapController.UpdatePlayerPosition(gridPosition, facingDirection);
+        }
     }
 }

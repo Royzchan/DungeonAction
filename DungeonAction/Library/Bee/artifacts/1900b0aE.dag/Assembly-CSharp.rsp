@@ -373,6 +373,7 @@
 "Assets/Scripts/Enemy/TestEnemyController.cs"
 "Assets/Scripts/GameManager/GameManager.cs"
 "Assets/Scripts/GameManager/GameManager_Normal.cs"
+"Assets/Scripts/MapController.cs"
 "Assets/Scripts/MouseController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerHPBarController.cs"
