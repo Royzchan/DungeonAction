@@ -257,7 +257,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // マップに現在の座標と向きを送る
-        //UpdatePlayerPositionOnMap();
+        UpdatePlayerPositionOnMap();
     }
 
     private void Attack()

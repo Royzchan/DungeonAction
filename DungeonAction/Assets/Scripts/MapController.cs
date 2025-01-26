@@ -17,6 +17,8 @@ public class MapController : MonoBehaviour
 
     private GameObject playerIcon;      // プレイヤーを表すアイコン
     private float tileSize = 20f;       // UI上の1マスのサイズ (ピクセル)
+    [SerializeField]
+    private float _playerTileSize = 50f;
 
     private Vector2 playerPosition;     // プレイヤーの現在位置 (詳細な位置指定が可能)
 
@@ -53,7 +55,8 @@ public class MapController : MonoBehaviour
         // プレイヤーアイコンを生成
         playerIcon = Instantiate(playerIconPrefab, mapGridParent);
         RectTransform playerRect = playerIcon.GetComponent<RectTransform>();
-        playerRect.sizeDelta = new Vector2(tileSize, tileSize);
+        playerRect.sizeDelta = new Vector2(_playerTileSize, _playerTileSize);
+        playerRect.rotation = Quaternion.Euler(0, 0, 90f);
 
         // 親の中心位置調整
         CenterMapGrid();
@@ -103,7 +106,7 @@ public class MapController : MonoBehaviour
 
         // プレイヤーアイコンの向きを更新
         float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg;
-        playerRect.localRotation = Quaternion.Euler(0, 0, angle);
+        playerRect.localRotation = Quaternion.Euler(0, 0, angle - 90f);
     }
 
     /// <summary>
