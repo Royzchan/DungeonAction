@@ -32,6 +32,11 @@ public class TitleUIController : MonoBehaviour
             _tm = FindAnyObjectByType<TitleManager>();
         }
         _nowSelect = 0;
+
+        for (int i = 0; i < _buttonsRect.Count; i++)
+        {
+            _buttonsRect[i].sizeDelta = _firstButtonSize[i];
+        }
         if (_buttonsRect[_nowSelect] != null) _buttonsRect[_nowSelect].sizeDelta = _firstButtonSize[_nowSelect] * 1.2f;
     }
 

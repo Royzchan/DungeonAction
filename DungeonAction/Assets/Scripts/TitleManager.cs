@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
@@ -26,6 +25,11 @@ public class TitleManager : MonoBehaviour
     InputAction _downAction;
     [SerializeField]
     InputAction _decisionAction;
+
+    [SerializeField]
+    private string _sceneName_Normal = "TestScene";
+    [SerializeField]
+    private string _sceneName_Endless = "TestScene";
 
     private void OnEnable()
     {
@@ -72,6 +76,9 @@ public class TitleManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// タイトルシーンのトップ画面へ移動
+    /// </summary>
     public void GoTop()
     {
         _nowScene = Scene.Top;
@@ -83,6 +90,9 @@ public class TitleManager : MonoBehaviour
         if (_UIController[(int)Scene.Top] != null) _nowUIController = _UIController[(int)Scene.Top];
     }
 
+    /// <summary>
+    /// タイトルシーンのモードセレクト画面へ移動
+    /// </summary>
     public void GoModeSelect()
     {
         _nowScene = Scene.ModeSelect;
@@ -94,6 +104,9 @@ public class TitleManager : MonoBehaviour
         if (_UIController[(int)Scene.ModeSelect] != null) _nowUIController = _UIController[(int)Scene.ModeSelect];
     }
 
+    /// <summary>
+    /// タイトルシーンの設定画面へ移動
+    /// </summary>
     public void GoSetting()
     {
         _nowScene = Scene.Setting;
@@ -105,6 +118,9 @@ public class TitleManager : MonoBehaviour
         if (_UIController[(int)Scene.Setting] != null) _nowUIController = _UIController[(int)Scene.Setting];
     }
 
+    /// <summary>
+    /// タイトルシーンのランキング画面へ移動
+    /// </summary>
     public void GoRanking()
     {
         _nowScene = Scene.Ranking;
@@ -138,5 +154,21 @@ public class TitleManager : MonoBehaviour
         {
             _nowUIController.Decision();
         }
+    }
+
+    /// <summary>
+    /// ノーマルモードでゲームスタート
+    /// </summary>
+    public void GameStart_Normal()
+    {
+        SceneManager.LoadScene(_sceneName_Normal);
+    }
+
+    /// <summary>
+    /// エンドレスモードでゲームスタート
+    /// </summary>
+    public void GameStartEndless()
+    {
+        SceneManager.LoadScene(_sceneName_Endless);
     }
 }

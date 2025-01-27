@@ -16,9 +16,11 @@ public class TopUIController : TitleUIController
         switch (_nowSelect)
         {
             case (int)SelectList.ModeSelect:
+                _tm.GoModeSelect();
                 break;
 
             case (int)SelectList.Setting:
+                _tm.GoSetting();
                 break;
 
             case (int)SelectList.GameEnd:

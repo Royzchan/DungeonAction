@@ -382,6 +382,7 @@
 "Assets/Scripts/SettingController.cs"
 "Assets/Scripts/TitleManager.cs"
 "Assets/Scripts/TitleUIController/ModeSelectUIController.cs"
+"Assets/Scripts/TitleUIController/SettingUIController.cs"
 "Assets/Scripts/TitleUIController/TitleUIController.cs"
 "Assets/Scripts/TitleUIController/TopUIController.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
