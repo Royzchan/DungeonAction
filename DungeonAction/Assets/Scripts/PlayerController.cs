@@ -212,6 +212,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _gm = FindAnyObjectByType<GameManager>();
+        if (_gm == null) Debug.LogError("GameManagerÇ™ë∂ç›ÇµÇƒÇ¢Ç‹ÇπÇÒ");
         _settingController = FindAnyObjectByType<SettingController>();
         if (_settingController != null) _settingController.SetPlayer(this);
         _mapController = FindAnyObjectByType<MapController>();

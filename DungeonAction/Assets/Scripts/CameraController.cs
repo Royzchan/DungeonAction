@@ -37,6 +37,7 @@ public class CameraController : MonoBehaviour
         }
         _playerController = _player.GetComponent<PlayerController>();
         _gm = FindAnyObjectByType<GameManager>();
+        if (_gm == null) Debug.LogError("GameManager‚ª‘¶İ‚µ‚Ä‚¢‚Ü‚¹‚ñ");
     }
 
     void Update()

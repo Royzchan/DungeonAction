@@ -32,6 +32,7 @@ public class DungeonCreator : MonoBehaviour
     void Start()
     {
         _gm = FindAnyObjectByType<GameManager>();
+        if (_gm == null) Debug.LogError("GameManagerÇ™ë∂ç›ÇµÇƒÇ¢Ç‹ÇπÇÒ");
         _player = FindAnyObjectByType<PlayerController>();
         _mapController = FindAnyObjectByType<MapController>();
         GenerateDungeon();
@@ -291,7 +292,7 @@ public class DungeonCreator : MonoBehaviour
                 center.y * 4 + Random.Range(-1f, 1f)
             ) - offset;
             var boss = Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
-            _gm.AddBossEnemy(boss);
+            if (_gm != null) _gm.AddBossEnemy(boss);
         }
     }
 

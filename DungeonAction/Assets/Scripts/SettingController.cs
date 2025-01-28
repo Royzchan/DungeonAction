@@ -46,6 +46,7 @@ public class SettingController : MonoBehaviour
     {
         _cameraController = Camera.main.GetComponent<CameraController>();
         _gm = FindAnyObjectByType<GameManager>();
+        if (_gm == null) Debug.LogError("GameManagerが存在していません");
 
         //感度設定スライダーの最大値、最小値を設定
         if (_setRotateSlider_Yaw != null)
@@ -102,7 +103,6 @@ public class SettingController : MonoBehaviour
     public void SelectUp()
     {
         _nowSelect--;
-        Debug.Log(_nowSelect);
         if (_nowSelect < 0)
         {
             _nowSelect = 0;
@@ -115,8 +115,6 @@ public class SettingController : MonoBehaviour
     public void SelectDown()
     {
         _nowSelect++;
-        Debug.Log(_nowSelect);
-        Debug.Log(_maxSelect);
         if (_nowSelect >= _maxSelect)
         {
             _nowSelect = _maxSelect - 1;
