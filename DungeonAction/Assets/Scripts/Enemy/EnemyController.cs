@@ -41,6 +41,11 @@ public class EnemyController : MonoBehaviour
     private Collider _collider; // 敵のコライダー
     private GameManager _gm;
 
+    private void Awake()
+    {
+        
+    }
+
     // 初期化処理
     protected virtual void Start()
     {

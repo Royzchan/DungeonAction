@@ -11,6 +11,7 @@ public class MouseController : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR
         // Escapeキーでマウスのロックを解除する機能（デバッグ用）
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -24,5 +25,6 @@ public class MouseController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+#endif
     }
 }

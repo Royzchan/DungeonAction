@@ -204,10 +204,7 @@ public class PlayerController : MonoBehaviour
         // 初期化
         _hp = _maxHp;
         _stamina = _maxStamina;
-    }
 
-    private void Start()
-    {
         // コンポーネントの取得
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
@@ -216,15 +213,16 @@ public class PlayerController : MonoBehaviour
         _settingController = FindAnyObjectByType<SettingController>();
         if (_settingController != null) _settingController.SetPlayer(this);
         _mapController = FindAnyObjectByType<MapController>();
-        // マップに初期位置を送信
-        //UpdatePlayerPositionOnMap();
-
         // 武器のコライダー設定
         if (_sowrdObj != null)
         {
             _sowrdCollider = _sowrdObj.GetComponent<Collider>();
             _sowrdCollider.enabled = false;
         }
+    }
+
+    private void Start()
+    {
     }
 
     private void Update()

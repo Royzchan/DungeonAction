@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - S_MinionController
     - SceneChanger
     - SettingController
+    - SettingUIController
     - TitleManager
     - TopUIController
     DOTween.dll:
@@ -38,8 +39,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnimatorStateTransitionInspector
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -92,7 +96,13 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: TitleManager
+    methodName: GoTop
+  - assembly: Assembly-CSharp
+    fullTypeName: TitleManager
+    methodName: GoTop
   sceneClasses:
     Assets/Scenes/TestScene.unity:
     - Class: 1
@@ -136,39 +146,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1602}
     - Class: 114
-      Script: {instanceID: 1648}
+      Script: {instanceID: 1650}
     - Class: 114
-      Script: {instanceID: 1714}
+      Script: {instanceID: 1716}
     - Class: 114
-      Script: {instanceID: 2834}
+      Script: {instanceID: 2836}
     - Class: 114
-      Script: {instanceID: 3054}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 5600}
+      Script: {instanceID: 3390}
     - Class: 114
-      Script: {instanceID: 5682}
+      Script: {instanceID: 5602}
     - Class: 114
-      Script: {instanceID: 6534}
+      Script: {instanceID: 5684}
     - Class: 114
-      Script: {instanceID: 6900}
+      Script: {instanceID: 6536}
     - Class: 114
-      Script: {instanceID: 9476}
+      Script: {instanceID: 6902}
     - Class: 114
-      Script: {instanceID: 9488}
+      Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 9604}
+      Script: {instanceID: 9550}
     - Class: 114
-      Script: {instanceID: 9612}
+      Script: {instanceID: 9670}
     - Class: 114
-      Script: {instanceID: 9620}
+      Script: {instanceID: 9682}
     - Class: 114
-      Script: {instanceID: 9652}
+      Script: {instanceID: 9690}
     - Class: 114
-      Script: {instanceID: 9658}
+      Script: {instanceID: 9730}
     - Class: 114
-      Script: {instanceID: 9714}
+      Script: {instanceID: 9736}
+    - Class: 114
+      Script: {instanceID: 9794}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -217,39 +229,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 1648}
+      Script: {instanceID: 1602}
     - Class: 114
-      Script: {instanceID: 2344}
+      Script: {instanceID: 1650}
     - Class: 114
-      Script: {instanceID: 2834}
+      Script: {instanceID: 2346}
     - Class: 114
-      Script: {instanceID: 3054}
+      Script: {instanceID: 2836}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3782}
+      Script: {instanceID: 3390}
     - Class: 114
-      Script: {instanceID: 4442}
+      Script: {instanceID: 3784}
     - Class: 114
-      Script: {instanceID: 4568}
+      Script: {instanceID: 4444}
     - Class: 114
-      Script: {instanceID: 4864}
+      Script: {instanceID: 4570}
     - Class: 114
-      Script: {instanceID: 5682}
+      Script: {instanceID: 4866}
     - Class: 114
-      Script: {instanceID: 6534}
+      Script: {instanceID: 5684}
     - Class: 114
-      Script: {instanceID: 6900}
+      Script: {instanceID: 6536}
     - Class: 114
-      Script: {instanceID: 9670}
+      Script: {instanceID: 6902}
     - Class: 114
-      Script: {instanceID: 9726}
+      Script: {instanceID: 9542}
     - Class: 114
-      Script: {instanceID: 61838}
+      Script: {instanceID: 9690}
     - Class: 114
-      Script: {instanceID: 63024}
+      Script: {instanceID: 9718}
+    - Class: 114
+      Script: {instanceID: 9762}
+    - Class: 114
+      Script: {instanceID: 9806}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -269,22 +285,28 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: cde618686d62cad5d199674d6efb7469
-    assemblyName: Assembly-CSharp
-    namespaceName: UnityChan
-    className: IdleChanger
-  - hash:
-      serializedVersion: 2
       Hash: e0e01fcb97134847e4978d9a035def70
     assemblyName: Assembly-CSharp
     namespaceName: UnityChan
     className: UnityChanControlScriptWithRgidBody
   - hash:
       serializedVersion: 2
-      Hash: abdf92fe512a73d6d2106e30d8a3d029
+      Hash: cde618686d62cad5d199674d6efb7469
+    assemblyName: Assembly-CSharp
+    namespaceName: UnityChan
+    className: IdleChanger
+  - hash:
+      serializedVersion: 2
+      Hash: b93497e3e47abe0a225a438a12fab5ad
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: fac6df0ee29001571b2679975530c1fa
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TitleManager
   - hash:
       serializedVersion: 2
       Hash: 867f88e61ac3a1d0992154bc4b0e4172
@@ -1667,6 +1689,12 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
+      Hash: 33a9516d733b1a48461ba773fbe41a0a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SettingUIController
+  - hash:
+      serializedVersion: 2
       Hash: 9fb1c3ab48b256d508ecddd967f98652
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1775,6 +1803,12 @@ ScriptsOnlyBuild:
     className: IKCtrlRightHand
   - hash:
       serializedVersion: 2
+      Hash: 81fd22a684ba308299cb847a746b4f62
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Togglescript
+  - hash:
+      serializedVersion: 2
       Hash: 4166580c620718548959a77fa7b43fc1
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1823,6 +1857,12 @@ ScriptsOnlyBuild:
     className: MapController
   - hash:
       serializedVersion: 2
+      Hash: fb57ed2cd331535572beb001d2dd353e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TitleUIController
+  - hash:
+      serializedVersion: 2
       Hash: 35e0b31791c377513b6fc7b9568c50cd
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1865,6 +1905,18 @@ ScriptsOnlyBuild:
     className: TMP_DigitValidator
   - hash:
       serializedVersion: 2
+      Hash: eb112ef5d7614e51803a75373037caf0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Slide
+  - hash:
+      serializedVersion: 2
+      Hash: 9598dfe91501f328a16baee718c5c70e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TopUIController
+  - hash:
+      serializedVersion: 2
       Hash: 571cd6b321abba4ed60d2cd49250f231
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1895,12 +1947,6 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
-      Hash: 1b82ff118feb6dffba530f28e6f47f78
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TitleManager
-  - hash:
-      serializedVersion: 2
       Hash: a8865ea7c8780b8120f7086f6a11aef8
     assemblyName: Assembly-CSharp
     namespaceName: UnityChan
@@ -1917,6 +1963,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SkeletonEnemyController
+  - hash:
+      serializedVersion: 2
+      Hash: f1c72f1f5608fa216ec1a63496da4004
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ModeSelectUIController
   - hash:
       serializedVersion: 2
       Hash: dc700a321988b3ba7a2343adc113c9ae
@@ -1961,7 +2013,7 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
-      Hash: 6630acd874207a6328210adf9635c4f8
+      Hash: ec720632f545a0092370f3078195a116
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SettingController
@@ -1983,26 +2035,8 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SceneChanger
-  - hash:
-      serializedVersion: 2
-      Hash: fb57ed2cd331535572beb001d2dd353e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TitleUIController
-  - hash:
-      serializedVersion: 2
-      Hash: 9598dfe91501f328a16baee718c5c70e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TopUIController
-  - hash:
-      serializedVersion: 2
-      Hash: f1c72f1f5608fa216ec1a63496da4004
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ModeSelectUIController
   platform: 19
   scenePathNames:
   - Assets/Scenes/TitleScene.unity
   - Assets/Scenes/TestScene.unity
-  playerPath: C:/Users/G2241/Desktop/DungeonAction/DungeonAction/Build/DungeonAction.exe
+  playerPath: D:/Unity/DungeonAction/DungeonAction/Build/DungeonAction.exe
