@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private GameManager _gm;
     [SerializeField]
+    private SettingController _settingController;
+    [SerializeField]
     private MapController _mapController;
-
     [SerializeField]
     private Transform _cameraTransform; // プレイヤーの動きに基づくカメラの向き
 
@@ -53,9 +54,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private InputAction _dashAction;
     [SerializeField]
-    private InputAction _suspensionAction;
-    [SerializeField]
     private InputAction _mapAction;
+
+    [Header("Setting Input Actions")]
+    [SerializeField]
+    private InputAction _upAction;
+    [SerializeField]
+    private InputAction _downAction;
+    [SerializeField]
+    private InputAction _rightAction;
+    [SerializeField]
+    private InputAction _leftAction;
+    [SerializeField]
+    private InputAction _decisionAction;
+
+    [Header("Other Input Action")]
+    [SerializeField]
+    private InputAction _suspensionAction;
 
     [Header("武器設定")]
     [SerializeField]
@@ -91,40 +106,97 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        // 入力を有効化
-        _moveAction?.Enable();
+        //フィールドの入力を有効化
+        EnableFieldAction();
+        //設定の入力を無効化
+        DisableSettingAction();
+
+        //フィールドのアクションを追加
         _attackAction.started += OnAttack;
-        _attackAction?.Enable();
         _skillAction.started += OnSkill;
-        _skillAction?.Enable();
         _specialAction.started += OnSpecial;
-        _specialAction?.Enable();
         _avoidAction.started += OnAvoid;
-        _avoidAction?.Enable();
-        _dashAction?.Enable();
+        _mapAction.started += OnMap;
+        //設定のアクションを追加
+        _upAction.started += OnUpButton;
+        _downAction.started += OnDownButton;
+        _decisionAction.started += OnDecisionButton;
+
         _suspensionAction?.Enable();
         _suspensionAction.started += OnSuspension;
-        _mapAction?.Enable();
-        _mapAction.started += OnMap;
     }
 
     private void OnDisable()
     {
-        // 入力を無効化
-        _moveAction?.Disable();
+        //フィールドの入力を無効化
+        DisableFieldAction();
+        //設定の入力を無効化
+        DisableSettingAction();
+
         _attackAction.started -= OnAttack;
-        _attackAction?.Disable();
         _skillAction.started -= OnSkill;
-        _skillAction?.Disable();
         _specialAction.started -= OnSpecial;
-        _specialAction?.Disable();
         _avoidAction.started -= OnAvoid;
-        _avoidAction?.Disable();
-        _dashAction?.Disable();
+        _mapAction.started -= OnMap;
+
+        _upAction.started -= OnUpButton;
+        _downAction.started -= OnDownButton;
+        _decisionAction.started -= OnDecisionButton;
+
         _suspensionAction?.Disable();
         _suspensionAction.started -= OnSuspension;
+    }
+
+    /// <summary>
+    /// フィールドで押せるボタンの入力の有効化
+    /// </summary>
+    private void EnableFieldAction()
+    {
+        _moveAction?.Enable();
+        _attackAction?.Enable();
+        _skillAction?.Enable();
+        _specialAction?.Enable();
+        _avoidAction?.Enable();
+        _dashAction?.Enable();
+        _mapAction?.Enable();
+    }
+
+    /// <summary>
+    /// フィールドで使うボタンの入力を無効化
+    /// </summary>
+    private void DisableFieldAction()
+    {
+        _moveAction?.Disable();
+        _attackAction?.Disable();
+        _skillAction?.Disable();
+        _specialAction?.Disable();
+        _avoidAction?.Disable();
+        _dashAction?.Disable();
         _mapAction?.Disable();
-        _mapAction.started -= OnMap;
+    }
+
+    /// <summary>
+    /// 設定で使うボタンの入力を有効化
+    /// </summary>
+    private void EnableSettingAction()
+    {
+        _upAction?.Enable();
+        _downAction?.Enable();
+        _rightAction?.Enable();
+        _leftAction?.Enable();
+        _decisionAction?.Enable();
+    }
+
+    /// <summary>
+    /// 設定で使うボタンの入力を無効化
+    /// </summary>
+    private void DisableSettingAction()
+    {
+        _upAction?.Disable();
+        _downAction?.Disable();
+        _rightAction?.Disable();
+        _leftAction?.Disable();
+        _decisionAction?.Disable();
     }
 
     private void Awake()
@@ -140,6 +212,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _gm = FindAnyObjectByType<GameManager>();
+        _settingController = FindAnyObjectByType<SettingController>();
         _mapController = FindAnyObjectByType<MapController>();
         // マップに初期位置を送信
         //UpdatePlayerPositionOnMap();
@@ -423,10 +496,18 @@ public class PlayerController : MonoBehaviour
         if (!_gm.OpenSetting)
         {
             _gm.ViewSettingCanvas();
+            //フィールドの入力を無効化
+            DisableFieldAction();
+            //設定の入力を有効化
+            EnableSettingAction();
         }
         else
         {
             _gm.HideSettingCanvas();
+            //フィールドの入力を有効化
+            EnableFieldAction();
+            //設定の入力を有効化
+            DisableSettingAction();
         }
     }
 
@@ -440,6 +521,21 @@ public class PlayerController : MonoBehaviour
         {
             _gm.HideMapCanvas();
         }
+    }
+
+    private void OnUpButton(InputAction.CallbackContext context)
+    {
+        _settingController.SelectUp();
+    }
+
+    private void OnDownButton(InputAction.CallbackContext context)
+    {
+        _settingController.SelectDown();
+    }
+
+    private void OnDecisionButton(InputAction.CallbackContext context)
+    {
+        _settingController.Decision();
     }
 
     private void OnTriggerEnter(Collider other)
