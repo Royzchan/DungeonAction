@@ -120,6 +120,8 @@ public class PlayerController : MonoBehaviour
         //ê›íËÇÃÉAÉNÉVÉáÉìÇí«â¡
         _upAction.started += OnUpButton;
         _downAction.started += OnDownButton;
+        _rightAction.started += OnRightButton;
+        _leftAction.started += OnLeftButton;
         _decisionAction.started += OnDecisionButton;
 
         _suspensionAction?.Enable();
@@ -141,6 +143,8 @@ public class PlayerController : MonoBehaviour
 
         _upAction.started -= OnUpButton;
         _downAction.started -= OnDownButton;
+        _rightAction.started -= OnRightButton;
+        _leftAction.started -= OnLeftButton;
         _decisionAction.started -= OnDecisionButton;
 
         _suspensionAction?.Disable();
@@ -531,6 +535,16 @@ public class PlayerController : MonoBehaviour
     private void OnDownButton(InputAction.CallbackContext context)
     {
         _settingController.SelectDown();
+    }
+
+    private void OnRightButton(InputAction.CallbackContext context)
+    {
+        _settingController.SelectRight();
+    }
+
+    private void OnLeftButton(InputAction.CallbackContext context)
+    {
+        _settingController.SelectLeft();
     }
 
     private void OnDecisionButton(InputAction.CallbackContext context)
