@@ -17,6 +17,9 @@ public class SettingController : MonoBehaviour
     }
 
     private CameraController _cameraController;
+    private GameManager _gm;
+    private PlayerController _player;
+
     [SerializeField]
     private float _maxRotateSpeed = 500;
     [SerializeField]
@@ -42,6 +45,7 @@ public class SettingController : MonoBehaviour
     private void Awake()
     {
         _cameraController = Camera.main.GetComponent<CameraController>();
+        _gm = FindAnyObjectByType<GameManager>();
 
         //感度設定スライダーの最大値、最小値を設定
         if (_setRotateSlider_Yaw != null)
@@ -124,6 +128,22 @@ public class SettingController : MonoBehaviour
 
     public void Decision()
     {
+        switch (_nowSelect)
+        {
+            case (int)SelectList.ReturnGame:
+                if (_gm != null) _gm.HideSettingCanvas();
+                _player.EnableFieldAction();
+                _player.DisableSettingAction();
+                break;
 
+            case (int)SelectList.Gotitle:
+                if (_gm != null) _gm.GoTitle();
+                break;
+        }
+    }
+
+    public void SetPlayer(PlayerController player)
+    {
+        _player = player;
     }
 }

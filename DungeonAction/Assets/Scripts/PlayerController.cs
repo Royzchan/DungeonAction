@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// フィールドで押せるボタンの入力の有効化
     /// </summary>
-    private void EnableFieldAction()
+    public void EnableFieldAction()
     {
         _moveAction?.Enable();
         _attackAction?.Enable();
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// フィールドで使うボタンの入力を無効化
     /// </summary>
-    private void DisableFieldAction()
+    public void DisableFieldAction()
     {
         _moveAction?.Disable();
         _attackAction?.Disable();
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// 設定で使うボタンの入力を有効化
     /// </summary>
-    private void EnableSettingAction()
+    public void EnableSettingAction()
     {
         _upAction?.Enable();
         _downAction?.Enable();
@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// 設定で使うボタンの入力を無効化
     /// </summary>
-    private void DisableSettingAction()
+    public void DisableSettingAction()
     {
         _upAction?.Disable();
         _downAction?.Disable();
@@ -213,6 +213,7 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _gm = FindAnyObjectByType<GameManager>();
         _settingController = FindAnyObjectByType<SettingController>();
+        if (_settingController != null) _settingController.SetPlayer(this);
         _mapController = FindAnyObjectByType<MapController>();
         // マップに初期位置を送信
         //UpdatePlayerPositionOnMap();

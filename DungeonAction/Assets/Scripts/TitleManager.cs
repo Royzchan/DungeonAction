@@ -41,7 +41,7 @@ public class TitleManager : MonoBehaviour
         _decisionAction.started += OnDecisionButton;
     }
 
-    private void OnOnDisable()
+    private void OnDisable()
     {
         _upAction?.Disable();
         _upAction.started -= OnUpButton;

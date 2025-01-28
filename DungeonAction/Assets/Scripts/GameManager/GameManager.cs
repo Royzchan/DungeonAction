@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI; // UIコンポーネント用
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -143,6 +143,7 @@ public class GameManager : MonoBehaviour
 
     public virtual void HideSettingCanvas()
     {
+        Time.timeScale = 1;
         _settingCanvas.SetActive(false);
         _openSetting = false;
     }
@@ -157,5 +158,11 @@ public class GameManager : MonoBehaviour
     {
         _mapCanvas.SetActive(false);
         _openMap = false;
+    }
+
+    public void GoTitle()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("TitleScene");
     }
 }
