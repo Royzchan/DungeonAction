@@ -448,6 +448,294 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6275351407980519906, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
   m_PrefabInstance: {fileID: 9126763411329572899}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &865000929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865000923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f40d9a5a9fc204a922c27ac5f0ae2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingController: {fileID: 0}
+  _mapController: {fileID: 0}
+  _cameraTransform: {fileID: 226183430}
+  _maxHp: 100
+  _maxStamina: 100
+  _attackPower: 20
+  _attackRange: 5
+  _defenses: 100
+  _speed: 5
+  _dashSpeed: 7.5
+  _invincibilityDuration: 0.5
+  _moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ab9b5168-06eb-431c-8345-3c4847a605cf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: KeyBoard
+      m_Id: b734b7ce-dd6f-4e7a-8f9f-153ac52d4e60
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: d3fdf09f-17d7-44ce-8a45-f55a12ed90e3
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: aa480514-d1ac-454b-ad3e-94cc51535096
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: eafd9ff6-8a14-4417-b877-afdc9bb4a2bc
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 7e71fc09-caef-40ed-b051-5074297a3aaa
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+  _attackAction:
+    m_Name: Attack
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: edb1a3e6-1c36-45be-afbd-825f1a720455
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3d778c0a-dd13-4edc-b042-0e2a4f24f53b
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Attack
+      m_Flags: 0
+    m_Flags: 0
+  _skillAction:
+    m_Name: Skill
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: bb554bcd-9217-42e3-a643-25654635339c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 78aa3ba6-76d8-441a-8a96-5a3de9bb98b9
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Skill
+      m_Flags: 0
+    m_Flags: 0
+  _specialAction:
+    m_Name: Special
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 20021701-d182-4329-9b73-a5252b0067ac
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4ffbca4b-caf1-4a9b-9fc0-f68922f1a5ba
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Special
+      m_Flags: 0
+    m_Flags: 0
+  _avoidAction:
+    m_Name: Avoid
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 24911928-c48b-480d-8316-e21c5e546d43
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8ad5144d-05d8-45bf-a626-768987a1b76b
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Avoid
+      m_Flags: 0
+    m_Flags: 0
+  _dashAction:
+    m_Name: Dash
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 3b088884-3173-4f2b-be01-607a845ca4b9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 199eec65-718e-4d97-bad8-12dc3fdeeb87
+      m_Path: <Keyboard>/shift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Dash
+      m_Flags: 0
+    m_Flags: 0
+  _mapAction:
+    m_Name: Map
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: ff303c23-eff7-47fa-89eb-69ed11f5e9ea
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: da5aaa55-74b4-4157-8055-fd4e3a6dcb2b
+      m_Path: <Keyboard>/m
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Map
+      m_Flags: 0
+    m_Flags: 0
+  _upAction:
+    m_Name: Up
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: af0a1a5b-050f-466d-a3f1-bea016d4b8dd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b5f84991-4ba2-4159-b9da-1b1ab756a31a
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Up
+      m_Flags: 0
+    m_Flags: 0
+  _downAction:
+    m_Name: Down
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: c3ff46a7-ac82-419a-8ca4-da5b055b456e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 447fd48b-1e20-4d60-9c01-58a0b55775ef
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Down
+      m_Flags: 0
+    m_Flags: 0
+  _rightAction:
+    m_Name: Right
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 851a816f-b069-4308-88c7-6ceba66532de
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 67b502fa-7404-44f6-ac7d-35811923c9ae
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Right
+      m_Flags: 0
+    m_Flags: 0
+  _leftAction:
+    m_Name: Left
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c04590d3-5425-494a-a07d-8eaa313044b8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: cb721d03-4ec0-4d5e-996d-58db0a5aca41
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left
+      m_Flags: 0
+    m_Flags: 0
+  _decisionAction:
+    m_Name: Decision
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 1efa216b-4f43-4aa3-be76-da3ff37592a2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 02d07ad4-2e0e-480e-b537-f20580df4e53
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Decision
+      m_Flags: 0
+    - m_Name: 
+      m_Id: fe8f3d52-dabc-4a0c-bde0-74a8d48a794d
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Decision
+      m_Flags: 0
+    m_Flags: 0
+  _suspensionAction:
+    m_Name: Suspension
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 28ac7f48-a6b0-4dd6-87e2-c6d5abdc0746
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6c34908c-8a98-4ee0-b90a-e6cd36ee22b1
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Suspension
+      m_Flags: 0
+    m_Flags: 0
+  _staminaRecoveryRate: 5
+  _staminaConsumptionRate: 10
+  _avoidConsumptionAmount: 10
+  _sowrdObj: {fileID: 1939913269}
 --- !u!1 &867364370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1762,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab190eb9a50f46a41ae1093b61eb5d00, type: 3}
+--- !u!1 &1939913269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 387743833567453791, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
+  m_PrefabInstance: {fileID: 9126763411329572899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2104405368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1829722505820200543, guid: 317e7d511a9ce2643aa4c613824cd0dc, type: 3}
@@ -2495,12 +2788,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5952211440095512900, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
+    - {fileID: 2391773107721803635, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6275351407980519906, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
       insertIndex: -1
       addedObject: {fileID: 947399630}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7910618971927313076, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 865000929}
   m_SourcePrefab: {fileID: 100100000, guid: 9290f34f04bb3324fb7c42a8c2da6428, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

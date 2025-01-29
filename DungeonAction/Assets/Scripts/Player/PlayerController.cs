@@ -23,11 +23,11 @@ public class PlayerController : MonoBehaviour
     private float _maxStamina; // 最大スタミナ
     private float _stamina;
     [SerializeField]
-    private float _attackPower = 100f; // 攻撃力
+    protected float _attackPower = 100f; // 攻撃力
     [SerializeField]
-    private float _attackRange = 5f; // 攻撃範囲
+    protected float _attackRange = 5f; // 攻撃範囲
     [SerializeField]
-    private float _defenses = 100f; // 防御力
+    protected float _defenses = 100f; // 防御力
     [SerializeField]
     private float _speed = 5f; // 通常移動速度
     [SerializeField]
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private bool _alive = true; // 生存状態フラグ
     private bool _isInvincible = false; // 無敵状態フラグ
     private bool _isAvoiding = false; // 回避中フラグ
+    private bool _useSkill = false;
     private Vector2 _avoidDirection = Vector2.zero; // 回避方向
 
     [Header("Input Actions")]
@@ -72,12 +73,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private InputAction _suspensionAction;
 
-    [Header("武器設定")]
-    [SerializeField]
-    private GameObject _sowrdObj; // プレイヤーの武器オブジェクト
-    private Collider _sowrdCollider; // 武器のコライダー
-
-    private HashSet<Collider> _hitEnemies = new HashSet<Collider>(); // 攻撃した敵の記録
+    protected HashSet<Collider> _hitEnemies = new HashSet<Collider>(); // 攻撃した敵の記録
 
     private Vector2 _moveDirection = Vector2.zero; // プレイヤーの移動方向
 
@@ -85,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private string _moveSpeedStr = "MoveSpeed"; // アニメーション用の速度パラメータ
     private string _attackStr = "isAttack"; // 攻撃アニメーショントリガー
+    private string _skillStr = "isSkill";
     private string _avoidStr = "isAvoid"; // 回避アニメーショントリガー
     private string _dieStr = "Die"; // 死亡アニメーショントリガー
 
@@ -203,7 +200,7 @@ public class PlayerController : MonoBehaviour
         _decisionAction?.Disable();
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         // 初期化
         _hp = _maxHp;
@@ -217,12 +214,6 @@ public class PlayerController : MonoBehaviour
         _settingController = FindAnyObjectByType<SettingController>();
         if (_settingController != null) _settingController.SetPlayer(this);
         _mapController = FindAnyObjectByType<MapController>();
-        // 武器のコライダー設定
-        if (_sowrdObj != null)
-        {
-            _sowrdCollider = _sowrdObj.GetComponent<Collider>();
-            _sowrdCollider.enabled = false;
-        }
     }
 
     private void Start()
@@ -337,7 +328,7 @@ public class PlayerController : MonoBehaviour
         UpdatePlayerPositionOnMap();
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
         if (!_attackNow)
         {
@@ -357,13 +348,7 @@ public class PlayerController : MonoBehaviour
             }
 
             _animator.SetTrigger(_attackStr);
-
-            // 武器のコライダーを有効化
-            if (_sowrdCollider != null)
-            {
-                _sowrdCollider.enabled = true;
-                _hitEnemies.Clear();
-            }
+            _hitEnemies.Clear();
         }
     }
 
@@ -391,20 +376,17 @@ public class PlayerController : MonoBehaviour
         return nearestEnemy;
     }
 
-    public void EndAttack()
+    public virtual void EndAttack()
     {
         // 攻撃終了時の処理
         _attackNow = false;
-        if (_sowrdCollider != null)
-        {
-            _sowrdCollider.enabled = false;
-        }
         _hitEnemies.Clear();
     }
 
     private void Skill()
     {
         Debug.Log("スキル発動");
+        _animator.SetTrigger(_skillStr);
     }
 
     private void Special()
@@ -550,21 +532,6 @@ public class PlayerController : MonoBehaviour
     private void OnDecisionButton(InputAction.CallbackContext context)
     {
         _settingController.Decision();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // 武器の攻撃判定
-        bool hitAttack = _sowrdCollider.enabled && !_hitEnemies.Contains(other);
-        if (hitAttack)
-        {
-            EnemyController enemy = other.GetComponent<EnemyController>();
-            if (enemy != null)
-            {
-                enemy.Damage(_attackPower);
-                _hitEnemies.Add(other);
-            }
-        }
     }
 
     private void OnDrawGizmosSelected()
