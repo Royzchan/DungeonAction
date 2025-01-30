@@ -29,17 +29,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float _defenses = 100f; // 防御力
     [SerializeField]
+    private float _skillCoolTime = 5.0f; //スキルのクールタイム
+    private float _skillCoolTimeCounter = 0;
+    [SerializeField]
+    private float _getSpecialPoin = 15.0f; //スキル使用時に獲得できる必殺ポイント
+    [SerializeField]
+    private float _maxSpecialPoint = 100f;//貯められる必殺ポイントの最大値
+    [SerializeField]
+    private float _specialPoint = 100f; //必殺技を打つのに必要な必殺ポイント
+    [SerializeField]
+    private float _specialCoolTime = 10.0f; //必殺技のクールタイム
+    private float _specialCoolTimeCounter = 0f;
+    [SerializeField]
     private float _speed = 5f; // 通常移動速度
     [SerializeField]
     private float _dashSpeed = 7.5f; // ダッシュ時の移動速度
     [SerializeField]
     private float _invincibilityDuration = 0.5f; // 無敵時間の長さ
 
-    private bool _alive = true; // 生存状態フラグ
+    private bool _alive = true;         // 生存状態フラグ
     private bool _isInvincible = false; // 無敵状態フラグ
-    private bool _isAvoiding = false; // 回避中フラグ
-    private bool _useSkill = false; //スキル使用中フラグ
-    private bool _useSpecial = false;// 必殺技使用中フラグ
+    private bool _isAvoiding = false;   // 回避中フラグ
+    private bool _skillNow = false;     // スキル使用中フラグ
+    private bool _canUseSkill = true;   // スキル使用可能フラグ
+    private bool _specialNow = false;   // 必殺技使用中フラグ
+    private bool _canUseSpecial = true; // 必殺使用可能フラグ
     private Vector2 _avoidDirection = Vector2.zero; // 回避方向
 
     [Header("Input Actions")]
@@ -237,7 +251,8 @@ public class PlayerController : MonoBehaviour
         }
 
         // 攻撃中は移動不可
-        _moveDirection = _attackNow || _isAvoiding ? Vector2.zero : _moveAction.ReadValue<Vector2>();
+        bool canMove = _attackNow || _skillNow || _specialNow || _isAvoiding;
+        _moveDirection = canMove ? Vector2.zero : _moveAction.ReadValue<Vector2>();
 
         // スタミナ回復（ダッシュ中、回避中では回復しない）
         if (!_dashAction.IsPressed() && _stamina < _maxStamina && !_isAvoiding)
@@ -330,9 +345,13 @@ public class PlayerController : MonoBehaviour
         UpdatePlayerPositionOnMap();
     }
 
+    /// <summary>
+    /// 攻撃処理
+    /// </summary>
     protected virtual void Attack()
     {
-        if (!_attackNow)
+        bool canAttack = !_attackNow && !_skillNow && !_specialNow;
+        if (canAttack)
         {
             _attackNow = true;
 
@@ -385,23 +404,111 @@ public class PlayerController : MonoBehaviour
         _hitEnemies.Clear();
     }
 
-    private void Skill()
+    /// <summary>
+    /// スキル処理
+    /// </summary>
+    protected virtual void Skill()
     {
-        Debug.Log("スキル発動");
-        _animator.SetTrigger(_skillStr);
+        bool canSkill = _canUseSkill && !_skillNow && !_specialNow;
+        if (canSkill)
+        {
+            _canUseSkill = false;
+            _skillCoolTimeCounter = _skillCoolTime;
+            _skillNow = true;
+            // 最寄りの敵を向く
+            Collider nearestEnemy = FindNearestEnemy();
+            if (nearestEnemy != null)
+            {
+                Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
+                directionToEnemy.y = 0;
+                if (directionToEnemy.magnitude > 0.1f)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
+                    transform.rotation = targetRotation;
+                }
+            }
+            _animator.SetTrigger(_skillStr);
+            _hitEnemies.Clear();
+        }
     }
 
-    private void Special()
+    public virtual void EndSkill()
     {
-        Debug.Log("必殺技発動");
-        _animator.SetTrigger(_specialStr);
+        _skillNow = false;
+        _hitEnemies.Clear();
     }
+
+    /// <summary>
+    /// スキルのクールタイムをチェック
+    /// </summary>
+    private void CheckSkillCoolTime()
+    {
+        if (_canUseSkill) return;
+        _skillCoolTimeCounter -= Time.deltaTime;
+        if (_skillCoolTimeCounter <= 0)
+        {
+            _skillCoolTimeCounter = 0;
+            _canUseSkill = true;
+        }
+    }
+
+    /// <summary>
+    /// 必殺技のクールタイムをチェック
+    /// </summary>
+    private void CheckSpecialCoolTime()
+    {
+        if (_canUseSpecial) return;
+        _specialCoolTimeCounter -= Time.deltaTime;
+        if (_specialCoolTimeCounter <= 0)
+        {
+            _specialCoolTimeCounter = 0;
+            _canUseSpecial = true;
+        }
+    }
+
+    /// <summary>
+    /// 必殺技処理
+    /// </summary>
+    protected virtual void Special()
+    {
+        bool canSpecial = _canUseSpecial && !_specialNow;
+        if (canSpecial)
+        {
+            _specialNow = true;
+            // 最寄りの敵を向く
+            Collider nearestEnemy = FindNearestEnemy();
+            if (nearestEnemy != null)
+            {
+                Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
+                directionToEnemy.y = 0;
+                if (directionToEnemy.magnitude > 0.1f)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
+                    transform.rotation = targetRotation;
+                }
+            }
+            _animator.SetTrigger(_specialStr);
+            _hitEnemies.Clear();
+        }
+    }
+
+    public virtual void EndSpecial()
+    {
+        _specialNow = false;
+        _hitEnemies.Clear();
+    }
+
 
     private void StartAvoid()
     {
         if (_attackNow)
         {
             _attackNow = false;
+        }
+
+        if (_skillNow || _specialNow)
+        {
+            return;
         }
 
         // スタミナが足りていない場合は回避できない
