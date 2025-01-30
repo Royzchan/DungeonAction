@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour
     private bool _alive = true; // 生存状態フラグ
     private bool _isInvincible = false; // 無敵状態フラグ
     private bool _isAvoiding = false; // 回避中フラグ
-    private bool _useSkill = false;
+    private bool _useSkill = false; //スキル使用中フラグ
+    private bool _useSpecial = false;// 必殺技使用中フラグ
     private Vector2 _avoidDirection = Vector2.zero; // 回避方向
 
     [Header("Input Actions")]
@@ -80,10 +81,11 @@ public class PlayerController : MonoBehaviour
     private bool _attackNow = false; // 現在攻撃中か
 
     private string _moveSpeedStr = "MoveSpeed"; // アニメーション用の速度パラメータ
-    private string _attackStr = "isAttack"; // 攻撃アニメーショントリガー
-    private string _skillStr = "isSkill";
-    private string _avoidStr = "isAvoid"; // 回避アニメーショントリガー
-    private string _dieStr = "Die"; // 死亡アニメーショントリガー
+    private string _attackStr = "isAttack";     // 攻撃アニメーショントリガー
+    private string _skillStr = "isSkill";       // スキルアニメーショントリガー
+    private string _specialStr = "isSpecial";   // 必殺技アニメーショントリガー
+    private string _avoidStr = "isAvoid";       // 回避アニメーショントリガー
+    private string _dieStr = "Die";             // 死亡アニメーショントリガー
 
     #region ゲッター
     public float MaxHP { get { return _maxHp; } }
@@ -392,6 +394,7 @@ public class PlayerController : MonoBehaviour
     private void Special()
     {
         Debug.Log("必殺技発動");
+        _animator.SetTrigger(_specialStr);
     }
 
     private void StartAvoid()
