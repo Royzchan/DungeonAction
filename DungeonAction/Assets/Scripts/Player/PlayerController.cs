@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private bool _alive = true;         // 生存状態フラグ
     private bool _isInvincible = false; // 無敵状態フラグ
     private bool _isAvoiding = false;   // 回避中フラグ
+    private bool _attackNow = false;    // 攻撃中フラグ
     private bool _skillNow = false;     // スキル使用中フラグ
     private bool _canUseSkill = true;   // スキル使用可能フラグ
     private bool _specialNow = false;   // 必殺技使用中フラグ
@@ -91,8 +92,6 @@ public class PlayerController : MonoBehaviour
     protected HashSet<Collider> _hitEnemies = new HashSet<Collider>(); // 攻撃した敵の記録
 
     private Vector2 _moveDirection = Vector2.zero; // プレイヤーの移動方向
-
-    private bool _attackNow = false; // 現在攻撃中か
 
     private string _moveSpeedStr = "MoveSpeed"; // アニメーション用の速度パラメータ
     private string _attackStr = "isAttack";     // 攻撃アニメーショントリガー
@@ -260,6 +259,10 @@ public class PlayerController : MonoBehaviour
             _stamina += _staminaRecoveryRate * Time.deltaTime;
             if (_stamina > _maxStamina) _stamina = _maxStamina;
         }
+
+        //スキル、必殺技のクールタイムチェック
+        CheckSkillCoolTime();
+        CheckSpecialCoolTime();
     }
 
     private void FixedUpdate()
@@ -415,6 +418,8 @@ public class PlayerController : MonoBehaviour
             _canUseSkill = false;
             _skillCoolTimeCounter = _skillCoolTime;
             _skillNow = true;
+            if (_attackNow) _attackNow = false;
+            if (_isAvoiding) _isAvoiding = false;
             // 最寄りの敵を向く
             Collider nearestEnemy = FindNearestEnemy();
             if (nearestEnemy != null)
@@ -475,6 +480,8 @@ public class PlayerController : MonoBehaviour
         if (canSpecial)
         {
             _specialNow = true;
+            if (_attackNow) _attackNow = false;
+            if (_isAvoiding) _isAvoiding = false;
             // 最寄りの敵を向く
             Collider nearestEnemy = FindNearestEnemy();
             if (nearestEnemy != null)
