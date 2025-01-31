@@ -378,6 +378,10 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger(_attackStr);
             _hitEnemies.Clear();
         }
+        else
+        {
+            return;
+        }
     }
 
     private Collider FindNearestEnemy()
@@ -412,33 +416,40 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
+    /// ƒXƒLƒ‹g—p‰Â”\‚Èó‘Ô‚©‚Ì”»’èæ“¾ŠÖ”
+    /// </summary>
+    /// <returns></returns>
+    protected bool CanSkill()
+    {
+        return _canUseSkill && !_skillNow && !_specialNow;
+    }
+
+    /// <summary>
     /// ƒXƒLƒ‹ˆ—
     /// </summary>
     protected virtual void Skill()
     {
-        bool canSkill = _canUseSkill && !_skillNow && !_specialNow;
-        if (canSkill)
+        if (!CanSkill()) return;
+
+        _canUseSkill = false;
+        _skillCoolTimeCounter = _skillCoolTime;
+        _skillNow = true;
+        if (_attackNow) _attackNow = false;
+        if (_isAvoiding) _isAvoiding = false;
+        // ÅŠñ‚è‚Ì“G‚ğŒü‚­
+        Collider nearestEnemy = FindNearestEnemy();
+        if (nearestEnemy != null)
         {
-            _canUseSkill = false;
-            _skillCoolTimeCounter = _skillCoolTime;
-            _skillNow = true;
-            if (_attackNow) _attackNow = false;
-            if (_isAvoiding) _isAvoiding = false;
-            // ÅŠñ‚è‚Ì“G‚ğŒü‚­
-            Collider nearestEnemy = FindNearestEnemy();
-            if (nearestEnemy != null)
+            Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
+            directionToEnemy.y = 0;
+            if (directionToEnemy.magnitude > 0.1f)
             {
-                Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
-                directionToEnemy.y = 0;
-                if (directionToEnemy.magnitude > 0.1f)
-                {
-                    Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
-                    transform.rotation = targetRotation;
-                }
+                Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
+                transform.rotation = targetRotation;
             }
-            _animator.SetTrigger(_skillStr);
-            _hitEnemies.Clear();
         }
+        _animator.SetTrigger(_skillStr);
+        _hitEnemies.Clear();
     }
 
     public virtual void EndSkill()
@@ -475,32 +486,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    protected bool CanSpecial()
+    {
+        return _canUseSpecial && !_specialNow;
+    }
+
     /// <summary>
     /// •KE‹Zˆ—
     /// </summary>
     protected virtual void Special()
     {
-        bool canSpecial = _canUseSpecial && !_specialNow;
-        if (canSpecial)
+        if (!CanSpecial()) return;
+
+        _specialNow = true;
+        if (_attackNow) _attackNow = false;
+        if (_isAvoiding) _isAvoiding = false;
+        // ÅŠñ‚è‚Ì“G‚ğŒü‚­
+        Collider nearestEnemy = FindNearestEnemy();
+        if (nearestEnemy != null)
         {
-            _specialNow = true;
-            if (_attackNow) _attackNow = false;
-            if (_isAvoiding) _isAvoiding = false;
-            // ÅŠñ‚è‚Ì“G‚ğŒü‚­
-            Collider nearestEnemy = FindNearestEnemy();
-            if (nearestEnemy != null)
+            Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
+            directionToEnemy.y = 0;
+            if (directionToEnemy.magnitude > 0.1f)
             {
-                Vector3 directionToEnemy = (nearestEnemy.transform.position - transform.position).normalized;
-                directionToEnemy.y = 0;
-                if (directionToEnemy.magnitude > 0.1f)
-                {
-                    Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
-                    transform.rotation = targetRotation;
-                }
+                Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
+                transform.rotation = targetRotation;
             }
-            _animator.SetTrigger(_specialStr);
-            _hitEnemies.Clear();
         }
+        _animator.SetTrigger(_specialStr);
+        _hitEnemies.Clear();
     }
 
     public virtual void EndSpecial()

@@ -8,6 +8,10 @@ public class KnightController : PlayerController
     [SerializeField]
     private GameObject _sowrdObj; // プレイヤーの武器オブジェクト
     private Collider _sowrdCollider; // 武器のコライダー
+    [SerializeField]
+    private Collider _skillRangeCollider;
+    [SerializeField]
+    private Collider _specialRangeCollider;
     private bool _firstHitSkill = false;
 
     protected override void Awake()
@@ -20,61 +24,51 @@ public class KnightController : PlayerController
             _sowrdCollider = _sowrdObj.GetComponent<Collider>();
             _sowrdCollider.enabled = false;
         }
+        if (_skillRangeCollider != null) _skillRangeCollider.enabled = false;
+        if (_specialRangeCollider != null) _specialRangeCollider.enabled = false;
     }
 
     protected override void Attack()
     {
         base.Attack();
         // 武器のコライダーを有効化
-        if (_sowrdCollider != null)
-        {
-            _sowrdCollider.enabled = true;
-        }
+        if (_sowrdCollider != null) _sowrdCollider.enabled = true;
     }
 
     public override void EndAttack()
     {
         base.EndAttack();
-        if (_sowrdCollider != null)
-        {
-            _sowrdCollider.enabled = false;
-        }
+        if (_sowrdCollider != null) _sowrdCollider.enabled = false;
     }
 
     protected override void Skill()
     {
+        if (!CanSkill()) return;
+        if (_sowrdCollider != null) _sowrdCollider.enabled = true;
+        if (_skillRangeCollider != null) _skillRangeCollider.enabled = true;
         base.Skill();
-        if (_sowrdCollider != null)
-        {
-            _sowrdCollider.enabled = true;
-        }
     }
 
     public override void EndSkill()
     {
         base.EndSkill();
-        if (_sowrdCollider != null)
-        {
-            _sowrdCollider.enabled = false;
-        }
+        if (_sowrdCollider != null) _sowrdCollider.enabled = false;
+        if (_skillRangeCollider != null) _skillRangeCollider.enabled = false;
     }
 
     protected override void Special()
     {
+        if (!CanSpecial()) return;
+        if (_sowrdCollider != null) _sowrdCollider.enabled = true;
+        if (_specialRangeCollider != null) _specialRangeCollider.enabled = true;
         base.Special();
-        if (_sowrdCollider != null)
-        {
-            _sowrdCollider.enabled = true;
-        }
     }
 
     public override void EndSpecial()
     {
         base.EndSpecial();
-        if (_sowrdCollider != null)
-        {
-            _sowrdCollider.enabled = false;
-        }
+        if (_sowrdCollider != null) _sowrdCollider.enabled = false;
+        if (_specialRangeCollider != null) _specialRangeCollider.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
