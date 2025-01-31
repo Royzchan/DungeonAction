@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float _attackPower = 100f; // 攻撃力
     [SerializeField]
+    protected float _skillPowerUpRatio = 1.5f;　//　スキル時のダメージアップ倍率
+    [SerializeField]
+    protected float _specialPowerUpRatio = 2.0f; // 必殺技時のダメージアップ倍率
+    [SerializeField]
     protected float _attackRange = 5f; // 攻撃範囲
     [SerializeField]
     protected float _defenses = 100f; // 防御力
@@ -50,10 +54,10 @@ public class PlayerController : MonoBehaviour
     private bool _alive = true;         // 生存状態フラグ
     private bool _isInvincible = false; // 無敵状態フラグ
     private bool _isAvoiding = false;   // 回避中フラグ
-    private bool _attackNow = false;    // 攻撃中フラグ
-    private bool _skillNow = false;     // スキル使用中フラグ
+    protected bool _attackNow = false;    // 攻撃中フラグ
+    protected bool _skillNow = false;     // スキル使用中フラグ
     private bool _canUseSkill = true;   // スキル使用可能フラグ
-    private bool _specialNow = false;   // 必殺技使用中フラグ
+    protected bool _specialNow = false;   // 必殺技使用中フラグ
     private bool _canUseSpecial = true; // 必殺使用可能フラグ
     private Vector2 _avoidDirection = Vector2.zero; // 回避方向
 

@@ -8,6 +8,7 @@ public class KnightController : PlayerController
     [SerializeField]
     private GameObject _sowrdObj; // プレイヤーの武器オブジェクト
     private Collider _sowrdCollider; // 武器のコライダー
+    private bool _firstHitSkill = false;
 
     protected override void Awake()
     {
@@ -40,6 +41,42 @@ public class KnightController : PlayerController
         }
     }
 
+    protected override void Skill()
+    {
+        base.Skill();
+        if (_sowrdCollider != null)
+        {
+            _sowrdCollider.enabled = true;
+        }
+    }
+
+    public override void EndSkill()
+    {
+        base.EndSkill();
+        if (_sowrdCollider != null)
+        {
+            _sowrdCollider.enabled = false;
+        }
+    }
+
+    protected override void Special()
+    {
+        base.Special();
+        if (_sowrdCollider != null)
+        {
+            _sowrdCollider.enabled = true;
+        }
+    }
+
+    public override void EndSpecial()
+    {
+        base.EndSpecial();
+        if (_sowrdCollider != null)
+        {
+            _sowrdCollider.enabled = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // 武器の攻撃判定
@@ -49,7 +86,18 @@ public class KnightController : PlayerController
             EnemyController enemy = other.GetComponent<EnemyController>();
             if (enemy != null)
             {
-                enemy.Damage(_attackPower);
+                if (_specialNow)
+                {
+                    enemy.Damage(_attackPower * _specialPowerUpRatio);
+                }
+                else if (_skillNow)
+                {
+                    enemy.Damage(_attackPower * _skillPowerUpRatio);
+                }
+                else
+                {
+                    enemy.Damage(_attackPower);
+                }
                 _hitEnemies.Add(other);
             }
         }
