@@ -35,12 +35,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _skillCoolTime = 5.0f; //スキルのクールタイム
     private float _skillCoolTimeCounter = 0;
+    protected float _specialPoint = 0f;
     [SerializeField]
-    private float _getSpecialPoin = 15.0f; //スキル使用時に獲得できる必殺ポイント
+    protected float _getSpecialPoint = 15.0f; //スキル使用時に獲得できる必殺ポイント
     [SerializeField]
-    private float _maxSpecialPoint = 100f;//貯められる必殺ポイントの最大値
+    protected float _maxSpecialPoint = 100f;//貯められる必殺ポイントの最大値
     [SerializeField]
-    private float _specialPoint = 100f; //必殺技を打つのに必要な必殺ポイント
+    private float _useSpecialPoint = 100f; //必殺技を打つのに必要な必殺ポイント
     [SerializeField]
     private float _specialCoolTime = 10.0f; //必殺技のクールタイム
     private float _specialCoolTimeCounter = 0f;
@@ -54,10 +55,10 @@ public class PlayerController : MonoBehaviour
     private bool _alive = true;         // 生存状態フラグ
     private bool _isInvincible = false; // 無敵状態フラグ
     private bool _isAvoiding = false;   // 回避中フラグ
-    protected bool _attackNow = false;    // 攻撃中フラグ
-    protected bool _skillNow = false;     // スキル使用中フラグ
+    protected bool _attackNow = false;  // 攻撃中フラグ
+    protected bool _skillNow = false;   // スキル使用中フラグ
     private bool _canUseSkill = true;   // スキル使用可能フラグ
-    protected bool _specialNow = false;   // 必殺技使用中フラグ
+    protected bool _specialNow = false; // 必殺技使用中フラグ
     private bool _canUseSpecial = true; // 必殺使用可能フラグ
     private Vector2 _avoidDirection = Vector2.zero; // 回避方向
 
@@ -109,6 +110,9 @@ public class PlayerController : MonoBehaviour
     public float HP { get { return _hp; } }
     public float MaxStamina { get { return _maxStamina; } }
     public float Stamina { get { return _stamina; } }
+    public float SpecialPoint { get { return _specialPoint; } }
+    public float UseSpecialPoint { get { return _useSpecialPoint; } }
+    public float MaxSpecialPoint { get { return _maxSpecialPoint; } }
     public bool Alive { get { return _alive; } }
     #endregion
 
@@ -488,7 +492,7 @@ public class PlayerController : MonoBehaviour
 
     protected bool CanSpecial()
     {
-        return _canUseSpecial && !_specialNow;
+        return _canUseSpecial && !_specialNow && _specialPoint >= _useSpecialPoint;
     }
 
     /// <summary>
@@ -499,6 +503,7 @@ public class PlayerController : MonoBehaviour
         if (!CanSpecial()) return;
 
         _specialNow = true;
+        _specialPoint -= _useSpecialPoint;
         if (_attackNow) _attackNow = false;
         if (_isAvoiding) _isAvoiding = false;
         // 最寄りの敵を向く

@@ -44,6 +44,7 @@ public class KnightController : PlayerController
     protected override void Skill()
     {
         if (!CanSkill()) return;
+        _firstHitSkill = true;
         if (_sowrdCollider != null) _sowrdCollider.enabled = true;
         if (_skillRangeCollider != null) _skillRangeCollider.enabled = true;
         base.Skill();
@@ -73,26 +74,38 @@ public class KnightController : PlayerController
 
     private void OnTriggerEnter(Collider other)
     {
-        // ïêäÌÇÃçUåÇîªíË
-        bool hitAttack = _sowrdCollider.enabled && !_hitEnemies.Contains(other);
-        if (hitAttack)
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyController enemy = other.GetComponent<EnemyController>();
-            if (enemy != null)
+            // ïêäÌÇÃçUåÇîªíË
+            bool hitAttack = _sowrdCollider.enabled && !_hitEnemies.Contains(other);
+            if (hitAttack)
             {
-                if (_specialNow)
+                EnemyController enemy = other.GetComponent<EnemyController>();
+                if (enemy != null)
                 {
-                    enemy.Damage(_attackPower * _specialPowerUpRatio);
+                    if (_specialNow)
+                    {
+                        enemy.Damage(_attackPower * _specialPowerUpRatio);
+                    }
+                    else if (_skillNow)
+                    {
+                        enemy.Damage(_attackPower * _skillPowerUpRatio);
+                        if (_firstHitSkill)
+                        {
+                            _specialPoint += _getSpecialPoint;
+                            if (_specialPoint >= _maxSpecialPoint)
+                            {
+                                _specialPoint = _maxSpecialPoint;
+                            }
+                            _firstHitSkill = false;
+                        }
+                    }
+                    else
+                    {
+                        enemy.Damage(_attackPower);
+                    }
+                    _hitEnemies.Add(other);
                 }
-                else if (_skillNow)
-                {
-                    enemy.Damage(_attackPower * _skillPowerUpRatio);
-                }
-                else
-                {
-                    enemy.Damage(_attackPower);
-                }
-                _hitEnemies.Add(other);
             }
         }
     }
