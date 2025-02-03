@@ -137,8 +137,11 @@ public class GameManager : MonoBehaviour
 
     public virtual void ViewSettingCanvas()
     {
-        _settingCanvas.SetActive(true);
-        _openSetting = true;
+        if (_gamePlaying)
+        {
+            _settingCanvas.SetActive(true);
+            _openSetting = true;
+        }
     }
 
     public virtual void HideSettingCanvas()
