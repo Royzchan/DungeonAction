@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float _attackRange = 5f; // 攻撃範囲
     [SerializeField]
-    protected float _defenses = 100f; // 防御力
+    protected float _defense = 100f; // 防御力
     [SerializeField]
     private float _skillCoolTime = 5.0f; //スキルのクールタイム
     private float _skillCoolTimeCounter = 0;

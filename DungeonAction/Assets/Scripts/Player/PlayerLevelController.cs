@@ -17,7 +17,7 @@ public class PlayerLevelController : MonoBehaviour
     //ƒXƒLƒ‹ƒ|ƒCƒ“ƒg‚É‚æ‚Á‚Ä•ÏX‚Å‚«‚é”’l
     private float _hp = 100; // Å‘åHP
     private float _attack = 15; // UŒ‚—Í
-    private float _defenses = 15; // –hŒä—Í
+    private float _defense = 15; // –hŒä—Í
     private float _skillPowerUpRatio = 1.5f; // ƒXƒLƒ‹‚ÌŒø‰Ê”{—¦
     private float _specialPowerUpRatio = 2.0f; // •KE‹Z‚ÌŒø‰Ê”{—¦
 
@@ -31,7 +31,7 @@ public class PlayerLevelController : MonoBehaviour
     public int SkillPoint { get { return _skillPoint; } }
     public float HP { get { return _hp; } }
     public float Attack { get { return _attack; } }
-    public float Defenses { get { return _defenses; } }
+    public float Defense { get { return _defense; } }
     public float SkillPowerUpRatio { get { return _skillPowerUpRatio; } }
     public float SpecialPowerUpRatio { get { return _specialPowerUpRatio; } }
     #endregion
@@ -152,9 +152,9 @@ public class PlayerLevelController : MonoBehaviour
     /// –hŒä—Í‚Ì’l‚ğXV
     /// </summary>
     /// <param name="value">XVŒã‚Ì–hŒä—Í</param>
-    public void SetDefenses(float value)
+    public void SetDefense(float value)
     {
-        _defenses = value;
+        _defense = value;
     }
 
     /// <summary>
