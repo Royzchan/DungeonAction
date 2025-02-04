@@ -385,6 +385,7 @@
 "Assets/Scripts/Player/UIController/PlayerStaminaBarController.cs"
 "Assets/Scripts/SceneChanger.cs"
 "Assets/Scripts/SettingController.cs"
+"Assets/Scripts/SkillTreeController.cs"
 "Assets/Scripts/TitleManager.cs"
 "Assets/Scripts/TitleUIController/ModeSelectUIController.cs"
 "Assets/Scripts/TitleUIController/SettingUIController.cs"

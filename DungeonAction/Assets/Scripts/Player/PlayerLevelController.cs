@@ -16,8 +16,8 @@ public class PlayerLevelController : MonoBehaviour
 
     //スキルポイントによって変更できる数値
     private float _hp = 100; // 最大HP
-    private float _attack = 15; // 攻撃力
-    private float _defense = 15; // 防御力
+    private float _attack = 100; // 攻撃力
+    private float _defense = 100; // 防御力
     private float _skillPowerUpRatio = 1.5f; // スキルの効果倍率
     private float _specialPowerUpRatio = 2.0f; // 必殺技の効果倍率
 
@@ -36,7 +36,7 @@ public class PlayerLevelController : MonoBehaviour
     public float SpecialPowerUpRatio { get { return _specialPowerUpRatio; } }
     #endregion
 
-    void Start()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -68,6 +68,11 @@ public class PlayerLevelController : MonoBehaviour
         {
             Debug.LogError("レベルデータの読み込み失敗");
         }
+    }
+
+    void Start()
+    {
+
     }
 
     //ゲーム終了時に呼ばれる
