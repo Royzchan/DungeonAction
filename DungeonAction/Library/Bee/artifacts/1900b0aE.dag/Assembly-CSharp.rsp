@@ -379,6 +379,7 @@
 "Assets/Scripts/MouseController.cs"
 "Assets/Scripts/Player/KnightController.cs"
 "Assets/Scripts/Player/PlayerController.cs"
+"Assets/Scripts/Player/PlayerLevelController.cs"
 "Assets/Scripts/Player/UIController/PlayerHPBarController.cs"
 "Assets/Scripts/Player/UIController/PlayerSpecialGageController.cs"
 "Assets/Scripts/Player/UIController/PlayerStaminaBarController.cs"
