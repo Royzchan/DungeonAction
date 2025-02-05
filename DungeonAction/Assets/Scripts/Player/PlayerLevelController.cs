@@ -25,6 +25,12 @@ public class PlayerLevelController : MonoBehaviour
     private int _getSkillPoint = 5;
     private List<int> _levelUpEXP = new List<int>(); // レベルアップに必要な経験値
 
+    private float _hpUpValue = 15; // 1回で強化されるHPの量
+    private float _attackUpValue = 15; // 1回で強化される攻撃の量
+    private float _defenseUpValue = 15; // 1回で強化される防御力の量
+    private float _skillPowerUpValue = 0.1f; // 1回で強化されるスキル効果倍率の量
+    private float _specialPowerUpValue = 0.1f; // 1回で強化される必殺技の効果倍率の量
+
     #region ゲッター
     public int Level { get { return _level; } }
     public int EXP { get { return _exp; } }

@@ -122,4 +122,28 @@ public class SkillTreeController : MonoBehaviour
         _textRects[_nowSelect].DOScale(_textRects[_nowSelect].localScale * _upSizeScale, 0.3f).SetUpdate(true); ;
         _textRects[_nowSelect + 1].DOScale(Vector3.one, 0.3f).SetUpdate(true);
     }
+
+    /// <summary>
+    /// 選択しているステータスを上げる
+    /// </summary>
+    public void StatusUp()
+    {
+
+    }
+
+    /// <summary>
+    /// 選択しているステータスを下げる
+    /// </summary>
+    public void StatusDown()
+    {
+
+    }
+
+    /// <summary>
+    /// ステータスをリセット
+    /// </summary>
+    public void StatusReset()
+    {
+
+    }
 }

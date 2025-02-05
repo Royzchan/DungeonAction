@@ -10,6 +10,7 @@ public class TitleManager : MonoBehaviour
         Top,
         ModeSelect,
         Setting,
+        SkillTree,
         Ranking
     }
     private Scene _nowScene = Scene.Top;
@@ -18,6 +19,9 @@ public class TitleManager : MonoBehaviour
     private List<GameObject> _sceneCanvas;
     private List<TitleUIController> _UIController = new List<TitleUIController>();
     private TitleUIController _nowUIController;
+    [SerializeField]
+    private GameObject _skillTreeControllerCanvas;
+    private SkillTreeController _skillTreeController;
 
     [SerializeField]
     InputAction _upAction;
@@ -53,6 +57,9 @@ public class TitleManager : MonoBehaviour
 
     void Start()
     {
+        if (_skillTreeControllerCanvas != null)
+            _skillTreeController = _skillTreeControllerCanvas.GetComponent<SkillTreeController>();
+        _skillTreeControllerCanvas.SetActive(false);
         foreach (GameObject canvas in _sceneCanvas)
         {
             var UIController = canvas.GetComponent<TitleUIController>();
@@ -86,6 +93,7 @@ public class TitleManager : MonoBehaviour
         {
             canvas.SetActive(false);
         }
+        _skillTreeControllerCanvas.SetActive(false);
         if (_sceneCanvas[(int)Scene.Top] != null) _sceneCanvas[(int)Scene.Top].SetActive(true);
         if (_UIController[(int)Scene.Top] != null) _nowUIController = _UIController[(int)Scene.Top];
     }
@@ -100,6 +108,7 @@ public class TitleManager : MonoBehaviour
         {
             canvas.SetActive(false);
         }
+        _skillTreeControllerCanvas.SetActive(false);
         if (_sceneCanvas[(int)Scene.ModeSelect] != null) _sceneCanvas[(int)Scene.ModeSelect].SetActive(true);
         if (_UIController[(int)Scene.ModeSelect] != null) _nowUIController = _UIController[(int)Scene.ModeSelect];
     }
@@ -114,8 +123,23 @@ public class TitleManager : MonoBehaviour
         {
             canvas.SetActive(false);
         }
+        _skillTreeControllerCanvas.SetActive(false);
         if (_sceneCanvas[(int)Scene.Setting] != null) _sceneCanvas[(int)Scene.Setting].SetActive(true);
         if (_UIController[(int)Scene.Setting] != null) _nowUIController = _UIController[(int)Scene.Setting];
+    }
+
+    /// <summary>
+    /// スキルツリーを見る
+    /// </summary>
+    public void GoSkillTree()
+    {
+        _nowScene = Scene.SkillTree;
+        foreach (GameObject canvas in _sceneCanvas)
+        {
+            canvas.SetActive(false);
+        }
+        _skillTreeControllerCanvas.SetActive(true);
+        _nowUIController = null;
     }
 
     /// <summary>

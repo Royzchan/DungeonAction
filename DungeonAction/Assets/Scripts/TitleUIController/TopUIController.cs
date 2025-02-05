@@ -8,6 +8,7 @@ public class TopUIController : TitleUIController
     {
         ModeSelect,
         Setting,
+        SkillTree,
         GameEnd
     }
 
@@ -21,6 +22,10 @@ public class TopUIController : TitleUIController
 
             case (int)SelectList.Setting:
                 _tm.GoSetting();
+                break;
+
+            case (int)SelectList.SkillTree:
+                _tm.GoSkillTree();
                 break;
 
             case (int)SelectList.GameEnd:
