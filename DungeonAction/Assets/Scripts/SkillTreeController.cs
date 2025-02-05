@@ -96,28 +96,28 @@ public class SkillTreeController : MonoBehaviour
     }
 
     /// <summary>
-    /// 選択しているステータスを次に進める
+    /// 選択しているステータスを前に戻す
     /// </summary>
-    public void SelectNext()
+    public void SelectUp()
     {
-        _nowSelect++;
-        if (_nowSelect > (int)SkillTreeList.SpecialPower)
+        _nowSelect--;
+        if (_nowSelect < (int)SkillTreeList.HP)
         {
-            _nowSelect = (int)SkillTreeList.HP;
+            _nowSelect = (int)SkillTreeList.SpecialPower;
         }
         _textRects[_nowSelect].DOScale(_textRects[_nowSelect].localScale * _upSizeScale, 0.3f).SetUpdate(true); ;
         _textRects[_nowSelect + 1].DOScale(Vector3.one, 0.3f).SetUpdate(true);
     }
 
     /// <summary>
-    /// 選択しているステータスを前に戻す
+    /// 選択しているステータスを次に進める
     /// </summary>
-    public void SelectPreceding()
+    public void SelectDown()
     {
-        _nowSelect--;
-        if (_nowSelect < (int)SkillTreeList.HP)
+        _nowSelect++;
+        if (_nowSelect > (int)SkillTreeList.SpecialPower)
         {
-            _nowSelect = (int)SkillTreeList.SpecialPower;
+            _nowSelect = (int)SkillTreeList.HP;
         }
         _textRects[_nowSelect].DOScale(_textRects[_nowSelect].localScale * _upSizeScale, 0.3f).SetUpdate(true); ;
         _textRects[_nowSelect + 1].DOScale(Vector3.one, 0.3f).SetUpdate(true);
