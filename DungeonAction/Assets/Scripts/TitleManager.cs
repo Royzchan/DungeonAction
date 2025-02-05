@@ -58,8 +58,15 @@ public class TitleManager : MonoBehaviour
     void Start()
     {
         if (_skillTreeControllerCanvas != null)
+        {
             _skillTreeController = _skillTreeControllerCanvas.GetComponent<SkillTreeController>();
-        _skillTreeControllerCanvas.SetActive(false);
+            _skillTreeControllerCanvas.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("スキルツリーキャンバスがありません");
+        }
+
         foreach (GameObject canvas in _sceneCanvas)
         {
             var UIController = canvas.GetComponent<TitleUIController>();
@@ -158,6 +165,12 @@ public class TitleManager : MonoBehaviour
 
     private void OnUpButton(InputAction.CallbackContext context)
     {
+        if (_nowScene == Scene.SkillTree)
+        {
+            _skillTreeController.SelectUp();
+            return;
+        }
+
         if (_nowUIController != null)
         {
             _nowUIController.SelectUp();
@@ -166,6 +179,11 @@ public class TitleManager : MonoBehaviour
 
     private void OnDownButton(InputAction.CallbackContext context)
     {
+        if (_nowScene == Scene.SkillTree)
+        {
+            _skillTreeController.SelectDown();
+            return;
+        }
         if (_nowUIController != null)
         {
             _nowUIController.SelectDown();
@@ -174,6 +192,11 @@ public class TitleManager : MonoBehaviour
 
     private void OnDecisionButton(InputAction.CallbackContext context)
     {
+        if (_nowScene == Scene.SkillTree)
+        {
+            _skillTreeController.Decision();
+            return;
+        }
         if (_nowUIController != null)
         {
             _nowUIController.Decision();

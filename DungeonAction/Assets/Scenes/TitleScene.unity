@@ -2456,6 +2456,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 7214063025636151439, guid: f2e724eac0322bd4f855926b4d8f1dca, type: 3}
+      propertyPath: _closeButton
+      value: 
+      objectReference: {fileID: 1620662391}
     - target: {fileID: 7542007917471225440, guid: f2e724eac0322bd4f855926b4d8f1dca, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 400
@@ -2823,6 +2827,11 @@ CanvasRenderer:
 --- !u!1 &1502177689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8310217303251697221, guid: f2e724eac0322bd4f855926b4d8f1dca, type: 3}
+  m_PrefabInstance: {fileID: 1357534050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1620662391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3015319311846020002, guid: f2e724eac0322bd4f855926b4d8f1dca, type: 3}
   m_PrefabInstance: {fileID: 1357534050}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1622873672
