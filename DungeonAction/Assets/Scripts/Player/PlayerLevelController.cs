@@ -11,8 +11,16 @@ public class PlayerLevelController : MonoBehaviour
     private int _maxLevel = 99;
     private int _exp = 0; // 経験値
     [SerializeField]
-    private int _maxExp = 999999;//最大経験値
+    private int _maxExp = 999999;//最大経験値  
     private int _skillPoint = 0; // スキルポイント
+    private int _maxHaveSkillPoint = 0; // 現状持てる最大のスキルポイント数
+
+    //各ステータスの初期ステータス
+    private float _firstHp = 100;
+    private float _firstAttack = 100;
+    private float _firstDefense = 100;
+    private float _firstSkillPowerUpRatio = 1.5f;
+    private float _firstSpecialPowerUpRatio = 2.0f;
 
     //スキルポイントによって変更できる数値
     private float _hp = 100; // 最大HP
@@ -35,11 +43,22 @@ public class PlayerLevelController : MonoBehaviour
     public int Level { get { return _level; } }
     public int EXP { get { return _exp; } }
     public int SkillPoint { get { return _skillPoint; } }
+    public int MaxHaveSkillPoint { get { return _maxHaveSkillPoint; } }
+    public float FirstHp { get { return _firstHp; } }
+    public float FirstAttack { get { return _firstAttack; } }
+    public float FirstDefense { get { return _firstDefense; } }
+    public float FirstSkillPowerUpRatio { get { return _firstSkillPowerUpRatio; } }
+    public float FirstSpecialPowerUpRatio { get { return _firstSpecialPowerUpRatio; } }
     public float HP { get { return _hp; } }
     public float Attack { get { return _attack; } }
     public float Defense { get { return _defense; } }
     public float SkillPowerUpRatio { get { return _skillPowerUpRatio; } }
     public float SpecialPowerUpRatio { get { return _specialPowerUpRatio; } }
+    public float HPUpValue { get { return _hpUpValue; } }
+    public float AttackUpValue { get { return _attackUpValue; } }
+    public float DefenseUpValue { get { return _defenseUpValue; } }
+    public float SkillPowerUpValue { get { return _skillPowerUpValue; } }
+    public float SpecialPowerUpValue { get { return _specialPowerUpValue; } }
     #endregion
 
     private void Awake()
@@ -139,6 +158,7 @@ public class PlayerLevelController : MonoBehaviour
     public void GetSkillPoint()
     {
         _skillPoint += _getSkillPoint;
+        _maxHaveSkillPoint += _getSkillPoint;
     }
 
     /// <summary>
