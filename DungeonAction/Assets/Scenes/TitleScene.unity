@@ -190,6 +190,40 @@ MonoBehaviour:
       m_Action: Down
       m_Flags: 0
     m_Flags: 0
+  _rightAction:
+    m_Name: Right
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5a5efc4c-eab9-4be6-9913-7cf9bbbb774b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c123a355-ac43-4122-9677-80723c5d6eee
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Right
+      m_Flags: 0
+    m_Flags: 0
+  _leftAction:
+    m_Name: Left
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 215c2059-4dd4-4ea2-81bb-93fdcf9afcff
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a283aa99-d1cd-47e5-80b8-9f623d44cd10
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left
+      m_Flags: 0
+    m_Flags: 0
   _decisionAction:
     m_Name: Decision
     m_Type: 1

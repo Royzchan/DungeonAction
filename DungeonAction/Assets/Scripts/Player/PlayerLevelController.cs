@@ -12,8 +12,8 @@ public class PlayerLevelController : MonoBehaviour
     private int _exp = 0; // 経験値
     [SerializeField]
     private int _maxExp = 999999;//最大経験値  
-    private int _skillPoint = 0; // スキルポイント
-    private int _maxHaveSkillPoint = 0; // 現状持てる最大のスキルポイント数
+    private int _skillPoint = 10; // スキルポイント
+    private int _maxHaveSkillPoint = 10; // 現状持てる最大のスキルポイント数
 
     //各ステータスの初期ステータス
     private float _firstHp = 100;

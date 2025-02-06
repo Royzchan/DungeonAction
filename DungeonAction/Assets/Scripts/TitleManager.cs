@@ -28,6 +28,10 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     InputAction _downAction;
     [SerializeField]
+    InputAction _rightAction;
+    [SerializeField]
+    InputAction _leftAction;
+    [SerializeField]
     InputAction _decisionAction;
 
     [SerializeField]
@@ -41,6 +45,10 @@ public class TitleManager : MonoBehaviour
         _upAction.started += OnUpButton;
         _downAction?.Enable();
         _downAction.started += OnDownButton;
+        _rightAction?.Enable();
+        _rightAction.started += OnRightButton;
+        _leftAction?.Enable();
+        _leftAction.started += OnLeftButton;
         _decisionAction?.Enable();
         _decisionAction.started += OnDecisionButton;
     }
@@ -51,6 +59,10 @@ public class TitleManager : MonoBehaviour
         _upAction.started -= OnUpButton;
         _downAction?.Disable();
         _downAction.started -= OnDownButton;
+        _rightAction?.Disable();
+        _rightAction.started -= OnRightButton;
+        _leftAction?.Disable();
+        _leftAction.started -= OnLeftButton;
         _decisionAction?.Disable();
         _decisionAction.started -= OnDecisionButton;
     }
@@ -187,6 +199,24 @@ public class TitleManager : MonoBehaviour
         if (_nowUIController != null)
         {
             _nowUIController.SelectDown();
+        }
+    }
+
+    private void OnRightButton(InputAction.CallbackContext context)
+    {
+        if (_nowScene == Scene.SkillTree)
+        {
+            _skillTreeController.StatusUp();
+            return;
+        }
+    }
+
+    private void OnLeftButton(InputAction.CallbackContext context)
+    {
+        if (_nowScene == Scene.SkillTree)
+        {
+            _skillTreeController.StatusDown();
+            return;
         }
     }
 
