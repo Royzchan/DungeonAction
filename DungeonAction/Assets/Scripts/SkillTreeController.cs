@@ -7,6 +7,12 @@ using UnityEngine;
 
 public class SkillTreeController : MonoBehaviour
 {
+    enum SceneList
+    {
+        Title, // タイトルシーン
+        Game // ゲームシーン
+    }
+
     enum GameMode
     {
         Normal, //通常モード
@@ -45,6 +51,8 @@ public class SkillTreeController : MonoBehaviour
     private float _specialPowerUpRatio; // 必殺技効果倍率
 
     [SerializeField]
+    private SceneList _useScene = SceneList.Title;
+    [SerializeField]
     private GameMode _mode = GameMode.Normal;
     [SerializeField]
     private TMP_Text _spNum;
@@ -82,7 +90,8 @@ public class SkillTreeController : MonoBehaviour
 
     private void Awake()
     {
-        _tm = FindAnyObjectByType<TitleManager>();
+        if (_useScene == SceneList.Title) _tm = FindAnyObjectByType<TitleManager>();
+        if (_useScene == SceneList.Game) _gm = FindAnyObjectByType<GameManager>();
 
         if (_hpTexts != null) _textRects.Add(_hpTexts.GetComponent<RectTransform>());
         if (_attackTexts != null) _textRects.Add(_attackTexts.GetComponent<RectTransform>());
@@ -95,67 +104,74 @@ public class SkillTreeController : MonoBehaviour
 
     void Start()
     {
-        if (PlayerLevelController.Instance != null)
+        if (_useScene == SceneList.Title || _mode == GameMode.Normal)
         {
-            _spNum.text = PlayerLevelController.Instance.SkillPoint.ToString();
-            _hpNum.text = PlayerLevelController.Instance.HP.ToString();
-            _attackNum.text = PlayerLevelController.Instance.Attack.ToString();
-            _defenseNum.text = PlayerLevelController.Instance.Defense.ToString();
-            _skillPowerNum.text = PlayerLevelController.Instance.SkillPowerUpRatio.ToString();
-            _specialPowerNum.text = PlayerLevelController.Instance.SpecialPowerUpRatio.ToString();
-
-            if (_tm != null || _mode == GameMode.Normal)
+            if (PlayerLevelController.Instance != null)
             {
-                //スキルポイント関係をセット
-                _sp = PlayerLevelController.Instance.SkillPoint;
-                _maxHaveSkillPoint = PlayerLevelController.Instance.MaxHaveSkillPoint;
-                //各ステータスの初期値をセット
-                _firstHp = PlayerLevelController.Instance.FirstHp;
-                _firstAttack = PlayerLevelController.Instance.FirstAttack;
-                _firstDefense = PlayerLevelController.Instance.FirstDefense;
-                _firstSkillPowerUpRatio = PlayerLevelController.Instance.FirstSkillPowerUpRatio;
-                _firstSpecialPowerUpRatio = PlayerLevelController.Instance.FirstSpecialPowerUpRatio;
-                //各ステータスをセット
-                _hp = PlayerLevelController.Instance.HP;
-                _attack = PlayerLevelController.Instance.Attack;
-                _defense = PlayerLevelController.Instance.Defense;
-                _skillPowerUpRatio = PlayerLevelController.Instance.SkillPowerUpRatio;
-                _specialPowerUpRatio = PlayerLevelController.Instance.SpecialPowerUpRatio;
+                _spNum.text = PlayerLevelController.Instance.SkillPoint.ToString();
+                _hpNum.text = PlayerLevelController.Instance.HP.ToString();
+                _attackNum.text = PlayerLevelController.Instance.Attack.ToString();
+                _defenseNum.text = PlayerLevelController.Instance.Defense.ToString();
+                _skillPowerNum.text = PlayerLevelController.Instance.SkillPowerUpRatio.ToString();
+                _specialPowerNum.text = PlayerLevelController.Instance.SpecialPowerUpRatio.ToString();
+
+                if (_tm != null || _mode == GameMode.Normal)
+                {
+                    //スキルポイント関係をセット
+                    _sp = PlayerLevelController.Instance.SkillPoint;
+                    _maxHaveSkillPoint = PlayerLevelController.Instance.MaxHaveSkillPoint;
+                    //各ステータスの初期値をセット
+                    _firstHp = PlayerLevelController.Instance.FirstHp;
+                    _firstAttack = PlayerLevelController.Instance.FirstAttack;
+                    _firstDefense = PlayerLevelController.Instance.FirstDefense;
+                    _firstSkillPowerUpRatio = PlayerLevelController.Instance.FirstSkillPowerUpRatio;
+                    _firstSpecialPowerUpRatio = PlayerLevelController.Instance.FirstSpecialPowerUpRatio;
+                    //各ステータスをセット
+                    _hp = PlayerLevelController.Instance.HP;
+                    _attack = PlayerLevelController.Instance.Attack;
+                    _defense = PlayerLevelController.Instance.Defense;
+                    _skillPowerUpRatio = PlayerLevelController.Instance.SkillPowerUpRatio;
+                    _specialPowerUpRatio = PlayerLevelController.Instance.SpecialPowerUpRatio;
+                }
             }
         }
     }
 
     private void OnEnable()
     {
-        _nowSelect = (int)SkillTreeList.HP;
-        if (PlayerLevelController.Instance != null)
+        if (_useScene == SceneList.Title || _mode == GameMode.Normal)
         {
-            _spNum.text = PlayerLevelController.Instance.SkillPoint.ToString();
-            _hpNum.text = PlayerLevelController.Instance.HP.ToString();
-            _attackNum.text = PlayerLevelController.Instance.Attack.ToString();
-            _defenseNum.text = PlayerLevelController.Instance.Defense.ToString();
-            _skillPowerNum.text = PlayerLevelController.Instance.SkillPowerUpRatio.ToString();
-            _specialPowerNum.text = PlayerLevelController.Instance.SpecialPowerUpRatio.ToString();
-
-            if (_tm != null || _mode == GameMode.Normal)
+            if (PlayerLevelController.Instance != null)
             {
-                //スキルポイント関係をセット
-                _sp = PlayerLevelController.Instance.SkillPoint;
-                _maxHaveSkillPoint = PlayerLevelController.Instance.MaxHaveSkillPoint;
-                //各ステータスの初期値をセット
-                _firstHp = PlayerLevelController.Instance.FirstHp;
-                _firstAttack = PlayerLevelController.Instance.FirstAttack;
-                _firstDefense = PlayerLevelController.Instance.FirstDefense;
-                _firstSkillPowerUpRatio = PlayerLevelController.Instance.FirstSkillPowerUpRatio;
-                _firstSpecialPowerUpRatio = PlayerLevelController.Instance.FirstSpecialPowerUpRatio;
-                //各ステータスをセット
-                _hp = PlayerLevelController.Instance.HP;
-                _attack = PlayerLevelController.Instance.Attack;
-                _defense = PlayerLevelController.Instance.Defense;
-                _skillPowerUpRatio = PlayerLevelController.Instance.SkillPowerUpRatio;
-                _specialPowerUpRatio = PlayerLevelController.Instance.SpecialPowerUpRatio;
+                _spNum.text = PlayerLevelController.Instance.SkillPoint.ToString();
+                _hpNum.text = PlayerLevelController.Instance.HP.ToString();
+                _attackNum.text = PlayerLevelController.Instance.Attack.ToString();
+                _defenseNum.text = PlayerLevelController.Instance.Defense.ToString();
+                _skillPowerNum.text = PlayerLevelController.Instance.SkillPowerUpRatio.ToString();
+                _specialPowerNum.text = PlayerLevelController.Instance.SpecialPowerUpRatio.ToString();
+
+                if (_tm != null || _mode == GameMode.Normal)
+                {
+                    //スキルポイント関係をセット
+                    _sp = PlayerLevelController.Instance.SkillPoint;
+                    _maxHaveSkillPoint = PlayerLevelController.Instance.MaxHaveSkillPoint;
+                    //各ステータスの初期値をセット
+                    _firstHp = PlayerLevelController.Instance.FirstHp;
+                    _firstAttack = PlayerLevelController.Instance.FirstAttack;
+                    _firstDefense = PlayerLevelController.Instance.FirstDefense;
+                    _firstSkillPowerUpRatio = PlayerLevelController.Instance.FirstSkillPowerUpRatio;
+                    _firstSpecialPowerUpRatio = PlayerLevelController.Instance.FirstSpecialPowerUpRatio;
+                    //各ステータスをセット
+                    _hp = PlayerLevelController.Instance.HP;
+                    _attack = PlayerLevelController.Instance.Attack;
+                    _defense = PlayerLevelController.Instance.Defense;
+                    _skillPowerUpRatio = PlayerLevelController.Instance.SkillPowerUpRatio;
+                    _specialPowerUpRatio = PlayerLevelController.Instance.SpecialPowerUpRatio;
+                }
             }
         }
+
+        _nowSelect = (int)SkillTreeList.HP;
         foreach (RectTransform textsRect in _textRects)
         {
             textsRect.localScale = Vector3.one;
@@ -276,6 +292,7 @@ public class SkillTreeController : MonoBehaviour
         if (_sp > 0)
         {
             _skillPowerUpRatio += PlayerLevelController.Instance.SkillPowerUpValue;
+            _skillPowerUpRatio = Mathf.Round(_skillPowerUpRatio * 100f) / 100f;
             _sp--;
         }
     }
@@ -292,17 +309,19 @@ public class SkillTreeController : MonoBehaviour
             return;
         }
 
-        var updatedSkillPowerUpRatio =
-            _skillPowerUpRatio - PlayerLevelController.Instance.SkillPowerUpValue;
-        if (updatedSkillPowerUpRatio >= _firstSkillPowerUpRatio)
+        var updatedSkillPowerUpRatio = _skillPowerUpRatio - PlayerLevelController.Instance.SkillPowerUpValue;
+        if (updatedSkillPowerUpRatio >= _firstSkillPowerUpRatio ||
+            Mathf.Approximately(updatedSkillPowerUpRatio, _firstSkillPowerUpRatio))
         {
             _skillPowerUpRatio -= PlayerLevelController.Instance.SkillPowerUpValue;
+            _skillPowerUpRatio = Mathf.Round(_skillPowerUpRatio * 100f) / 100f; // **ここでしっかり丸める**
         }
         else
         {
             _sp--;
         }
     }
+
 
     /// <summary>
     /// 必殺技の効果倍率のステータスを上げる
@@ -312,6 +331,7 @@ public class SkillTreeController : MonoBehaviour
         if (_sp > 0)
         {
             _specialPowerUpRatio += PlayerLevelController.Instance.SpecialPowerUpValue;
+            _specialPowerUpRatio = Mathf.Round(_specialPowerUpRatio * 100f) / 100f;
             _sp--;
         }
     }
@@ -328,11 +348,12 @@ public class SkillTreeController : MonoBehaviour
             return;
         }
 
-        var updatedSpecialPowerUpRatio =
-            _specialPowerUpRatio - PlayerLevelController.Instance.SpecialPowerUpValue;
-        if (updatedSpecialPowerUpRatio >= _firstSpecialPowerUpRatio)
+        var updatedSpecialPowerUpRatio = _specialPowerUpRatio - PlayerLevelController.Instance.SpecialPowerUpValue;
+        if (updatedSpecialPowerUpRatio >= _firstSpecialPowerUpRatio ||
+            Mathf.Approximately(updatedSpecialPowerUpRatio, _firstSpecialPowerUpRatio))
         {
             _specialPowerUpRatio -= PlayerLevelController.Instance.SpecialPowerUpValue;
+            _specialPowerUpRatio = Mathf.Round(_specialPowerUpRatio * 100f) / 100f;
         }
         else
         {
