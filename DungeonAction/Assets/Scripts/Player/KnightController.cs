@@ -85,11 +85,11 @@ public class KnightController : PlayerController
                 {
                     if (_specialNow)
                     {
-                        enemy.Damage(_attackPower * _specialPowerUpRatio);
+                        enemy.Damage(_attack * _specialPowerUpRatio);
                     }
                     else if (_skillNow)
                     {
-                        enemy.Damage(_attackPower * _skillPowerUpRatio);
+                        enemy.Damage(_attack * _skillPowerUpRatio);
                         if (_firstHitSkill)
                         {
                             _specialPoint += _getSpecialPoint;
@@ -102,7 +102,7 @@ public class KnightController : PlayerController
                     }
                     else
                     {
-                        enemy.Damage(_attackPower);
+                        enemy.Damage(_attack);
                     }
                     _hitEnemies.Add(other);
                 }

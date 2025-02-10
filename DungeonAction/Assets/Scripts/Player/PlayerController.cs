@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private float _maxStamina; // 最大スタミナ
     private float _stamina;
     [SerializeField]
-    protected float _attackPower = 100f; // 攻撃力
+    protected float _attack = 100f; // 攻撃力
     [SerializeField]
     protected float _skillPowerUpRatio = 1.5f;　//　スキル時のダメージアップ倍率
     [SerializeField]
@@ -137,12 +137,6 @@ public class PlayerController : MonoBehaviour
         _specialAction.started += OnSpecial;
         _avoidAction.started += OnAvoid;
         _mapAction.started += OnMap;
-        //設定のアクションを追加
-        _upAction.started += OnUpButton;
-        _downAction.started += OnDownButton;
-        _rightAction.started += OnRightButton;
-        _leftAction.started += OnLeftButton;
-        _decisionAction.started += OnDecisionButton;
 
         _suspensionAction?.Enable();
         _suspensionAction.started += OnSuspension;
@@ -160,12 +154,6 @@ public class PlayerController : MonoBehaviour
         _specialAction.started -= OnSpecial;
         _avoidAction.started -= OnAvoid;
         _mapAction.started -= OnMap;
-
-        _upAction.started -= OnUpButton;
-        _downAction.started -= OnDownButton;
-        _rightAction.started -= OnRightButton;
-        _leftAction.started -= OnLeftButton;
-        _decisionAction.started -= OnDecisionButton;
 
         _suspensionAction?.Disable();
         _suspensionAction.started -= OnSuspension;
@@ -209,6 +197,12 @@ public class PlayerController : MonoBehaviour
         _rightAction?.Enable();
         _leftAction?.Enable();
         _decisionAction?.Enable();
+        //設定のアクションを追加
+        _upAction.started += OnUpButton_Setting;
+        _downAction.started += OnDownButton_Setting;
+        _rightAction.started += OnRightButton_Setting;
+        _leftAction.started += OnLeftButton_Setting;
+        _decisionAction.started += OnDecisionButton_Setting;
     }
 
     /// <summary>
@@ -221,6 +215,12 @@ public class PlayerController : MonoBehaviour
         _rightAction?.Disable();
         _leftAction?.Disable();
         _decisionAction?.Disable();
+
+        _upAction.started -= OnUpButton_Setting;
+        _downAction.started -= OnDownButton_Setting;
+        _rightAction.started -= OnRightButton_Setting;
+        _leftAction.started -= OnLeftButton_Setting;
+        _decisionAction.started -= OnDecisionButton_Setting;
     }
 
     protected virtual void Awake()
@@ -232,11 +232,21 @@ public class PlayerController : MonoBehaviour
         // コンポーネントの取得
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+
         _gm = FindAnyObjectByType<GameManager>();
-        if (_gm == null) Debug.LogError("GameManagerが存在していません");
+        if (_gm == null) Debug.LogError("GameManagerが登録されていません。");
+
         _settingController = FindAnyObjectByType<SettingController>();
-        if (_settingController != null) _settingController.SetPlayer(this);
+        if (_settingController != null)
+        {
+            _settingController.SetPlayer(this);
+        }
+        else
+        {
+            Debug.LogError("SetingControllerが登録されていません。");
+        }
         _mapController = FindAnyObjectByType<MapController>();
+        if (_mapController == null) Debug.LogError("MapControllerが登録されていません。");
     }
 
     private void Start()
@@ -277,6 +287,25 @@ public class PlayerController : MonoBehaviour
     {
         // 移動処理
         Move();
+    }
+
+    /// <summary>
+    /// プレイヤーのステータスをセット
+    /// </summary>
+    /// <param name="maxHp">最大HP</param>
+    /// <param name="attack">攻撃力</param>
+    /// <param name="defense">防御力</param>
+    /// <param name="skillPower">スキル効果アップ倍率</param>
+    /// <param name="specialPower">必殺技効果アップ倍率</param>
+    public void SetStatus(float maxHp, float attack, float defense, float skillPower, float specialPower)
+    {
+        _maxHp = maxHp;
+        _attack = attack;
+        _defense = defense;
+        _skillPowerUpRatio = skillPower;
+        _specialPowerUpRatio = specialPower;
+        Debug.Log("最大HP : " + _maxHp + "攻撃力 : " + _attack + "防御力 : " + _defense
+            + "スキル効果倍率 : " + _skillPowerUpRatio + "必殺技効果倍率 : " + _specialPowerUpRatio);
     }
 
     private void Move()
@@ -649,27 +678,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnUpButton(InputAction.CallbackContext context)
+    private void OnUpButton_Setting(InputAction.CallbackContext context)
     {
         _settingController.SelectUp();
     }
 
-    private void OnDownButton(InputAction.CallbackContext context)
+    private void OnDownButton_Setting(InputAction.CallbackContext context)
     {
         _settingController.SelectDown();
     }
 
-    private void OnRightButton(InputAction.CallbackContext context)
+    private void OnRightButton_Setting(InputAction.CallbackContext context)
     {
         _settingController.SelectRight();
     }
 
-    private void OnLeftButton(InputAction.CallbackContext context)
+    private void OnLeftButton_Setting(InputAction.CallbackContext context)
     {
         _settingController.SelectLeft();
     }
 
-    private void OnDecisionButton(InputAction.CallbackContext context)
+    private void OnDecisionButton_Setting(InputAction.CallbackContext context)
     {
         _settingController.Decision();
     }

@@ -33,6 +33,7 @@ public class SkillTreeController : MonoBehaviour
 
     private TitleManager _tm;
     private GameManager _gm;
+    private PlayerController _player;
 
     //各ステータスの初期ステータス
     private float _firstSp = 100;
@@ -90,8 +91,18 @@ public class SkillTreeController : MonoBehaviour
 
     private void Awake()
     {
-        if (_useScene == SceneList.Title) _tm = FindAnyObjectByType<TitleManager>();
-        if (_useScene == SceneList.Game) _gm = FindAnyObjectByType<GameManager>();
+        if (_useScene == SceneList.Title)
+        {
+            _tm = FindAnyObjectByType<TitleManager>();
+            if (_tm == null) Debug.LogError("TitleManagerが登録されていません。");
+        }
+        if (_useScene == SceneList.Game)
+        {
+            _gm = FindAnyObjectByType<GameManager>();
+            if (_gm == null) Debug.LogError("GameManagerが登録されていません。");
+            _player = FindAnyObjectByType<PlayerController>();
+            if (_player == null) Debug.LogError("PlayerControllerが登録されていません。");
+        }
 
         if (_hpTexts != null) _textRects.Add(_hpTexts.GetComponent<RectTransform>());
         if (_attackTexts != null) _textRects.Add(_attackTexts.GetComponent<RectTransform>());
@@ -107,6 +118,18 @@ public class SkillTreeController : MonoBehaviour
         if (_useScene == SceneList.Title || _mode == GameMode.Normal)
         {
             GetStatus_Instance();
+        }
+
+        if (_useScene == SceneList.Game)
+        {
+            if (_player != null)
+            {
+                _player.SetStatus(_hp, _attack, _defense, _skillPowerUpRatio, _specialPowerUpRatio);
+            }
+            else
+            {
+                Debug.LogError("PlayerControllerが登録されていません。");
+            }
         }
     }
 
@@ -130,6 +153,18 @@ public class SkillTreeController : MonoBehaviour
         if (_useScene == SceneList.Title || _mode == GameMode.Normal)
         {
             SetStatus_Instance();
+        }
+
+        if (_useScene == SceneList.Game)
+        {
+            if (_player != null)
+            {
+                _player.SetStatus(_hp, _attack, _defense, _skillPowerUpRatio, _specialPowerUpRatio);
+            }
+            else
+            {
+                Debug.LogError("PlayerControllerが登録されていません。");
+            }
         }
     }
 
