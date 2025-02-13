@@ -297,6 +297,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &367894732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8310217303251697221, guid: f2e724eac0322bd4f855926b4d8f1dca, type: 3}
+  m_PrefabInstance: {fileID: 146150753511359395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &369239908
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _settingController: {fileID: 0}
   _mapController: {fileID: 0}
+  _skillTreeController: {fileID: 0}
   _cameraTransform: {fileID: 226183430}
   _maxHp: 100
   _maxStamina: 100
@@ -905,6 +911,23 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Map
+      m_Flags: 0
+    m_Flags: 0
+  _skillTreeAction:
+    m_Name: Skill Tree
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: beeb9a65-6388-466d-bf10-55edcc84df4c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 040c90da-812d-48ef-babd-fab5af7cd48e
+      m_Path: <Keyboard>/t
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Skill Tree
       m_Flags: 0
     m_Flags: 0
   _upAction:
@@ -1563,6 +1586,7 @@ MonoBehaviour:
   _gameOverUIs: {fileID: 592514319905132136}
   _settingCanvas: {fileID: 382677631}
   _mapCanvas: {fileID: 978627436}
+  _skillTreeCanvas: {fileID: 367894732}
   _bossEnemy: []
 --- !u!1 &1178770880
 GameObject:

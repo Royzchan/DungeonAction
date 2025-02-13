@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public bool OpenSetting { get { return _openSetting; } }
     private bool _openMap = false;
     public bool OpenMap { get { return _openMap; } }
+    private bool _openSkillTree = false;
+    public bool OpenSkillTree { get { return _openSkillTree; } }
+
     protected float _timer = 0f; // タイマーの総経過時間
     protected bool _isTimerRunning = false; // タイマーの開始/停止フラグ
 
@@ -35,6 +38,8 @@ public class GameManager : MonoBehaviour
     private GameObject _settingCanvas;
     [SerializeField]
     private GameObject _mapCanvas;
+    [SerializeField]
+    private GameObject _skillTreeCanvas;
 
     [SerializeField]
     protected List<GameObject> _bossEnemy;
@@ -46,9 +51,9 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         _gameClearUIs.SetActive(false);
         _gameOverUIs.SetActive(false);
-        if (_mapCanvas != null) _mapCanvas.SetActive(false);
-
         if (_settingCanvas != null) _settingCanvas.SetActive(false);
+        if (_mapCanvas != null) _mapCanvas.SetActive(false);
+        if (_skillTreeCanvas != null) _skillTreeCanvas.SetActive(false);
     }
 
     protected virtual void Update()
@@ -153,8 +158,11 @@ public class GameManager : MonoBehaviour
 
     public virtual void ViewMapCanvas()
     {
-        _mapCanvas.SetActive(true);
-        _openMap = true;
+        if (_gamePlaying)
+        {
+            _mapCanvas.SetActive(true);
+            _openMap = true;
+        }
     }
 
     public virtual void HideMapCanvas()
@@ -163,9 +171,25 @@ public class GameManager : MonoBehaviour
         _openMap = false;
     }
 
+    public virtual void ViewSkillTreeCanvas()
+    {
+        if (_gamePlaying)
+        {
+            _skillTreeCanvas.SetActive(true);
+            _openSkillTree = true;
+        }
+    }
+
+    public virtual void HideSkillTreeCanvas()
+    {
+        _skillTreeCanvas.SetActive(false);
+        _openSkillTree = false;
+    }
+
     public void GoTitle()
     {
         Time.timeScale = 1;
+        _gamePlaying = false;
         SceneManager.LoadScene("TitleScene");
     }
 }

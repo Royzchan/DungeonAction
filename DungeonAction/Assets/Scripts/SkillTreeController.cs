@@ -157,13 +157,16 @@ public class SkillTreeController : MonoBehaviour
 
         if (_useScene == SceneList.Game)
         {
-            if (_player != null)
+            if (_gm.GamePlaying)
             {
-                _player.SetStatus(_hp, _attack, _defense, _skillPowerUpRatio, _specialPowerUpRatio);
-            }
-            else
-            {
-                Debug.LogError("PlayerControllerÇ™ìoò^Ç≥ÇÍÇƒÇ¢Ç‹ÇπÇÒÅB");
+                if (_player != null)
+                {
+                    _player.SetStatus(_hp, _attack, _defense, _skillPowerUpRatio, _specialPowerUpRatio);
+                }
+                else
+                {
+                    Debug.LogError("PlayerControllerÇ™ìoò^Ç≥ÇÍÇƒÇ¢Ç‹ÇπÇÒÅB");
+                }
             }
         }
     }
@@ -523,6 +526,15 @@ public class SkillTreeController : MonoBehaviour
 
             case (int)SkillTreeList.CloseButton:
                 if (_tm != null) _tm.GoTop();
+                if (_gm != null)
+                {
+                    _gm.HideSkillTreeCanvas();
+                    if (_player != null)
+                    {
+                        _player.EnableFieldAction();
+                        _player.DisableSkillTreeAction();
+                    }
+                }
                 break;
         }
     }

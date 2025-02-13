@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private MapController _mapController;
     [SerializeField]
+    private SkillTreeController _skillTreeController;
+    [SerializeField]
     private Transform _cameraTransform; // プレイヤーの動きに基づくカメラの向き
 
     [Header("プレイヤーのステータス")]
@@ -77,6 +79,8 @@ public class PlayerController : MonoBehaviour
     private InputAction _dashAction;
     [SerializeField]
     private InputAction _mapAction;
+    [SerializeField]
+    private InputAction _skillTreeAction;
 
     [Header("Setting Input Actions")]
     [SerializeField]
@@ -137,6 +141,7 @@ public class PlayerController : MonoBehaviour
         _specialAction.started += OnSpecial;
         _avoidAction.started += OnAvoid;
         _mapAction.started += OnMap;
+        _skillTreeAction.started += OnSkillTree;
 
         _suspensionAction?.Enable();
         _suspensionAction.started += OnSuspension;
@@ -154,6 +159,7 @@ public class PlayerController : MonoBehaviour
         _specialAction.started -= OnSpecial;
         _avoidAction.started -= OnAvoid;
         _mapAction.started -= OnMap;
+        _skillTreeAction.started -= OnSkillTree;
 
         _suspensionAction?.Disable();
         _suspensionAction.started -= OnSuspension;
@@ -171,6 +177,7 @@ public class PlayerController : MonoBehaviour
         _avoidAction?.Enable();
         _dashAction?.Enable();
         _mapAction?.Enable();
+        _skillTreeAction?.Enable();
     }
 
     /// <summary>
@@ -185,6 +192,7 @@ public class PlayerController : MonoBehaviour
         _avoidAction?.Disable();
         _dashAction?.Disable();
         _mapAction?.Disable();
+        _skillTreeAction?.Disable();
     }
 
     /// <summary>
@@ -223,6 +231,42 @@ public class PlayerController : MonoBehaviour
         _decisionAction.started -= OnDecisionButton_Setting;
     }
 
+    /// <summary>
+    /// スキルツリーの入力を有効化
+    /// </summary>
+    public void EnableSkillTreeAction()
+    {
+        _upAction?.Enable();
+        _downAction?.Enable();
+        _rightAction?.Enable();
+        _leftAction?.Enable();
+        _decisionAction?.Enable();
+        //スキルツリーのアクションを追加
+        _upAction.started += OnUpButton_SkillTree;
+        _downAction.started += OnDownButton_SkillTree;
+        _rightAction.started += OnRightButton_SkillTree;
+        _leftAction.started += OnLeftButton_SkillTree;
+        _decisionAction.started += OnDecisionButton_SkillTree;
+    }
+
+    /// <summary>
+    /// スキルツリーの入力を無効化
+    /// </summary>
+    public void DisableSkillTreeAction()
+    {
+        _upAction?.Disable();
+        _downAction?.Disable();
+        _rightAction?.Disable();
+        _leftAction?.Disable();
+        _decisionAction?.Disable();
+
+        _upAction.started -= OnUpButton_SkillTree;
+        _downAction.started -= OnDownButton_SkillTree;
+        _rightAction.started -= OnRightButton_SkillTree;
+        _leftAction.started -= OnLeftButton_SkillTree;
+        _decisionAction.started -= OnDecisionButton_SkillTree;
+    }
+
     protected virtual void Awake()
     {
         // 初期化
@@ -245,8 +289,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("SetingControllerが登録されていません。");
         }
+
         _mapController = FindAnyObjectByType<MapController>();
         if (_mapController == null) Debug.LogError("MapControllerが登録されていません。");
+
+        _skillTreeController = FindAnyObjectByType<SkillTreeController>();
+        if (_skillTreeController == null) Debug.LogError("SkillTreeControllerが登録されていません。");
     }
 
     private void Start()
@@ -678,6 +726,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnSkillTree(InputAction.CallbackContext context)
+    {
+        if (!_gm.OpenSkillTree)
+        {
+            _gm.ViewSkillTreeCanvas();
+            //フィールドのアクションを無効化
+            DisableFieldAction();
+            //スキルツリーのアクションを有効化
+            EnableSkillTreeAction();
+        }
+        else
+        {
+            _gm.HideSkillTreeCanvas();
+            //フィールドのアクションを有効化
+            EnableFieldAction();
+            //スキルツリーのアクションを無効化
+            DisableSkillTreeAction();
+        }
+    }
+
     private void OnUpButton_Setting(InputAction.CallbackContext context)
     {
         _settingController.SelectUp();
@@ -701,6 +769,31 @@ public class PlayerController : MonoBehaviour
     private void OnDecisionButton_Setting(InputAction.CallbackContext context)
     {
         _settingController.Decision();
+    }
+
+    private void OnUpButton_SkillTree(InputAction.CallbackContext context)
+    {
+        _skillTreeController.SelectUp();
+    }
+
+    private void OnDownButton_SkillTree(InputAction.CallbackContext context)
+    {
+        _skillTreeController.SelectDown();
+    }
+
+    private void OnRightButton_SkillTree(InputAction.CallbackContext context)
+    {
+        _skillTreeController.StatusUp();
+    }
+
+    private void OnLeftButton_SkillTree(InputAction.CallbackContext context)
+    {
+        _skillTreeController.StatusDown();
+    }
+
+    private void OnDecisionButton_SkillTree(InputAction.CallbackContext context)
+    {
+        _skillTreeController.Decision();
     }
 
     private void OnDrawGizmosSelected()

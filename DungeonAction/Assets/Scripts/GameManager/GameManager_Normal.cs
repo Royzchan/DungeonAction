@@ -55,12 +55,26 @@ public class GameManager_Normal : GameManager
     public override void ViewSettingCanvas()
     {
         base.ViewSettingCanvas();
+        if (!_gamePlaying) return;
         Time.timeScale = 0;
     }
 
     public override void HideSettingCanvas()
     {
         base.HideSettingCanvas();
+        Time.timeScale = 1;
+    }
+
+    public override void ViewSkillTreeCanvas()
+    {
+        base.ViewSkillTreeCanvas();
+        if (!_gamePlaying) return;
+        Time.timeScale = 0;
+    }
+
+    public override void HideSkillTreeCanvas()
+    {
+        base.HideSkillTreeCanvas();
         Time.timeScale = 1;
     }
 }

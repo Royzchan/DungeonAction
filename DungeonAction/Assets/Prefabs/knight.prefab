@@ -1630,12 +1630,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d3fa2b79f229948a616e1e3ac4a18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _settingController: {fileID: 0}
+  _mapController: {fileID: 0}
+  _skillTreeController: {fileID: 0}
   _cameraTransform: {fileID: 0}
   _maxHp: 100
   _maxStamina: 100
-  _attackPower: 20
+  _attack: 100
+  _skillPowerUpRatio: 1.5
+  _specialPowerUpRatio: 2
   _attackRange: 5
-  _defenses: 100
+  _defense: 100
+  _skillCoolTime: 5
+  _getSpecialPoint: 15
+  _maxSpecialPoint: 100
+  _useSpecialPoint: 100
+  _specialCoolTime: 10
   _speed: 5
   _dashSpeed: 7.5
   _invincibilityDuration: 0.5
@@ -1773,7 +1783,69 @@ MonoBehaviour:
       m_Action: Dash
       m_Flags: 0
     m_Flags: 0
-  _sowrdObj: {fileID: 387743833567453791}
+  _mapAction:
+    m_Name: Map
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 65f678d9-4cbf-4421-8373-6bac6eabbd7e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _upAction:
+    m_Name: Up
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bafe8ea1-c690-484f-bcf8-d84ef5a37848
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _downAction:
+    m_Name: Down
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dea79f34-e318-4777-97c4-dc98bda89e5a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _rightAction:
+    m_Name: Right
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f14f5525-678e-4f70-a4b9-d902187f88d0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _leftAction:
+    m_Name: Left
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 64a4bd98-ed99-400d-84b2-f34399e1338a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _decisionAction:
+    m_Name: Decision
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 37ab2098-d638-4115-bf52-c2183fae8d15
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _suspensionAction:
+    m_Name: Suspension
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1b07687f-47d9-49c7-a3f7-6bdadffec5a8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   _staminaRecoveryRate: 5
   _staminaConsumptionRate: 10
   _avoidConsumptionAmount: 10
