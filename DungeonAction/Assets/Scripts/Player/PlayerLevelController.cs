@@ -61,6 +61,12 @@ public class PlayerLevelController : MonoBehaviour
     public float SpecialPowerUpValue { get { return _specialPowerUpValue; } }
     #endregion
 
+    public void SetStatus(int level, int exp)
+    {
+        _level = level;
+        _exp = exp;
+    }
+
     private void Awake()
     {
         if (Instance == null)

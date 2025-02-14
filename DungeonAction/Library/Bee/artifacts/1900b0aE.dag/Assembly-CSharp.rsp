@@ -386,6 +386,7 @@
 "Assets/Scripts/Player/UIController/PlayerHPBarController.cs"
 "Assets/Scripts/Player/UIController/PlayerSpecialGageController.cs"
 "Assets/Scripts/Player/UIController/PlayerStaminaBarController.cs"
+"Assets/Scripts/PlayFabController.cs"
 "Assets/Scripts/PlayFabTest.cs"
 "Assets/Scripts/SceneChanger.cs"
 "Assets/Scripts/SettingController.cs"
