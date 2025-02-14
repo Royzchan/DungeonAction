@@ -140,11 +140,13 @@ public class PlayerController : MonoBehaviour
         _skillAction.started += OnSkill;
         _specialAction.started += OnSpecial;
         _avoidAction.started += OnAvoid;
-        _mapAction.started += OnMap;
-        _skillTreeAction.started += OnSkillTree;
 
         _suspensionAction?.Enable();
         _suspensionAction.started += OnSuspension;
+        _mapAction?.Enable();
+        _mapAction.started += OnMap;
+        _skillTreeAction?.Enable();
+        _skillTreeAction.started += OnSkillTree;
     }
 
     private void OnDisable()
@@ -158,11 +160,13 @@ public class PlayerController : MonoBehaviour
         _skillAction.started -= OnSkill;
         _specialAction.started -= OnSpecial;
         _avoidAction.started -= OnAvoid;
-        _mapAction.started -= OnMap;
-        _skillTreeAction.started -= OnSkillTree;
 
         _suspensionAction?.Disable();
         _suspensionAction.started -= OnSuspension;
+        _mapAction?.Disable();
+        _mapAction.started -= OnMap;
+        _skillTreeAction?.Disable();
+        _skillTreeAction.started -= OnSkillTree;
     }
 
     /// <summary>
@@ -176,8 +180,6 @@ public class PlayerController : MonoBehaviour
         _specialAction?.Enable();
         _avoidAction?.Enable();
         _dashAction?.Enable();
-        _mapAction?.Enable();
-        _skillTreeAction?.Enable();
     }
 
     /// <summary>
@@ -191,8 +193,6 @@ public class PlayerController : MonoBehaviour
         _specialAction?.Disable();
         _avoidAction?.Disable();
         _dashAction?.Disable();
-        _mapAction?.Disable();
-        _skillTreeAction?.Disable();
     }
 
     /// <summary>
@@ -696,6 +696,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnSuspension(InputAction.CallbackContext context)
     {
+        if (_gm.OpenSkillTree) return;
+        if (_gm.OpenMap) return;
+
         if (!_gm.OpenSetting)
         {
             _gm.ViewSettingCanvas();
@@ -716,6 +719,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnMap(InputAction.CallbackContext context)
     {
+        if (_gm.OpenSetting) return;
+        if (_gm.OpenSkillTree) return;
+
         if (!_gm.OpenMap)
         {
             _gm.ViewMapCanvas();
@@ -728,6 +734,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnSkillTree(InputAction.CallbackContext context)
     {
+        if (_gm.OpenSetting) return;
+        if (_gm.OpenMap) return;
+
         if (!_gm.OpenSkillTree)
         {
             _gm.ViewSkillTreeCanvas();
