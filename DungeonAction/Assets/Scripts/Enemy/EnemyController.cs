@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
+    private SkillTreeController _skillTreeController;
+
+    [SerializeField]
+    private int _dropEXP = 5;
     // “G‚ÌƒXƒe[ƒ^ƒX
     [SerializeField]
     private float _maxHp = 100f; // Å‘åHP
@@ -43,28 +47,30 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        
+        _rb = GetComponent<Rigidbody>();
+        if (_rb == null) Debug.LogError("Rigidbody‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+
+        _collider = GetComponent<Collider>();
+        if (_collider == null) Debug.LogError("Collider‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+
+        _gm = FindAnyObjectByType<GameManager>();
+        if (_gm == null) Debug.LogError("GameManager‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+
+        _skillTreeController = FindAnyObjectByType<SkillTreeController>();
+        if (_skillTreeController == null) Debug.LogError("SkillTreeController‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // ‰Šú‰»ˆ—
     protected virtual void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
-        _rb = GetComponent<Rigidbody>();
-        _collider = GetComponent<Collider>();
-        _gm = FindAnyObjectByType<GameManager>();
-
         _hp = _maxHp; // HP‚ğ‰Šú‰»
-
-        if (_rb == null)
-        {
-            Debug.LogError("Rigidbody component is missing!");
-        }
 
         _hpSlider = _hpBar.GetComponentInChildren<Slider>();
         if (_hpSlider == null)
         {
-            Debug.LogError("HP bar Slider component is missing in child objects!");
+            Debug.LogError("HPBarSlider‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
         }
         else
         {
@@ -192,6 +198,32 @@ public class EnemyController : MonoBehaviour
         if (_gm != null)
         {
             _gm.AddScore(10);
+        }
+        else
+        {
+            Debug.Log("GameManagerg‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        if (_skillTreeController != null)
+        {
+            switch (_skillTreeController.Mode)
+            {
+                case GameMode.Normal:
+                    PlayerLevelController.Instance.GetEXP(_dropEXP);
+                    break;
+
+                case GameMode.Challenge_Endless:
+                    PlayerLevelController.Instance.GetEXP(_dropEXP);
+                    break;
+
+                case GameMode.Challenge_TimeAttack:
+                    PlayerLevelController.Instance.GetEXP(_dropEXP);
+                    break;
+            }
+        }
+        else 
+        {
+            Debug.LogError("SkillTreeController‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
         }
     }
 

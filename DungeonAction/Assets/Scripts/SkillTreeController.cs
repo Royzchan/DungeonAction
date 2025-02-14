@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+public enum GameMode
+{
+    Normal, //通常モード
+    Challenge_TimeAttack, // チャレンジモードのタイムアタック
+    Challenge_Endless //チャレンジモードのエンドレス
+}
 
 public class SkillTreeController : MonoBehaviour
 {
@@ -11,13 +17,6 @@ public class SkillTreeController : MonoBehaviour
     {
         Title, // タイトルシーン
         Game // ゲームシーン
-    }
-
-    enum GameMode
-    {
-        Normal, //通常モード
-        Challenge_TimeAttack, // チャレンジモードのタイムアタック
-        Challenge_Endless //チャレンジモードのエンドレス
     }
 
     enum SkillTreeList
@@ -51,6 +50,10 @@ public class SkillTreeController : MonoBehaviour
     private float _skillPowerUpRatio; // スキル効果倍率
     private float _specialPowerUpRatio; // 必殺技効果倍率
 
+    [SerializeField]
+    private TMP_Text _lvText;
+    [SerializeField]
+    private TMP_Text _expText;
     [SerializeField]
     private SceneList _useScene = SceneList.Title;
     [SerializeField]
@@ -88,6 +91,10 @@ public class SkillTreeController : MonoBehaviour
     private List<RectTransform> _textRects = new List<RectTransform>();
     [SerializeField]
     private float _upSizeScale = 1.1f;
+
+    #region
+    public GameMode Mode { get { return _mode; } }
+    #endregion
 
     private void Awake()
     {
@@ -178,6 +185,8 @@ public class SkillTreeController : MonoBehaviour
     {
         if (PlayerLevelController.Instance != null)
         {
+            _lvText.text = "Lv : " + PlayerLevelController.Instance.Level;
+            _expText.text = "EXP : " + PlayerLevelController.Instance.EXP;
             //テキストの更新
             _spNum.text = PlayerLevelController.Instance.SkillPoint.ToString();
             _hpNum.text = PlayerLevelController.Instance.HP.ToString();
