@@ -61,10 +61,30 @@ public class PlayerLevelController : MonoBehaviour
     public float SpecialPowerUpValue { get { return _specialPowerUpValue; } }
     #endregion
 
-    public void SetStatus(int level, int exp)
+    /// <summary>
+    /// ステータスをセットする
+    /// </summary>
+    /// <param name="level">レベル</param>
+    /// <param name="exp">経験値</param>
+    /// <param name="maxSkillPoint">最大スキルポイント</param>
+    /// <param name="skillPoint">持ってるスキルポイント</param>
+    /// <param name="hp">HP</param>
+    /// <param name="attack">攻撃力</param>
+    /// <param name="defense">防御力</param>
+    /// <param name="skillPowerUpRatio">スキル効果倍率</param>
+    /// <param name="specialPowerUpRatio">必殺技効果倍率</param>
+    public void SetStatus(int level, int exp, int maxSkillPoint, int skillPoint,
+        float hp, float attack, float defense, float skillPowerUpRatio, float specialPowerUpRatio)
     {
         _level = level;
         _exp = exp;
+        _maxHaveSkillPoint = maxSkillPoint;
+        _skillPoint = skillPoint;
+        _hp = hp;
+        _attack = attack;
+        _defense = defense;
+        _skillPowerUpRatio = skillPowerUpRatio;
+        _specialPowerUpRatio = specialPowerUpRatio;
     }
 
     private void Awake()

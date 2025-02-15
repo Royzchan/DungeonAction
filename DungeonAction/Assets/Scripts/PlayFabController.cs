@@ -82,13 +82,27 @@ public class PlayFabController : MonoBehaviour
     {
         var level = PlayerLevelController.Instance.Level;
         var exp = PlayerLevelController.Instance.EXP;
+        var maxSkillPoint = PlayerLevelController.Instance.MaxHaveSkillPoint;
+        var skillPoint = PlayerLevelController.Instance.SkillPoint;
+        var hp = PlayerLevelController.Instance.HP;
+        var attack = PlayerLevelController.Instance.Attack;
+        var defense = PlayerLevelController.Instance.Defense;
+        var skillPowerUpRatio = PlayerLevelController.Instance.SkillPowerUpRatio;
+        var specialPowerUpRatio = PlayerLevelController.Instance.SpecialPowerUpRatio;
 
         var request = new UpdateUserDataRequest
         {
             Data = new Dictionary<string, string>
             {
                 { "Level", level.ToString() },
-                { "EXP", exp.ToString() }
+                { "EXP", exp.ToString() },
+                { "MaxSkillPoint", maxSkillPoint.ToString() },
+                { "SkillPoint", skillPoint.ToString() },
+                { "HP", hp.ToString() },
+                { "Attack", attack.ToString() },
+                { "Defense", defense.ToString() },
+                { "SkillPowerUpRatio", skillPowerUpRatio.ToString() },
+                { "SpecialPowerUpRatio", specialPowerUpRatio.ToString() }
             }
         };
 
@@ -115,6 +129,14 @@ public class PlayFabController : MonoBehaviour
     {
         int level = 1;
         int exp = 0;
+        int maxSkillPoint = 0;
+        int skillPoint = 0;
+        float hp = PlayerLevelController.Instance.FirstHp;
+        float attack = PlayerLevelController.Instance.FirstAttack;
+        float defense = PlayerLevelController.Instance.FirstDefense;
+        float skillPowerUpRatio = PlayerLevelController.Instance.FirstSkillPowerUpRatio;
+        float specialPowerUpRatio = PlayerLevelController.Instance.FirstSpecialPowerUpRatio;
+
         if (result.Data == null || result.Data.Count == 0)
         {
             Debug.Log("ƒ†[ƒU[ƒf[ƒ^‚ª‘¶İ‚µ‚Ü‚¹‚ñB");
@@ -141,7 +163,78 @@ public class PlayFabController : MonoBehaviour
             Debug.LogError("PlayFab‚ÉEXP‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
         }
 
-        PlayerLevelController.Instance.SetStatus(level, exp);
+        if (result.Data.ContainsKey("MaxSkillPoint"))
+        {
+            maxSkillPoint = int.Parse(result.Data["MaxSkillPoint"].Value);
+            Debug.Log("•Û‘¶‚³‚ê‚½Å‘åƒXƒLƒ‹ƒ|ƒCƒ“ƒg : " + result.Data["MaxSkillPoint"].Value);
+        }
+        else
+        {
+            Debug.LogError("PlayFab‚ÉMaxSkillPoint‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        if (result.Data.ContainsKey("SkillPoint"))
+        {
+            skillPoint = int.Parse(result.Data["SkillPoint"].Value);
+            Debug.Log("•Û‘¶‚³‚ê‚½ƒXƒLƒ‹ƒ|ƒCƒ“ƒg : " + result.Data["SkillPoint"].Value);
+        }
+        else
+        {
+            Debug.LogError("PlayFab‚ÉSkillPoint‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        if (result.Data.ContainsKey("HP"))
+        {
+            hp = float.Parse(result.Data["HP"].Value);
+            Debug.Log("•Û‘¶‚³‚ê‚½HP : " + result.Data["HP"].Value);
+        }
+        else
+        {
+            Debug.LogError("PlayFab‚ÉHP‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        if (result.Data.ContainsKey("Attack"))
+        {
+            attack = float.Parse(result.Data["Attack"].Value);
+            Debug.Log("•Û‘¶‚³‚ê‚½UŒ‚—Í : " + result.Data["Attack"].Value);
+        }
+        else
+        {
+            Debug.LogError("PlayFab‚ÉUŒ‚—Í‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        if (result.Data.ContainsKey("Defense"))
+        {
+            defense = float.Parse(result.Data["Defense"].Value);
+            Debug.Log("•Û‘¶‚³‚ê‚½–hŒä—Í : " + result.Data["Defense"].Value);
+        }
+        else
+        {
+            Debug.LogError("PlayFab‚É–hŒä—Í‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        if (result.Data.ContainsKey("SkillPowerUpRatio"))
+        {
+            skillPowerUpRatio = float.Parse(result.Data["SkillPowerUpRatio"].Value);
+            Debug.Log("•Û‘¶‚³‚ê‚½ƒXƒLƒ‹Œø‰Ê”{—¦ : " + result.Data["SkillPowerUpRatio"].Value);
+        }
+        else
+        {
+            Debug.LogError("PlayFab‚ÉƒXƒLƒ‹Œø‰Ê”{—¦‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        if (result.Data.ContainsKey("SpecialPowerUpRatio"))
+        {
+            specialPowerUpRatio = float.Parse(result.Data["SpecialPowerUpRatio"].Value);
+            Debug.Log("•Û‘¶‚³‚ê‚½•KE‹ZŒø‰Ê”{—¦ : " + result.Data["SpecialPowerUpRatio"].Value);
+        }
+        else
+        {
+            Debug.LogError("PlayFab‚É•KE‹ZŒø‰Ê”{—¦‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+        }
+
+        PlayerLevelController.Instance.SetStatus(level, exp, maxSkillPoint, skillPoint,
+            hp, attack, defense, skillPowerUpRatio, specialPowerUpRatio);
     }
 
     void OnDataRetrieveFailure(PlayFabError error)
