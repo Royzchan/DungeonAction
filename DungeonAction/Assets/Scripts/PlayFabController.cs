@@ -2,10 +2,13 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using System.Collections.Generic;
+using TMPro;
 
 public class PlayFabController : MonoBehaviour
 {
     public static PlayFabController Instance;
+    [SerializeField]
+    private TMP_Text _playerIDText;
 
     private const string PlayerPrefsKey = "PlayFabCustomID";
 
@@ -42,6 +45,14 @@ public class PlayFabController : MonoBehaviour
         if (PlayerPrefs.HasKey(PlayerPrefsKey))
         {
             customId = PlayerPrefs.GetString(PlayerPrefsKey);
+            if (_playerIDText != null)
+            {
+                _playerIDText.text = "ID : " + customId;
+            }
+            else
+            {
+                Debug.LogError("IDのテキストを登録してください。");
+            }
             Debug.Log("既存のCustom IDを使用: " + customId);
         }
         else
