@@ -67,7 +67,7 @@ public class TitleManager : MonoBehaviour
         _decisionAction.started -= OnDecisionButton;
     }
 
-    void Start()
+    private void Awake()
     {
         if (_skillTreeControllerCanvas != null)
         {
@@ -95,6 +95,11 @@ public class TitleManager : MonoBehaviour
         }
         if (_UIController[(int)Scene.Top] != null) _UIController[(int)Scene.Top].gameObject.SetActive(true);
         if (_UIController[(int)Scene.Top] != null) _nowUIController = _UIController[(int)Scene.Top];
+    }
+
+    void Start()
+    {
+
     }
 
     void Update()

@@ -9,7 +9,13 @@ public class PlayFabController : MonoBehaviour
     public static PlayFabController Instance;
     [SerializeField]
     private TMP_Text _playerIDText;
+    [SerializeField]
+    private GameObject _loadResultUI;
+    [SerializeField]
+    private TMP_Text _loadResultText;
 
+    private TitleManager _titleManager;
+    private bool _endLoadData = false; // データを読み込み終わっているか
     private const string PlayerPrefsKey = "PlayFabCustomID";
 
     private void Awake()
@@ -23,11 +29,23 @@ public class PlayFabController : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        _titleManager = FindAnyObjectByType<TitleManager>();
+        if (_titleManager == null) Debug.LogError("TitleManagerが登録されていません。");
+
+        if (_loadResultUI != null)
+        {
+            _loadResultUI.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("ロード結果のUIが登録されていません。");
+        }
         DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
+        _titleManager.enabled = false;
         LoginWithSavedOrNewCustomID();
     }
 
@@ -40,6 +58,24 @@ public class PlayFabController : MonoBehaviour
 
     void LoginWithSavedOrNewCustomID()
     {
+        if (_loadResultUI != null)
+        {
+            _loadResultUI.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("ロード結果のUIが登録されていません。");
+        }
+
+        if (_loadResultText != null)
+        {
+            _loadResultText.text = "データを読み込み中...";
+        }
+        else
+        {
+            Debug.LogError("ロード結果のテキストが登録されていません。");
+        }
+
         string customId;
 
         if (PlayerPrefs.HasKey(PlayerPrefsKey))
@@ -63,6 +99,7 @@ public class PlayFabController : MonoBehaviour
             Debug.Log("新しいCustom IDを作成: " + customId);
         }
 
+        Debug.Log(customId);
         var request = new LoginWithCustomIDRequest
         {
             CustomId = customId,
@@ -82,15 +119,20 @@ public class PlayFabController : MonoBehaviour
 
         // ステータスを取得
         GetUserStatus();
+        _loadResultUI.SetActive(false);
+        _titleManager.enabled = true;
     }
 
     void OnLoginFailure(PlayFabError error)
     {
         Debug.LogError("PlayFabログイン失敗: " + error.GenerateErrorReport());
+        _loadResultText.text = "データの読み込みに失敗しました。";
     }
 
     public void SaveUserStatus()
     {
+        if (!_endLoadData) return;
+
         var level = PlayerLevelController.Instance.Level;
         var exp = PlayerLevelController.Instance.EXP;
         var maxSkillPoint = PlayerLevelController.Instance.MaxHaveSkillPoint;
@@ -153,6 +195,8 @@ public class PlayFabController : MonoBehaviour
             Debug.Log("ユーザーデータが存在しません。");
             return;
         }
+
+        _endLoadData = true;
 
         if (result.Data.ContainsKey("Level"))
         {
@@ -251,5 +295,17 @@ public class PlayFabController : MonoBehaviour
     void OnDataRetrieveFailure(PlayFabError error)
     {
         Debug.LogError("ユーザーデータの取得に失敗しました: " + error.GenerateErrorReport());
+
+        // ネットワークエラーのチェック
+        if (error.Error == PlayFabErrorCode.ConnectionError ||
+            error.Error == PlayFabErrorCode.ServiceUnavailable)
+        {
+            Debug.LogError("ネットワーク接続がありません。インターネットに接続して再試行してください。");
+            _loadResultText.text = "ネットワークエラー: インターネット接続を確認してください。";
+        }
+        else
+        {
+            _loadResultText.text = "データの読み込みに失敗しました。エラー: " + error.ErrorMessage;
+        }
     }
 }

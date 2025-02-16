@@ -854,6 +854,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372255829}
   m_CullTransparentMesh: 1
+--- !u!114 &405979721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6248749604691540970, guid: a46bc2d263faff84c82d7b5c3550d9cd, type: 3}
+  m_PrefabInstance: {fileID: 486717612245547998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &414525010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,17 +1230,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -60}
   m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &526385694 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1666914023209358019, guid: a46bc2d263faff84c82d7b5c3550d9cd, type: 3}
-  m_PrefabInstance: {fileID: 486717612245547998}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &586857180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,6 +3809,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958382804}
   m_CullTransparentMesh: 1
+--- !u!1 &2001020079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3762649543085583190, guid: a46bc2d263faff84c82d7b5c3550d9cd, type: 3}
+  m_PrefabInstance: {fileID: 486717612245547998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2049134891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4318,9 +4323,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3679951009563054508, guid: a46bc2d263faff84c82d7b5c3550d9cd, type: 3}
-      propertyPath: _playerIDText
+      propertyPath: _loadResultUI
       value: 
-      objectReference: {fileID: 526385694}
+      objectReference: {fileID: 2001020079}
+    - target: {fileID: 3679951009563054508, guid: a46bc2d263faff84c82d7b5c3550d9cd, type: 3}
+      propertyPath: _loadResultText
+      value: 
+      objectReference: {fileID: 405979721}
     - target: {fileID: 6254999139340166431, guid: a46bc2d263faff84c82d7b5c3550d9cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
