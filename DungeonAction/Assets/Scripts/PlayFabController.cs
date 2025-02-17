@@ -13,9 +13,12 @@ public class PlayFabController : MonoBehaviour
     private GameObject _loadResultUI;
     [SerializeField]
     private TMP_Text _loadResultText;
+    [SerializeField]
+    private GameObject _loginFailureButtons;
 
     private TitleManager _titleManager;
     private bool _endLoadData = false; // データを読み込み終わっているか
+    private bool _online = false; //ネットワークに接続しているかのフラグ
     private const string PlayerPrefsKey = "PlayFabCustomID";
 
     private void Awake()
@@ -30,6 +33,7 @@ public class PlayFabController : MonoBehaviour
         }
 
         _titleManager = FindAnyObjectByType<TitleManager>();
+
         if (_titleManager == null) Debug.LogError("TitleManagerが登録されていません。");
 
         if (_loadResultUI != null)
@@ -40,13 +44,54 @@ public class PlayFabController : MonoBehaviour
         {
             Debug.LogError("ロード結果のUIが登録されていません。");
         }
+
+        if (_loginFailureButtons != null)
+        {
+            _loginFailureButtons.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("ログイン失敗時のボタンが登録されていません。");
+        }
         DontDestroyOnLoad(gameObject);
+
+        //ネットワークの接続チェック
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("ネットワーク未接続");
+            if (_loadResultUI != null)
+            {
+                _loadResultUI.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("ロード結果のUIが登録されていません。");
+            }
+
+            if (_loadResultText != null)
+            {
+                _loadResultText.text = "ネットワークに接続されていません。";
+            }
+            else
+            {
+                Debug.LogError("ロード結果のテキストが登録されていません。");
+            }
+            _loginFailureButtons.SetActive(true);
+            this.enabled = false;
+            if (_titleManager != null) _titleManager.enabled = false;
+            _online = false;
+        }
+        else
+        {
+            Debug.Log("ネットワーク接続あり");
+            _online = true;
+        }
     }
 
     void Start()
     {
-        _titleManager.enabled = false;
-        LoginWithSavedOrNewCustomID();
+        if (_titleManager != null) _titleManager.enabled = false;
+        if (_online) LoginWithSavedOrNewCustomID();
     }
 
     //アプリ終了時の処理
@@ -127,6 +172,7 @@ public class PlayFabController : MonoBehaviour
     {
         Debug.LogError("PlayFabログイン失敗: " + error.GenerateErrorReport());
         _loadResultText.text = "データの読み込みに失敗しました。";
+        _loginFailureButtons.SetActive(true);
     }
 
     public void SaveUserStatus()
@@ -190,13 +236,13 @@ public class PlayFabController : MonoBehaviour
         float skillPowerUpRatio = PlayerLevelController.Instance.FirstSkillPowerUpRatio;
         float specialPowerUpRatio = PlayerLevelController.Instance.FirstSpecialPowerUpRatio;
 
+        _endLoadData = true;
+
         if (result.Data == null || result.Data.Count == 0)
         {
             Debug.Log("ユーザーデータが存在しません。");
             return;
         }
-
-        _endLoadData = true;
 
         if (result.Data.ContainsKey("Level"))
         {
@@ -307,5 +353,6 @@ public class PlayFabController : MonoBehaviour
         {
             _loadResultText.text = "データの読み込みに失敗しました。エラー: " + error.ErrorMessage;
         }
+        _loginFailureButtons.SetActive(true);
     }
 }
