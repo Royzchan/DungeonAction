@@ -94,11 +94,17 @@ public class PlayFabController : MonoBehaviour
         if (_online) LoginWithSavedOrNewCustomID();
     }
 
+    public void GameStart_Offline()
+    {
+        if (_titleManager != null) _titleManager.enabled = true;
+        _loadResultUI.SetActive(false);
+    }
+
     //アプリ終了時の処理
     private void OnApplicationQuit()
     {
         //データの保存
-        SaveUserStatus();
+        if (_online) SaveUserStatus();
     }
 
     void LoginWithSavedOrNewCustomID()

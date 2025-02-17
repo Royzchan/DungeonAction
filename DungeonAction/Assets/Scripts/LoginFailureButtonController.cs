@@ -82,6 +82,8 @@ public class LoginFailureButtonController : MonoBehaviour
         switch (_nowSelect)
         {
             case SelectList.GamePlay:
+                this.gameObject.SetActive(false);
+                PlayFabController.Instance.GameStart_Offline();
                 break;
 
             case SelectList.GameEnd:
